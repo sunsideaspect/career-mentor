@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Військова Освіта | Рекрутинговий центр</title>
+    <title>OFFICER MENTOR | Твій шлях до офіцерської еліти ЗСУ</title>
     
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
@@ -15,17 +15,19 @@
             font-family: 'UAF Sans';
             src: url('https://cdn.jsdelivr.net/gh/scidreams/uaf-sans-font@main/fonts/UAFSans-Bold.woff2') format('woff2');
             font-weight: 700;
+            font-style: normal;
         }
         @font-face {
             font-family: 'UAF Sans';
             src: url('https://cdn.jsdelivr.net/gh/scidreams/uaf-sans-font@main/fonts/UAFSans-Regular.woff2') format('woff2');
             font-weight: 400;
+            font-style: normal;
         }
 
         :root {
             --bg-deep: #020617;
             --bg-light: #0f172a;
-            --accent: #ffcc00; 
+            --accent: #ffcc00; /* Золото ЗСУ */
             --text: #ffffff;
         }
 
@@ -63,14 +65,13 @@
             color: #000;
             font-weight: 700;
             text-transform: uppercase;
-            padding: 1.5rem 3.5rem;
+            padding: 1.2rem 3rem;
             transition: all 0.3s ease;
             display: inline-block;
         }
         .btn-main:hover {
-            transform: scale(1.05);
-            box-shadow: 0 0 30px rgba(255, 204, 0, 0.4);
             background-color: #fff;
+            box-shadow: 0 0 30px rgba(255, 204, 0, 0.4);
         }
 
         .modal { 
@@ -85,30 +86,30 @@
 </head>
 <body class="uppercase">
 
-    <!-- Навігація -->
+    <!-- НАВІГАЦІЯ -->
     <nav class="fixed w-full z-50 bg-black/60 backdrop-blur-lg border-b border-white/5 font-bold text-[10px] tracking-[0.3em]">
-        <div class="container mx-auto px-6 py-5 flex justify-between items-center text-white">
+        <div class="container mx-auto px-6 py-5 flex justify-between items-center">
             <div class="flex items-center gap-4">
                 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Emblem_of_the_Ukrainian_Armed_Forces.svg/1200px-Emblem_of_the_Ukrainian_Armed_Forces.svg.png" class="h-8" alt="ЗСУ">
-                <span class="text-lg tracking-tighter italic font-black">OFFICER_MENTOR</span>
+                <span class="text-lg tracking-tighter">OFFICER_MENTOR</span>
             </div>
-            <a href="#form" class="bg-[#ffcc00] text-black px-4 py-2 hover:bg-white transition uppercase">Зв'язок_</a>
+            <a href="#form" class="bg-[#ffcc00] text-black px-6 py-2 hover:bg-white transition uppercase font-black">Зв'язок_</a>
         </div>
     </nav>
 
     <!-- 1. HERO SECTION -->
-    <section class="min-h-screen flex items-center px-6 pt-20 relative">
+    <section class="min-h-screen flex items-center px-6 pt-20 relative border-b border-white/5">
         <div class="container mx-auto relative z-10">
             <div data-aos="fade-up">
-                <h1 class="text-6xl md:text-[180px] mb-12 tracking-tighter font-bold leading-none italic">
+                <h1 class="text-6xl md:text-[160px] mb-12 tracking-tighter font-bold leading-none">
                     СТАНЬ <br> <span class="text-[#ffcc00] drop-shadow-[0_0_30px_rgba(255,204,0,0.3)]">ОФІЦЕРОМ_</span>
                 </h1>
                 <div class="grid md:grid-cols-2 gap-12 items-end">
-                    <p class="text-xl md:text-4xl font-normal text-slate-300 leading-[1.1] italic">
+                    <p class="text-xl md:text-4xl font-normal text-slate-300 leading-[1.1]">
                         ВИЩА ОСВІТА. ПОВНЕ ЗАБЕЗПЕЧЕННЯ. <br>ТВІЙ СТАТУС В ЕЛІТІ ЗСУ.
                     </p>
                     <div class="flex md:justify-end">
-                        <a href="#sectors" class="btn-main text-2xl font-bold">Обрати напрямок_</a>
+                        <a href="#manifesto" class="btn-main text-xl">Дізнатись більше_</a>
                     </div>
                 </div>
             </div>
@@ -116,52 +117,81 @@
     </section>
 
     <!-- 2. МАНІФЕСТ -->
-    <section id="manifesto" class="py-32 px-6 border-y border-white/5 bg-black/40">
+    <section id="manifesto" class="py-32 px-6 border-b border-white/5 bg-black/40">
         <div class="container mx-auto">
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-16">
                 <div class="lg:col-span-5" data-aos="fade-right">
-                    <h2 class="text-7xl md:text-[120px] text-[#ffcc00] sticky top-32 leading-[0.85] tracking-tighter italic">
+                    <h2 class="text-7xl md:text-[110px] text-[#ffcc00] sticky top-32 leading-[0.85] tracking-tighter">
                         ЧОМУ <br> САМЕ <br> ЗСУ?_
                     </h2>
                 </div>
                 <div class="lg:col-span-7 grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-20 text-white" data-aos="fade-up">
                     <div>
                         <h3 class="text-2xl text-[#ffcc00] mb-6">БЕЗОПЛАТНИЙ ГРАНТ</h3>
-                        <p class="text-slate-400 font-normal leading-relaxed text-sm uppercase italic">
-                            Держава повністю покриває твій шлях. <b>Ти отримуєш 100% оплачене навчання</b>, житло та харчування.
-                        </p>
+                        <p class="text-slate-400 font-normal leading-relaxed text-sm uppercase">Держава повністю покриває твій шлях. <b>Ти отримуєш 100% оплачене навчання</b>, житло та харчування.</p>
                     </div>
                     <div>
                         <h3 class="text-2xl text-[#ffcc00] mb-6">ВИСОКІ СТИПЕНДІЇ</h3>
-                        <p class="text-slate-400 font-normal leading-relaxed text-sm uppercase italic">
-                            Наші курсанти мають <b>підвищене грошове забезпечення</b>, що дозволяє бути незалежним вже під час навчання.
-                        </p>
+                        <p class="text-slate-400 font-normal leading-relaxed text-sm uppercase">Наші курсанти мають <b>підвищене грошове забезпечення</b>, що дозволяє бути незалежним вже під час навчання.</p>
                     </div>
                     <div>
                         <h3 class="text-2xl text-[#ffcc00] mb-6">ТЕХНОЛОГІЧНИЙ СТЕК</h3>
-                        <p class="text-slate-400 font-normal leading-relaxed text-sm uppercase italic">
-                            Ти опануєш <b>БПЛА, кібербезпеку та сучасні системи</b>. Це робота з технологіями майбутнього.
-                        </p>
+                        <p class="text-slate-400 font-normal leading-relaxed text-sm uppercase">Опануєш <b>БПЛА, кібербезпеку та сучасні системи</b>. Це робота з технологіями майбутнього.</p>
                     </div>
                     <div>
                         <h3 class="text-2xl text-[#ffcc00] mb-6">ОФІЦЕРСЬКИЙ СТАТУС</h3>
-                        <p class="text-slate-400 font-normal leading-relaxed text-sm uppercase italic">
-                            Після випуску ти одразу <b>стаєш офіцером</b> із гарантованим робочим місцем та стабільною кар'єрою.
-                        </p>
+                        <p class="text-slate-400 font-normal leading-relaxed text-sm uppercase">Після випуску ти одразу <b>стаєш офіцером</b> із гарантованим робочим місцем та стабільною кар'єрою.</p>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl text-[#ffcc00] mb-6">ПЕРСОНАЛЬНИЙ МЕНТОР</h3>
+                        <p class="text-slate-400 font-normal leading-relaxed text-sm uppercase">Ми <b>супроводжуємо твій вступ "під ключ"</b>. Допомагаємо з документами та ВЛК без черг.</p>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl text-[#ffcc00] mb-6">СТАНДАРТИ NATO</h3>
+                        <p class="text-slate-400 font-normal leading-relaxed text-sm uppercase">Навчання за <b>міжнародними протоколами</b>. Твої навички та диплом будуть актуальними у світі.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 3. НАПРЯМКИ (BENTO GRID - 8 ШТУК) -->
+    <!-- 3. ШЛЯХ КУРСАНТА -->
+    <section id="path" class="py-32 px-6 border-b border-white/5 bg-black/20">
+        <div class="container mx-auto">
+            <h2 class="text-4xl md:text-8xl mb-24 text-white font-bold">ШЛЯХ КУРСАНТА_</h2>
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div class="card-interactive p-10" data-aos="fade-up">
+                    <div class="text-5xl mb-6 text-[#ffcc00]">01.</div>
+                    <h3 class="text-2xl mb-4">ЗАЯВКА</h3>
+                    <p class="text-slate-400 text-[11px] font-bold tracking-widest leading-relaxed">Залишаєш запит. Ментор телефонує для брифінгу.</p>
+                </div>
+                <div class="card-interactive p-10" data-aos="fade-up" data-aos-delay="100">
+                    <div class="text-5xl mb-6 text-[#ffcc00]">02.</div>
+                    <h3 class="text-2xl mb-4">СУПРОВІД</h3>
+                    <p class="text-slate-400 text-[11px] font-bold tracking-widest leading-relaxed">Організовуємо медогляд та підготовку документів.</p>
+                </div>
+                <div class="card-interactive p-10" data-aos="fade-up" data-aos-delay="200">
+                    <div class="text-5xl mb-6 text-[#ffcc00]">03.</div>
+                    <h3 class="text-2xl mb-4">ВСТУП</h3>
+                    <p class="text-slate-400 text-[11px] font-bold tracking-widest leading-relaxed">Зарахування до елітного військового вишу.</p>
+                </div>
+                <div class="card-interactive p-10" data-aos="fade-up" data-aos-delay="300">
+                    <div class="text-5xl mb-6 text-[#ffcc00]">04.</div>
+                    <h3 class="text-2xl mb-4 text-white">ОФІЦЕР</h3>
+                    <p class="text-white text-[11px] font-bold tracking-widest leading-relaxed font-black">Старт професійної кар'єри в ЗСУ.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. НАПРЯМКИ (BENTO GRID) -->
     <section id="sectors" class="py-32 px-6">
         <div class="container mx-auto">
-            <h2 class="text-4xl md:text-8xl mb-20 text-white underline decoration-[#ffcc00] decoration-[12px] underline-offset-[20px] italic">НАПРЯМКИ_</h2>
+            <h2 class="text-4xl md:text-8xl mb-20 text-white underline decoration-[#ffcc00] decoration-[12px] underline-offset-[20px]">НАПРЯМКИ_</h2>
             
-            <div class="grid grid-cols-1 md:grid-cols-12 gap-6 italic">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-6">
                 
-                <!-- 1. Strategic Lead -->
+                <!-- 1. STRATEGIC_LEAD -->
                 <div class="md:col-span-7 card-interactive relative group overflow-hidden cursor-pointer p-10 h-80 flex flex-col justify-end" onclick="openModal('modal-lead')" data-aos="zoom-in">
                     <img src="img/cat-lead.jpg" class="absolute inset-0 w-full h-full object-cover opacity-20 grayscale group-hover:grayscale-0 group-hover:scale-105 transition duration-700">
                     <div class="relative z-10">
@@ -170,7 +200,7 @@
                     </div>
                 </div>
 
-                <!-- 2. Digital Cyber -->
+                <!-- 2. DIGITAL_CYBER -->
                 <div class="md:col-span-5 card-interactive relative group overflow-hidden cursor-pointer p-10 h-80 flex flex-col justify-end" onclick="openModal('modal-tech')" data-aos="zoom-in" data-aos-delay="100">
                     <img src="img/cat-digital.jpg" class="absolute inset-0 w-full h-full object-cover opacity-20 grayscale group-hover:grayscale-0 group-hover:scale-105 transition duration-700">
                     <div class="relative z-10">
@@ -179,16 +209,16 @@
                     </div>
                 </div>
 
-                <!-- 3. Air Masters -->
+                <!-- 3. AIR_MASTERS -->
                 <div class="md:col-span-5 card-interactive relative group overflow-hidden cursor-pointer p-10 h-80 flex flex-col justify-end" onclick="openModal('modal-air')" data-aos="zoom-in" data-aos-delay="200">
                     <img src="img/cat-air.jpg" class="absolute inset-0 w-full h-full object-cover opacity-20 grayscale group-hover:grayscale-0 transition duration-700">
-                    <div class="relative z-10">
-                        <h3 class="text-4xl mb-2 text-[#ffcc00]">AIR_MASTERS</h3>
+                    <div class="relative z-10 text-[#ffcc00]">
+                        <h3 class="text-4xl mb-2">AIR_MASTERS</h3>
                         <p class="text-[#ffcc00] text-xs font-bold tracking-[0.4em]">АВІАЦІЯ ТА ППО</p>
                     </div>
                 </div>
 
-                <!-- 4. Heavy Armor -->
+                <!-- 4. HEAVY_ARMOR -->
                 <div class="md:col-span-7 card-interactive relative group overflow-hidden cursor-pointer p-10 h-80 flex flex-col justify-end" onclick="openModal('modal-heavy')" data-aos="zoom-in" data-aos-delay="300">
                     <img src="img/cat-heavy.jpg" class="absolute inset-0 w-full h-full object-cover opacity-20 grayscale group-hover:grayscale-0 transition duration-700">
                     <div class="relative z-10">
@@ -197,7 +227,7 @@
                     </div>
                 </div>
 
-                <!-- 5. Naval Force -->
+                <!-- 5. NAVAL_FORCE -->
                 <div class="md:col-span-6 card-interactive relative group overflow-hidden cursor-pointer p-10 h-80 flex flex-col justify-end" onclick="openModal('modal-naval')" data-aos="zoom-in">
                     <img src="img/cat-naval.jpg" class="absolute inset-0 w-full h-full object-cover opacity-20 grayscale group-hover:grayscale-0 transition duration-700">
                     <div class="relative z-10">
@@ -206,16 +236,16 @@
                     </div>
                 </div>
 
-                <!-- 6. Info Tactics -->
+                <!-- 6. INFO_TACTICS -->
                 <div class="md:col-span-6 card-interactive relative group overflow-hidden cursor-pointer p-10 h-80 flex flex-col justify-end" onclick="openModal('modal-info')" data-aos="zoom-in" data-aos-delay="100">
                     <img src="img/cat-info.jpg" class="absolute inset-0 w-full h-full object-cover opacity-20 grayscale group-hover:grayscale-0 transition duration-700">
-                    <div class="relative z-10">
-                        <h3 class="text-4xl mb-2 text-white">INFO_TACTICS</h3>
+                    <div class="relative z-10 text-white">
+                        <h3 class="text-4xl mb-2">INFO_TACTICS</h3>
                         <p class="text-slate-400 text-xs font-bold tracking-[0.4em]">ІНТЕЛЕКТ, ПРАВО, ІПСО</p>
                     </div>
                 </div>
 
-                <!-- 7. Logistics Eng -->
+                <!-- 7. LOGISTICS_ENG -->
                 <div class="md:col-span-7 card-interactive relative group overflow-hidden cursor-pointer p-10 h-80 flex flex-col justify-end" onclick="openModal('modal-logistics')" data-aos="zoom-in">
                     <img src="img/cat-logistics.jpg" class="absolute inset-0 w-full h-full object-cover opacity-20 grayscale group-hover:grayscale-0 transition duration-700">
                     <div class="relative z-10 text-[#ffcc00]">
@@ -224,11 +254,11 @@
                     </div>
                 </div>
 
-                <!-- 8. Sergeant Corps -->
-                <div class="md:col-span-5 card-interactive relative group overflow-hidden cursor-pointer p-10 h-80 flex flex-col justify-end border-2 border-[#ffcc00]/40" onclick="openModal('modal-sergeant')" data-aos="zoom-in" data-aos-delay="100">
-                    <img src="img/cat-sergeant.jpg" class="absolute inset-0 w-full h-full object-cover opacity-30 grayscale group-hover:grayscale-0 transition duration-700">
+                <!-- 8. SERGEANT_CORPS -->
+                <div class="md:col-span-5 card-interactive relative group overflow-hidden cursor-pointer p-10 h-80 flex flex-col justify-end border-2 border-[#ffcc00]/30" onclick="openModal('modal-sergeant')" data-aos="zoom-in">
+                    <img src="img/cat-sergeant.jpg" class="absolute inset-0 w-full h-full object-cover opacity-20 grayscale group-hover:grayscale-0 transition duration-700">
                     <div class="relative z-10">
-                        <h3 class="text-4xl mb-2 text-white">SERGEANT_CORPS</h3>
+                        <h3 class="text-4xl mb-2">SERGEANT_CORPS</h3>
                         <p class="text-white text-xs font-bold tracking-[0.4em]">КОЛЕДЖІ: ШВИДКИЙ СТАРТ</p>
                     </div>
                 </div>
@@ -237,20 +267,23 @@
         </div>
     </section>
 
-    <!-- 4. ФОРМА -->
-    <section id="form" class="py-32 px-6 bg-[#ffcc00] text-black">
-        <div class="container mx-auto max-w-5xl font-bold italic">
-            <div id="direction-badge" class="hidden mb-16 border-4 border-black p-6 inline-block font-black uppercase">
+    <!-- 5. ФОРМА -->
+    <section id="form" class="py-32 px-6 bg-[#ffcc00] text-black border-t border-white/10">
+        <div class="container mx-auto max-w-5xl">
+            <div id="direction-badge" class="hidden mb-16 border-4 border-black p-6 inline-block font-bold uppercase">
                 <span class="text-[10px] uppercase block mb-1">Вибрано вектор:</span>
                 <div id="chosen-direction-text" class="text-3xl tracking-tighter">Напрямок не обрано</div>
             </div>
+
             <div class="grid md:grid-cols-2 gap-20 items-start">
                 <div>
-                    <h2 class="text-7xl md:text-8xl mb-10 leading-[0.8] tracking-tighter italic">ЗВ'ЯЗОК_ <br>З МЕНТОРОМ</h2>
-                    <p class="text-xl font-bold uppercase leading-tight italic">Твоє майбутнє потребує <br>рішучих дій. Залиш свій <br>номер телефону.</p>
+                    <h2 class="text-7xl md:text-8xl mb-10 leading-[0.8] tracking-tighter">ЗВ'ЯЗОК_ <br>З МЕНТОРОМ</h2>
+                    <p class="text-xl font-bold uppercase leading-tight">Залиш номер телефону. Ми зателефонуємо та побудуємо твою дорожню карту вступу.</p>
                 </div>
                 <form id="recruitment-form" class="space-y-12">
                     <input type="hidden" name="direction" id="hidden-direction" value="Загальна консультація">
+                    <input type="hidden" name="utm_source" id="utm_source" value="">
+                    
                     <input type="text" name="name" placeholder="ПРІЗВИЩЕ ТА ІМ'Я" required class="w-full bg-transparent border-b-8 border-black pb-4 outline-none focus:border-white transition text-4xl font-bold uppercase placeholder:text-black/30">
                     <input type="tel" name="phone" placeholder="НОМЕР ТЕЛЕФОНУ" required class="w-full bg-transparent border-b-8 border-black pb-4 outline-none focus:border-white transition text-4xl font-bold uppercase placeholder:text-black/30">
                     <button type="submit" id="submit-btn" class="w-full bg-black text-[#ffcc00] p-8 font-bold text-3xl uppercase hover:bg-white hover:text-black transition-all shadow-2xl">ПОДАТИ ЗАПИТ_</button>
@@ -259,24 +292,24 @@
         </div>
     </section>
 
-    <!-- МОДАЛЬНІ ВІКНА (ВСІ 8 ШТУК) -->
+    <!-- МОДАЛЬНІ ВІКНА (ВСІ 8) -->
 
     <!-- 1. Strategic Lead -->
     <div id="modal-lead" class="modal" onclick="closeModal(event)">
-        <div class="bg-black border-2 border-white/20 w-full max-w-6xl p-12 max-h-screen overflow-y-auto custom-scrollbar italic font-bold">
-            <div class="flex justify-between items-center mb-16 border-b-4 border-[#ffcc00] pb-8 text-white">
+        <div class="bg-black border-2 border-white/20 w-full max-w-6xl p-12 max-h-screen overflow-y-auto custom-scrollbar font-bold">
+            <div class="flex justify-between items-center mb-12 border-b-4 border-[#ffcc00] pb-8 text-white">
                 <h2 class="text-5xl text-[#ffcc00] tracking-tighter">STRATEGIC_LEAD_</h2>
                 <button class="text-6xl" onclick="closeModalDirect('modal-lead')">&times;</button>
             </div>
-            <div class="grid md:grid-cols-2 gap-12">
-                <div class="border border-white/10 p-8 card-interactive cursor-pointer" onclick="selectDirection('ВА (Одеса) — Спецназ/Розвідка')">
+            <div class="grid md:grid-cols-2 gap-12 text-white">
+                <div class="border border-white/10 p-10 card-interactive cursor-pointer" onclick="selectDirection('ВА (Одеса) — Спецназ/Розвідка')">
                     <h4 class="text-3xl mb-4 text-[#ffcc00]">Військова академія (Одеса)</h4>
-                    <p class="text-slate-400 text-xs uppercase mb-6 leading-relaxed italic">Спеціальності: ДШВ, Морська піхота, Розвідка, ССО.</p>
+                    <p class="text-slate-400 text-xs uppercase mb-10 leading-relaxed font-bold">Десантно-штурмові війська, Морська піхота, Військова розвідка, ССО.</p>
                     <span class="text-white underline font-black">Обрати заклад_</span>
                 </div>
-                <div class="border border-white/10 p-8 card-interactive cursor-pointer" onclick="selectDirection('НАСВ (Львів) — Піхота')">
+                <div class="border border-white/10 p-10 card-interactive cursor-pointer" onclick="selectDirection('НАСВ (Львів) — Піхота')">
                     <h4 class="text-3xl mb-4 text-white">НАСВ ім. Сагайдачного (Львів)</h4>
-                    <p class="text-slate-400 text-xs uppercase mb-6 leading-relaxed italic">Спеціальності: Управління механізованими підрозділами (Піхота).</p>
+                    <p class="text-slate-400 text-xs uppercase mb-10 leading-relaxed font-bold">Управління механізованими підрозділами (Піхота).</p>
                     <span class="text-[#ffcc00] underline font-black">Обрати заклад_</span>
                 </div>
             </div>
@@ -285,21 +318,21 @@
 
     <!-- 2. Digital Cyber -->
     <div id="modal-tech" class="modal" onclick="closeModal(event)">
-        <div class="bg-black border-2 border-white/20 w-full max-w-6xl p-12 max-h-screen overflow-y-auto custom-scrollbar italic font-bold text-white">
-            <div class="flex justify-between items-center mb-16 border-b-4 border-[#ffcc00] pb-8 text-white">
-                <h2 class="text-5xl text-[#ffcc00] tracking-tighter italic">DIGITAL_CYBER_</h2>
+        <div class="bg-black border-2 border-white/20 w-full max-w-6xl p-12 max-h-screen overflow-y-auto custom-scrollbar font-bold">
+            <div class="flex justify-between items-center mb-12 border-b-4 border-[#ffcc00] pb-8 text-white">
+                <h2 class="text-5xl text-[#ffcc00] tracking-tighter">DIGITAL_CYBER_</h2>
                 <button class="text-6xl" onclick="closeModalDirect('modal-tech')">&times;</button>
             </div>
-            <div class="grid md:grid-cols-2 gap-12">
-                <div class="border border-white/10 p-8 card-interactive cursor-pointer" onclick="selectDirection('ВІТІ (Київ) — IT/Cyber')">
+            <div class="grid md:grid-cols-2 gap-12 text-white">
+                <div class="border border-white/10 p-10 card-interactive cursor-pointer" onclick="selectDirection('ВІТІ (Київ) — ІТ/Кібер')">
                     <h4 class="text-3xl mb-4 text-[#ffcc00]">ВІТІ ім. Героїв Крут (Київ)</h4>
-                    <p class="text-slate-400 text-xs uppercase mb-6 italic">Кібербезпека, Софт, Телекомунікації.</p>
+                    <p class="text-slate-400 text-xs uppercase mb-10 font-bold leading-relaxed">Кібербезпека, Розробка ПЗ, Системи зв'язку.</p>
                     <span class="text-white underline font-black">Обрати заклад_</span>
                 </div>
-                <div class="border border-white/10 p-8 card-interactive cursor-pointer" onclick="selectDirection('ЖВІ (Житомир) — РЕБ/Космос')">
-                    <h4 class="text-3xl mb-4 text-white uppercase italic">ЖВІ ім. Корольова (Житомир)</h4>
-                    <p class="text-slate-400 text-xs uppercase mb-6 italic">РЕБ, Космічна розвідка, Захист інформації.</p>
-                    <span class="text-[#ffcc00] underline font-black italic">Обрати заклад_</span>
+                <div class="border border-white/10 p-10 card-interactive cursor-pointer" onclick="selectDirection('ЖВІ (Житомир) — РЕБ/БПЛА')">
+                    <h4 class="text-3xl mb-4 text-white">ЖВІ ім. Корольова (Житомир)</h4>
+                    <p class="text-slate-400 text-xs uppercase mb-10 font-bold leading-relaxed">РЕБ, Космічна розвідка, Захист інформації.</p>
+                    <span class="text-[#ffcc00] underline font-black">Обрати заклад_</span>
                 </div>
             </div>
         </div>
@@ -307,36 +340,36 @@
 
     <!-- 3. Air Masters -->
     <div id="modal-air" class="modal" onclick="closeModal(event)">
-        <div class="bg-black border-2 border-white/20 w-full max-w-6xl p-12 max-h-screen overflow-y-auto custom-scrollbar italic font-bold">
+        <div class="bg-black border-2 border-white/20 w-full max-w-6xl p-12 max-h-screen overflow-y-auto custom-scrollbar font-bold">
             <div class="flex justify-between items-center mb-16 border-b-4 border-[#ffcc00] pb-8 text-white">
                 <h2 class="text-5xl text-[#ffcc00] tracking-tighter">AIR_MASTERS_</h2>
                 <button class="text-6xl" onclick="closeModalDirect('modal-air')">&times;</button>
             </div>
-            <div class="border border-white/10 p-10 card-interactive cursor-pointer" onclick="selectDirection('ХНУПС (Харків) — Авіація/ППО')">
+            <div class="border border-white/10 p-10 card-interactive cursor-pointer text-white" onclick="selectDirection('ХНУПС (Харків) — Авіація/ППО')">
                 <h4 class="text-3xl mb-4 text-[#ffcc00]">ХНУПС ім. Кожедуба (Харків)</h4>
-                <p class="text-slate-400 text-sm uppercase mb-10 leading-relaxed italic italic font-bold">Льотчики, Штурмани, Офіцери ППО (Радіотехнічні та зенітно-ракетні війська).</p>
-                <span class="text-white underline font-black uppercase tracking-widest italic">Обрати авіацію_</span>
+                <p class="text-slate-400 text-sm uppercase mb-10 leading-relaxed font-bold">Льотчики, Штурмани, Офіцери ППО (Радіотехнічні та зенітно-ракетні війська).</p>
+                <span class="text-white underline font-black">Обрати авіацію_</span>
             </div>
         </div>
     </div>
 
     <!-- 4. Heavy Armor -->
     <div id="modal-heavy" class="modal" onclick="closeModal(event)">
-        <div class="bg-black border-2 border-white/20 w-full max-w-6xl p-12 max-h-screen overflow-y-auto custom-scrollbar italic font-bold">
-            <div class="flex justify-between items-center mb-16 border-b-4 border-white pb-8 text-white font-bold italic">
-                <h2 class="text-5xl text-white tracking-tighter italic font-bold">HEAVY_ARMOR_</h2>
+        <div class="bg-black border-2 border-white/20 w-full max-w-6xl p-12 max-h-screen overflow-y-auto custom-scrollbar font-bold">
+            <div class="flex justify-between items-center mb-16 border-b-4 border-white pb-8 text-white">
+                <h2 class="text-5xl text-white tracking-tighter">HEAVY_ARMOR_</h2>
                 <button class="text-6xl" onclick="closeModalDirect('modal-heavy')">&times;</button>
             </div>
-            <div class="grid md:grid-cols-2 gap-12 font-bold italic">
-                <div class="border border-white/10 p-8 card-interactive cursor-pointer font-bold italic" onclick="selectDirection('ВІТВ (Харків) — Танки/РХБЗ')">
-                    <h4 class="text-3xl mb-4 text-[#ffcc00] font-bold italic">ВІТВ НТУ "ХПІ" (Харків)</h4>
-                    <p class="text-slate-400 text-xs uppercase mb-6 italic font-bold italic">Танкові війська, РХБЗ.</p>
-                    <span class="text-white underline font-black font-bold italic">Обрати заклад_</span>
+            <div class="grid md:grid-cols-2 gap-12 text-white">
+                <div class="border border-white/10 p-10 card-interactive cursor-pointer" onclick="selectDirection('ВІТВ (Харків) — Танки/РХБЗ')">
+                    <h4 class="text-3xl mb-4 text-[#ffcc00]">ВІТВ НТУ "ХПІ" (Харків)</h4>
+                    <p class="text-slate-400 text-xs uppercase mb-10 leading-relaxed font-bold">Танкові війська, Радіаційний, хімічний, біологічний захист (РХБЗ).</p>
+                    <span class="text-white underline font-black">Обрати заклад_</span>
                 </div>
-                <div class="border border-white/10 p-8 card-interactive cursor-pointer font-bold italic" onclick="selectDirection('НАСВ (Львів) — Артилерія/Сапери')">
-                    <h4 class="text-3xl mb-4 text-white font-bold italic">НАСВ ім. Сагайдачного (Львів)</h4>
-                    <p class="text-slate-400 text-xs uppercase mb-6 font-bold italic italic">Наземна артилерія, Ракетні війська, Інженерні війська.</p>
-                    <span class="text-[#ffcc00] underline font-black font-bold italic">Обрати заклад_</span>
+                <div class="border border-white/10 p-10 card-interactive cursor-pointer" onclick="selectDirection('НАСВ (Львів) — Артилерія/Сапери')">
+                    <h4 class="text-3xl mb-4 text-white">НАСВ ім. Сагайдачного (Львів)</h4>
+                    <p class="text-slate-400 text-xs uppercase mb-10 leading-relaxed font-bold">Наземна артилерія, Ракетні війська, Інженерні війська (сапери).</p>
+                    <span class="text-[#ffcc00] underline font-black">Обрати заклад_</span>
                 </div>
             </div>
         </div>
@@ -344,36 +377,36 @@
 
     <!-- 5. Naval Force -->
     <div id="modal-naval" class="modal" onclick="closeModal(event)">
-        <div class="bg-black border-2 border-white/20 w-full max-w-6xl p-12 max-h-screen overflow-y-auto custom-scrollbar italic font-bold italic">
-            <div class="flex justify-between items-center mb-16 border-b-4 border-white pb-8 text-white font-bold italic">
-                <h2 class="text-5xl text-white tracking-tighter font-bold italic italic">NAVAL_FORCE_</h2>
+        <div class="bg-black border-2 border-white/20 w-full max-w-6xl p-12 max-h-screen overflow-y-auto custom-scrollbar font-bold">
+            <div class="flex justify-between items-center mb-16 border-b-4 border-white pb-8 text-white">
+                <h2 class="text-5xl text-white tracking-tighter font-black">NAVAL_FORCE_</h2>
                 <button class="text-6xl" onclick="closeModalDirect('modal-naval')">&times;</button>
             </div>
-            <div class="border border-white/10 p-10 card-interactive cursor-pointer font-bold italic" onclick="selectDirection('Інститут ВМС (Одеса)')">
-                <h4 class="text-3xl mb-4 text-[#ffcc00] font-bold italic italic">Інститут ВМС (Одеса)</h4>
-                <p class="text-slate-400 text-sm uppercase mb-10 leading-relaxed font-bold italic italic italic">Кораблеводіння, Берегові ракети, Корабельне озброєння.</p>
-                <span class="text-white underline font-black font-bold italic italic">Обрати флот_</span>
+            <div class="border border-white/10 p-10 card-interactive cursor-pointer text-white" onclick="selectDirection('Інститут ВМС (Одеса)')">
+                <h4 class="text-3xl mb-4 text-[#ffcc00]">Інститут ВМС (Одеса)</h4>
+                <p class="text-slate-400 text-sm uppercase mb-10 leading-relaxed font-bold">Кораблеводіння, Берегові ракетні комплекси, Корабельне озброєння та енергетика.</p>
+                <span class="text-white underline font-black">Обрати флот_</span>
             </div>
         </div>
     </div>
 
     <!-- 6. Info Tactics -->
     <div id="modal-info" class="modal" onclick="closeModal(event)">
-        <div class="bg-black border-2 border-white/20 w-full max-w-6xl p-12 max-h-screen overflow-y-auto custom-scrollbar italic font-bold">
-            <div class="flex justify-between items-center mb-16 border-b-4 border-white pb-8 text-white italic font-bold">
-                <h2 class="text-5xl text-white tracking-tighter italic font-bold">INFO_TACTICS_</h2>
+        <div class="bg-black border-2 border-white/20 w-full max-w-6xl p-12 max-h-screen overflow-y-auto custom-scrollbar font-bold text-white">
+            <div class="flex justify-between items-center mb-16 border-b-4 border-white pb-8">
+                <h2 class="text-5xl text-white tracking-tighter">INFO_TACTICS_</h2>
                 <button class="text-6xl" onclick="closeModalDirect('modal-info')">&times;</button>
             </div>
-            <div class="grid md:grid-cols-2 gap-12 italic font-bold italic">
-                <div class="border border-white/10 p-8 card-interactive cursor-pointer font-bold italic" onclick="selectDirection('ВІКНУ (Київ) — Психологія/ІПСО')">
-                    <h4 class="text-3xl mb-4 text-[#ffcc00] font-bold italic">ВІКНУ ім. Шевченка (Київ)</h4>
-                    <p class="text-slate-400 text-xs uppercase mb-6 italic font-bold">Психологія, Журналістика/ІПСО, Перекладачі, Фінанси.</p>
-                    <span class="text-white underline font-black italic">Обрати заклад_</span>
+            <div class="grid md:grid-cols-2 gap-12">
+                <div class="border border-white/10 p-10 card-interactive cursor-pointer" onclick="selectDirection('ВІКНУ (Київ) — Психологія/Юристи')">
+                    <h4 class="text-3xl mb-4 text-[#ffcc00]">ВІКНУ ім. Шевченка (Київ)</h4>
+                    <p class="text-slate-400 text-xs uppercase mb-10 font-bold leading-relaxed">Психологія, Журналістика та ІПСО, Перекладачі, Фінансисти.</p>
+                    <span class="text-white underline font-black">Обрати заклад_</span>
                 </div>
-                <div class="border border-white/10 p-8 card-interactive cursor-pointer font-bold italic" onclick="selectDirection('ВЮІ (Харків) — Юрист')">
-                    <h4 class="text-3xl mb-4 text-white italic font-bold">Військово-юридичний інститут (Харків)</h4>
-                    <p class="text-slate-400 text-xs uppercase mb-6 font-bold italic italic">Військова юстиція та право.</p>
-                    <span class="text-[#ffcc00] underline font-black italic">Обрати заклад_</span>
+                <div class="border border-white/10 p-10 card-interactive cursor-pointer" onclick="selectDirection('ВЮІ (Харків) — Військовий Юрист')">
+                    <h4 class="text-3xl mb-4 text-white">ВЮІ НЮУ ім. Мудрого (Харків)</h4>
+                    <p class="text-slate-400 text-xs uppercase mb-10 font-bold leading-relaxed">Військова юстиція та право.</p>
+                    <span class="text-[#ffcc00] underline font-black">Обрати заклад_</span>
                 </div>
             </div>
         </div>
@@ -381,21 +414,21 @@
 
     <!-- 7. Logistics Eng -->
     <div id="modal-logistics" class="modal" onclick="closeModal(event)">
-        <div class="bg-black border-2 border-white/20 w-full max-w-6xl p-12 max-h-screen overflow-y-auto custom-scrollbar italic font-bold italic">
-            <div class="flex justify-between items-center mb-16 border-b-4 border-[#ffcc00] pb-8 text-white font-bold italic">
-                <h2 class="text-5xl text-[#ffcc00] tracking-tighter italic font-bold">LOGISTICS_ENG_</h2>
-                <button class="text-6xl font-bold" onclick="closeModalDirect('modal-logistics')">&times;</button>
+        <div class="bg-black border-2 border-white/20 w-full max-w-6xl p-12 max-h-screen overflow-y-auto custom-scrollbar font-bold text-white">
+            <div class="flex justify-between items-center mb-16 border-b-4 border-[#ffcc00] pb-8">
+                <h2 class="text-5xl text-[#ffcc00] tracking-tighter">LOGISTICS_ENG_</h2>
+                <button class="text-6xl" onclick="closeModalDirect('modal-logistics')">&times;</button>
             </div>
-            <div class="grid md:grid-cols-2 gap-12 italic font-bold">
-                <div class="border border-white/10 p-8 card-interactive cursor-pointer italic font-bold" onclick="selectDirection('ВА (Одеса) — Логістика')">
-                    <h4 class="text-3xl mb-4 text-white font-bold italic">Військова академія (Одеса)</h4>
-                    <p class="text-slate-400 text-xs uppercase mb-6 italic font-bold">Тилове забезпечення, Ремонт озброєння.</p>
-                    <span class="text-[#ffcc00] underline font-black italic">Обрати Одесу_</span>
+            <div class="grid md:grid-cols-2 gap-12">
+                <div class="border border-white/10 p-10 card-interactive cursor-pointer" onclick="selectDirection('ВА (Одеса) — Логістика')">
+                    <h4 class="text-3xl mb-4 text-white">Військова академія (Одеса)</h4>
+                    <p class="text-slate-400 text-xs uppercase mb-10 font-bold leading-relaxed">Тилове забезпечення, Ремонт озброєння.</p>
+                    <span class="text-[#ffcc00] underline font-black">Обрати Одесу_</span>
                 </div>
-                <div class="border border-white/10 p-8 card-interactive cursor-pointer italic font-bold italic" onclick="selectDirection('Спец. кафедри — Інфраструктура')">
-                    <h4 class="text-3xl mb-4 text-white italic font-bold">Спеціалізовані кафедри</h4>
-                    <p class="text-slate-400 text-xs uppercase mb-6 font-bold italic">Аеродроми, Мости, Залізниці, Нафтопроводи, Метеорологія.</p>
-                    <span class="text-[#ffcc00] underline font-black italic font-bold">Дізнатись про кафедри_</span>
+                <div class="border border-white/10 p-10 card-interactive cursor-pointer" onclick="selectDirection('Спец. Кафедри — Інфраструктура')">
+                    <h4 class="text-3xl mb-4 text-white">Спеціалізовані кафедри</h4>
+                    <p class="text-slate-400 text-xs uppercase mb-10 font-bold leading-relaxed">Будівництво аеродромів (НАУ), Відновлення мостів (УДУНТ), Нафтопроводи (ІФНТУНГ).</p>
+                    <span class="text-[#ffcc00] underline font-black">Дізнатись більше_</span>
                 </div>
             </div>
         </div>
@@ -403,37 +436,34 @@
 
     <!-- 8. Sergeant Corps -->
     <div id="modal-sergeant" class="modal" onclick="closeModal(event)">
-        <div class="bg-black border-4 border-[#ffcc00]/30 w-full max-w-6xl p-12 max-h-screen overflow-y-auto custom-scrollbar font-bold italic italic">
-            <div class="flex justify-between items-center mb-16 border-b-4 border-[#ffcc00] pb-8 text-[#ffcc00] font-bold italic">
-                <h2 class="text-5xl tracking-tighter italic font-bold italic italic">SERGEANT_CORPS_COLLEGES_</h2>
-                <button class="text-6xl font-bold" onclick="closeModalDirect('modal-sergeant')">&times;</button>
+        <div class="bg-black border-4 border-[#ffcc00]/20 w-full max-w-6xl p-12 max-h-screen overflow-y-auto custom-scrollbar font-bold text-white">
+            <div class="flex justify-between items-center mb-16 border-b-4 border-[#ffcc00] pb-8 text-[#ffcc00]">
+                <h2 class="text-5xl tracking-tighter font-black uppercase">SERGEANT_CORPS_COLLEGES_</h2>
+                <button class="text-6xl" onclick="closeModalDirect('modal-sergeant')">&times;</button>
             </div>
-            <div class="grid md:grid-cols-2 gap-8 italic font-bold italic font-bold">
-                <div class="border border-white/10 p-6 card-interactive cursor-pointer italic" onclick="selectDirection('Коледж ВІТІ (Полтава)')">
-                    <h4 class="text-2xl mb-2 text-white italic">Коледж ВІТІ (Полтава)</h4>
-                    <p class="text-slate-400 text-[10px] uppercase font-bold italic">ІТ, електроніка, телекомунікації.</p>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="border border-white/10 p-8 card-interactive cursor-pointer" onclick="selectDirection('Коледж ВІТІ (Полтава)')">
+                    <h4 class="text-2xl mb-2 text-white">Коледж ВІТІ (Полтава)</h4>
+                    <p class="text-slate-400 text-[11px] uppercase font-bold italic">ІТ, електроніка, телекомунікації.</p>
                 </div>
-                <div class="border border-white/10 p-6 card-interactive cursor-pointer italic" onclick="selectDirection('Коледж НАСВ (Львів)')">
-                    <h4 class="text-2xl mb-2 text-white italic">Коледж НАСВ (Львів)</h4>
-                    <p class="text-slate-400 text-[10px] uppercase font-bold italic">Командири піхоти, ремонт техніки.</p>
+                <div class="border border-white/10 p-8 card-interactive cursor-pointer" onclick="selectDirection('Коледж НАСВ (Львів)')">
+                    <h4 class="text-2xl mb-2 text-white">Коледж НАСВ (Львів)</h4>
+                    <p class="text-slate-400 text-[11px] uppercase font-bold italic">Командири піхоти/артилерії, ремонт техніки.</p>
                 </div>
-                <div class="border border-white/10 p-6 card-interactive cursor-pointer italic italic" onclick="selectDirection('Коледж ХНУПС (Харків)')">
-                    <h4 class="text-2xl mb-2 text-white italic italic">Коледж ХНУПС (Харків)</h4>
-                    <p class="text-slate-400 text-[10px] uppercase font-bold italic">БПЛА, Авіація, ППО.</p>
+                <div class="border border-white/10 p-8 card-interactive cursor-pointer" onclick="selectDirection('Коледж ХНУПС (Харків)')">
+                    <h4 class="text-2xl mb-2 text-white">Коледж ХНУПС (Харків)</h4>
+                    <p class="text-slate-400 text-[11px] uppercase font-bold italic">Оператори БПЛА, Авіація, ППО.</p>
                 </div>
-                <div class="border border-white/10 p-6 card-interactive cursor-pointer italic italic font-bold" onclick="selectDirection('Коледж ВМС (Одеса)')">
-                    <h4 class="text-2xl mb-2 text-white italic italic">Коледж ВМС (Одеса)</h4>
-                    <p class="text-slate-400 text-[10px] uppercase font-bold italic italic font-bold">Навігація, Двигуни, Зброя.</p>
+                <div class="border border-white/10 p-8 card-interactive cursor-pointer" onclick="selectDirection('Коледж морського транспорту (Одеса)')">
+                    <h4 class="text-2xl mb-2 text-white">Коледж морського транспорту (Одеса)</h4>
+                    <p class="text-slate-400 text-[11px] uppercase font-bold italic font-bold">Навігація, суднові двигуни, корабельна зброя.</p>
                 </div>
-            </div>
-            <div class="mt-12 p-6 bg-[#ffcc00]/10 border border-[#ffcc00]/20 font-bold italic">
-                <p class="text-xs text-white uppercase italic">Швидкий старт кар'єри: 2-3 роки навчання. Ставай профі вже сьогодні.</p>
             </div>
         </div>
     </div>
 
     <!-- Футер -->
-    <footer class="py-16 text-center text-slate-700 bg-black border-t border-white/5 text-[9px] font-bold tracking-[0.6em]">
+    <footer class="py-20 text-center text-slate-700 bg-black border-t border-white/5 text-[9px] font-bold tracking-[0.6em] uppercase">
         ОФІЦІЙНИЙ РЕСУРС РЕКРУТИНГУ • ЗБРОЙНІ СИЛИ УКРАЇНИ • 2024
     </footer>
 
@@ -441,11 +471,17 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         AOS.init({ duration: 800, once: true });
+
+        // ВСТАВ СВОЄ ПОСИЛАННЯ З GOOGLE SCRIPT СЮДИ:
         const scriptURL = 'ВСТАВ_СЮДИ_СВОЄ_ПОСИЛАННЯ_З_GOOGLE';
+
         const form = document.getElementById('recruitment-form');
         const submitBtn = document.getElementById('submit-btn');
 
-        function openModal(id) { document.getElementById(id).classList.add('active'); document.body.style.overflow = 'hidden'; }
+        function openModal(id) {
+            const m = document.getElementById(id);
+            if(m) { m.classList.add('active'); document.body.style.overflow = 'hidden'; }
+        }
         function closeModalDirect(id) { document.getElementById(id).classList.remove('active'); document.body.style.overflow = 'auto'; }
         function closeModal(event) { if(event.target.classList.contains('modal')) { event.target.classList.remove('active'); document.body.style.overflow = 'auto'; } }
 
@@ -471,6 +507,7 @@
                     submitBtn.innerText = 'УСПІШНО';
                     alert('Заявку прийнято. Ментор зв’яжеться з тобою.');
                     form.reset();
+                    document.getElementById('direction-badge').classList.add('hidden');
                     setTimeout(() => { submitBtn.innerText = 'ПОДАТИ ЗАПИТ_'; submitBtn.disabled = false; }, 4000);
                 })
                 .catch(error => { submitBtn.innerText = 'ПОМИЛКА'; submitBtn.disabled = false; });
