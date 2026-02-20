@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OFFICER MENTOR | Твій шлях до еліти ЗСУ</title>
+    <title>OFFICER MENTOR | Твій шлях до офіцерської еліти ЗСУ</title>
     
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
@@ -19,12 +19,7 @@
         /* Тайм-лайн лінія */
         .timeline-line {
             background: linear-gradient(90deg, transparent, #eab308, transparent);
-            height: 2px;
-            width: 100%;
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            opacity: 0.3;
+            height: 2px; width: 100%; position: absolute; top: 50%; transform: translateY(-50%); opacity: 0.2;
         }
 
         /* Модальні вікна */
@@ -49,10 +44,10 @@
 </head>
 <body>
 
-    <!-- Навігація -->
+    <!-- НАВІГАЦІЯ -->
     <nav class="fixed w-full z-50 glass border-b border-white/5 italic font-bold">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <div class="text-xl md:text-2xl tracking-tighter uppercase">
+            <div class="text-xl md:text-2xl tracking-tighter uppercase italic">
                 OFFICER<span class="text-yellow-500">MENTOR</span>
             </div>
             <a href="#form" class="bg-yellow-500 text-slate-900 px-6 py-2 rounded-xl text-sm uppercase tracking-tighter btn-shine">
@@ -74,73 +69,67 @@
                     Центр рекрутингу та кар'єрної підтримки
                 </div>
                 <h1 class="text-6xl md:text-9xl font-black leading-[0.85] mb-8 uppercase tracking-tighter">
-                    ТВІЙ ШЛЯХ <br><span class="text-yellow-500 accent-glow">ТРАНСФОРМАЦІЇ</span>
+                    НЕ ПРОСТО НАВЧАННЯ. <br><span class="text-yellow-500 accent-glow">ТВІЙ СТАТУС.</span>
                 </h1>
                 <p class="text-xl md:text-2xl text-slate-300 mb-12 leading-relaxed max-w-2xl font-bold italic">
-                    Від абітурієнта до офіцера нової генерації. Ми проведемо тебе за руку через кожен етап.
+                    Отримай безкоштовну вищу освіту за стандартами НАТО. Ми забезпечимо повний супровід: від документів до зарахування.
                 </p>
-                <a href="#categories" class="inline-block bg-white text-slate-900 px-12 py-6 rounded-2xl font-black text-xl hover:bg-yellow-500 transition-all btn-shine shadow-2xl uppercase">
-                    Обрати напрямок
+                <a href="#path" class="inline-block bg-white text-slate-900 px-12 py-6 rounded-2xl font-black text-xl hover:bg-yellow-500 transition-all btn-shine shadow-2xl uppercase">
+                    Мій шлях вступу
                 </a>
             </div>
         </div>
     </section>
 
-    <!-- 2. INTERACTIVE TIMELINE (Шлях курсанта) -->
-    <section id="path" class="py-32 px-6 bg-slate-950 relative overflow-hidden italic">
+    <!-- 2. INTERACTIVE TIMELINE (Шлях трансформації) -->
+    <section id="path" class="py-32 px-6 bg-slate-950 relative overflow-hidden italic font-bold">
         <div class="container mx-auto relative">
             <div class="text-center mb-24" data-aos="fade-up">
-                <h2 class="text-4xl md:text-6xl font-black uppercase mb-4 tracking-tighter">Етапи твого <span class="text-yellow-500 italic">зростання</span></h2>
+                <h2 class="text-4xl md:text-6xl font-black uppercase mb-4 tracking-tighter italic">ШЛЯХ <span class="text-yellow-500 italic">ТРАНСФОРМАЦІЇ</span></h2>
                 <div class="h-1 w-24 bg-yellow-500 mx-auto mb-6"></div>
-                <p class="text-slate-500 font-bold uppercase tracking-[0.4em] text-xs">Ми супроводжуємо тебе на кожному кроці</p>
+                <p class="text-slate-500 font-bold uppercase tracking-[0.4em] text-[10px]">Ми супроводжуємо тебе на кожному кроці</p>
             </div>
 
             <div class="relative">
-                <!-- Лінія фону -->
                 <div class="hidden lg:block timeline-line"></div>
                 
                 <div class="grid grid-cols-1 lg:grid-cols-4 gap-8 relative z-10 italic">
-                    
                     <!-- Крок 01 -->
                     <div class="relative group" data-aos="fade-up" data-aos-delay="100">
                         <div class="glass p-10 rounded-[3rem] border-t-4 border-blue-500/50 group-hover:border-blue-500 transition-all duration-500 h-full">
-                            <div class="text-5xl font-black text-blue-500/20 absolute top-6 right-8 group-hover:text-blue-500/40 transition">01</div>
+                            <div class="text-5xl font-black text-blue-500/20 absolute top-6 right-8">01</div>
                             <div class="text-blue-500 text-5xl mb-8 group-hover:scale-110 transition origin-left"><i class="fas fa-paper-plane"></i></div>
                             <h4 class="text-2xl font-black uppercase mb-4 tracking-tighter">Вибір</h4>
-                            <p class="text-slate-400 font-bold leading-relaxed">Ти залишаєш заявку на сайті. Ми телефонуємо, щоб разом обрати ідеальний ВНЗ та спеціальність під твої здібності.</p>
+                            <p class="text-slate-400 text-sm leading-relaxed">Ти залишаєш заявку. Ми стаємо твоїми менторами, допомагаємо обрати ВНЗ та спеціальність згідно з твоїми талантами.</p>
                         </div>
                     </div>
-
                     <!-- Крок 02 -->
                     <div class="relative group" data-aos="fade-up" data-aos-delay="200">
                         <div class="glass p-10 rounded-[3rem] border-t-4 border-yellow-500/50 group-hover:border-yellow-500 transition-all duration-500 h-full">
-                            <div class="text-5xl font-black text-yellow-500/20 absolute top-6 right-8 group-hover:text-yellow-500/40 transition">02</div>
+                            <div class="text-5xl font-black text-yellow-500/20 absolute top-6 right-8">02</div>
                             <div class="text-yellow-500 text-5xl mb-8 group-hover:scale-110 transition origin-left"><i class="fas fa-id-card-alt"></i></div>
-                            <h4 class="text-2xl font-black uppercase mb-4 tracking-tighter">Підготовка</h4>
-                            <p class="text-slate-400 font-bold leading-relaxed italic text-glow">Наш ментор формує твою особову справу, організовує швидке проходження ВЛК та готує документи за тебе.</p>
+                            <h4 class="text-2xl font-black uppercase mb-4 tracking-tighter text-glow">Підготовка</h4>
+                            <p class="text-slate-400 text-sm leading-relaxed">Ми беремо на себе бюрократію: формуємо справу, організовуємо "зелений коридор" на ВЛК та готуємо документи за тебе.</p>
                         </div>
                     </div>
-
                     <!-- Крок 03 -->
                     <div class="relative group" data-aos="fade-up" data-aos-delay="300">
                         <div class="glass p-10 rounded-[3rem] border-t-4 border-purple-500/50 group-hover:border-purple-500 transition-all duration-500 h-full">
-                            <div class="text-5xl font-black text-purple-500/20 absolute top-6 right-8 group-hover:text-purple-500/40 transition">03</div>
+                            <div class="text-5xl font-black text-purple-500/20 absolute top-6 right-8">03</div>
                             <div class="text-purple-500 text-5xl mb-8 group-hover:scale-110 transition origin-left"><i class="fas fa-university"></i></div>
-                            <h4 class="text-2xl font-black uppercase mb-4 tracking-tighter font-bold italic">Навчання</h4>
-                            <p class="text-slate-400 font-bold leading-relaxed">Вступ до обраного ВНЗ. Ти стаєш курсантом: безкоштовне навчання, сучасні технології та військова стипендія.</p>
+                            <h4 class="text-2xl font-black uppercase mb-4 tracking-tighter italic">Навчання</h4>
+                            <p class="text-slate-400 text-sm leading-relaxed">Ти стаєш курсантом топового вишу: повне державне утримання, практика на новітній техніці та стипендія.</p>
                         </div>
                     </div>
-
                     <!-- Крок 04 -->
                     <div class="relative group" data-aos="fade-up" data-aos-delay="400">
                         <div class="glass p-10 rounded-[3rem] border-t-4 border-red-600/50 group-hover:border-red-600 transition-all duration-500 h-full">
-                            <div class="text-5xl font-black text-red-600/20 absolute top-6 right-8 group-hover:text-red-600/40 transition">04</div>
+                            <div class="text-5xl font-black text-red-600/20 absolute top-6 right-8">04</div>
                             <div class="text-red-500 text-5xl mb-8 group-hover:scale-110 transition origin-left"><i class="fas fa-star"></i></div>
                             <h4 class="text-2xl font-black uppercase mb-4 tracking-tighter accent-glow">Офіцер</h4>
-                            <p class="text-slate-400 font-bold leading-relaxed italic font-black text-white">Випускний, диплом державного зразка та гарантоване працевлаштування на престижну офіцерську посаду.</p>
+                            <p class="text-slate-400 text-sm leading-relaxed font-black text-white">Випуск, диплом державного зразка та гарантована офіцерська посада з високим грошовим забезпеченням.</p>
                         </div>
                     </div>
-
                 </div>
             </div>
         </div>
@@ -149,8 +138,8 @@
     <!-- 3. BENTO GRID КАТЕГОРІЇ -->
     <section id="categories" class="py-24 px-6 italic">
         <div class="container mx-auto">
-            <h2 class="text-4xl md:text-6xl font-black uppercase mb-16 tracking-tighter" data-aos="fade-right">
-                ОБЕРИ СВІЙ <span class="text-yellow-500">ВЕКТОР</span>
+            <h2 class="text-4xl md:text-6xl font-black uppercase mb-16 tracking-tighter italic" data-aos="fade-right">
+                ОБЕРИ СВІЙ <span class="text-yellow-500 italic">ВЕКТОР</span>
             </h2>
             
             <div class="grid grid-cols-1 md:grid-cols-12 gap-6 h-auto md:h-[700px]">
@@ -163,9 +152,9 @@
                     <div class="relative h-full p-12 flex flex-col justify-end">
                         <div class="flex items-center gap-4 mb-4">
                             <div class="p-3 bg-blue-500/20 rounded-2xl text-blue-400 text-3xl"><i class="fas fa-microchip"></i></div>
-                            <h3 class="text-4xl font-black uppercase tracking-tighter italic">Digital & Cyber</h3>
+                            <h3 class="text-3xl md:text-4xl font-black uppercase tracking-tighter italic">Digital & Cyber</h3>
                         </div>
-                        <p class="text-slate-300 max-w-md font-bold text-xl leading-tight">БПЛА, кібербезпека та розвідка майбутнього. Твій інтелект — це зброя.</p>
+                        <p class="text-slate-300 max-w-md font-bold text-lg leading-tight">БПЛА, штучний інтелект та кібербезпека. Стань архітектором сучасної війни.</p>
                     </div>
                 </div>
 
@@ -177,8 +166,8 @@
                     </div>
                     <div class="relative h-full p-12 flex flex-col justify-end">
                         <div class="p-3 bg-red-500/20 rounded-2xl text-red-500 text-3xl w-fit mb-4"><i class="fas fa-chess-knight"></i></div>
-                        <h3 class="text-3xl font-black uppercase tracking-tighter italic">Strategic Lead</h3>
-                        <p class="text-slate-300 font-bold text-lg leading-tight">Командування елітними підрозділами. Стань лідером за стандартами НАТО.</p>
+                        <h3 class="text-2xl md:text-3xl font-black uppercase tracking-tighter italic leading-none">Strategic Leadership</h3>
+                        <p class="text-slate-300 font-bold text-sm italic mt-2 leading-relaxed">Командування елітними підрозділами. Мистецтво управління за стандартами НАТО.</p>
                     </div>
                 </div>
 
@@ -189,8 +178,8 @@
                         <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent"></div>
                     </div>
                     <div class="relative h-full p-12 flex flex-col justify-end">
-                        <h3 class="text-3xl font-black uppercase tracking-tighter italic text-yellow-500">Air Masters</h3>
-                        <p class="text-slate-300 font-bold text-lg italic">Авіація, ППО та космічна розвідка.</p>
+                        <h3 class="text-2xl font-black uppercase tracking-tighter italic text-yellow-500">Air Masters</h3>
+                        <p class="text-slate-300 font-bold text-sm italic">Авіація, ракетні системи та сучасне ППО.</p>
                     </div>
                 </div>
 
@@ -203,10 +192,10 @@
                     <div class="relative h-full p-12 flex flex-col justify-end">
                         <div class="flex justify-between items-end">
                             <div>
-                                <h3 class="text-3xl font-black uppercase tracking-tighter italic text-purple-400">Elite Services</h3>
-                                <p class="text-slate-300 font-bold text-lg italic mt-1">Психологія, право та військова розвідка.</p>
+                                <h3 class="text-2xl md:text-3xl font-black uppercase tracking-tighter italic text-purple-400 leading-none mb-2">Elite Strategic Services</h3>
+                                <p class="text-slate-300 font-bold text-sm italic">Військова розвідка, право, психологія та журналістика.</p>
                             </div>
-                            <i class="fas fa-arrow-right text-yellow-500 text-3xl group-hover:translate-x-2 transition"></i>
+                            <i class="fas fa-arrow-right text-yellow-500 text-2xl group-hover:translate-x-2 transition"></i>
                         </div>
                     </div>
                 </div>
@@ -214,19 +203,19 @@
         </div>
     </section>
 
-    <!-- 4. ФОРМА -->
-    <section id="form" class="py-24 px-6 relative overflow-hidden italic">
-        <div class="container mx-auto max-w-2xl bg-white text-slate-900 rounded-[3.5rem] p-12 md:p-20 relative z-10 shadow-2xl transition-all duration-700">
+    <!-- 4. ФОРМА З ПРЕДЗАПОВНЕННЯМ -->
+    <section id="form" class="py-24 px-6 relative overflow-hidden italic font-bold">
+        <div class="container mx-auto max-w-2xl bg-white text-slate-900 rounded-[3.5rem] p-12 md:p-20 relative z-10 shadow-2xl italic">
             <div id="direction-badge" class="hidden mb-10">
-                <span class="text-[10px] uppercase font-black tracking-widest text-slate-400 block mb-2 text-center">Твій вибір:</span>
+                <span class="text-[10px] uppercase font-black tracking-widest text-slate-400 block mb-2 text-center">Ви обрали напрямок:</span>
                 <div id="chosen-direction-text" class="bg-yellow-500 px-8 py-4 rounded-2xl font-black uppercase text-center text-sm italic shadow-md">
                     Загальна консультація
                 </div>
             </div>
 
-            <div class="text-center mb-12">
-                <h2 class="text-4xl md:text-5xl font-black uppercase italic mb-4 leading-none tracking-tighter">Зв'язок з ментором</h2>
-                <p class="text-slate-500 font-bold italic text-lg leading-snug">Залиш телефон — ми зробимо решту за тебе. Це початок твоєї кар'єри.</p>
+            <div class="text-center mb-12 italic">
+                <h2 class="text-4xl md:text-5xl font-black uppercase mb-4 leading-none tracking-tighter text-slate-950">Зв'язок з ментором</h2>
+                <p class="text-slate-500 font-bold italic text-lg leading-snug">Залиш свій телефон — ми зробимо решту за тебе. Безкоштовна освіта починається тут.</p>
             </div>
 
             <form id="recruitment-form" class="space-y-4">
@@ -239,42 +228,42 @@
                     class="w-full bg-slate-100 border-2 border-transparent rounded-2xl p-6 text-xl outline-none focus:border-yellow-500 transition font-bold text-slate-900">
 
                 <button type="submit" id="submit-btn" class="w-full bg-slate-900 text-white font-black py-7 rounded-2xl text-2xl hover:bg-yellow-500 hover:text-slate-900 transition-all shadow-2xl uppercase italic btn-shine mt-4">
-                    Надіслати заявку
+                    Розпочати кар'єру
                 </button>
             </form>
         </div>
     </section>
 
-    <!-- МОДАЛКА DIGITAL (ЯК ПРИКЛАД) -->
+    <!-- МОДАЛЬНІ ВІКНА ДЛЯ ВСІХ КАТЕГОРІЙ -->
+
+    <!-- Digital Modal -->
     <div id="modal-tech" class="modal" onclick="closeModal(event)">
         <div class="glass max-w-3xl w-full rounded-[3rem] relative overflow-hidden flex flex-col max-h-[90vh]" onclick="event.stopPropagation()">
             <div class="p-8 border-b border-white/10 flex justify-between items-center bg-slate-900/50 italic font-bold">
-                <h2 class="text-2xl font-black text-yellow-500 uppercase">Digital & Cyber Systems</h2>
+                <h2 class="text-2xl font-black text-yellow-500 uppercase tracking-tighter">Digital & Cyber Systems</h2>
                 <button class="text-3xl text-slate-500 hover:text-white transition" onclick="closeModalDirect('modal-tech')">&times;</button>
             </div>
-            <div class="p-8 overflow-y-auto space-y-8 custom-scrollbar">
-                
-                <!-- ВНЗ 1 -->
-                <div class="flex flex-col bg-white/5 rounded-[2.5rem] border border-white/5 overflow-hidden group hover:border-yellow-500/30 transition shadow-lg italic">
-                    <div class="flex flex-col md:flex-row gap-6 p-6 font-bold">
+            <div class="p-8 overflow-y-auto space-y-8 custom-scrollbar italic font-bold">
+                <!-- ВІТІ -->
+                <div class="flex flex-col bg-white/5 rounded-[2.5rem] border border-white/5 overflow-hidden group hover:border-yellow-500/30 transition shadow-lg">
+                    <div class="flex flex-col md:flex-row gap-6 p-6">
                         <div class="md:w-1/3 h-44 bg-slate-800 rounded-3xl overflow-hidden shrink-0">
                             <img src="img/viti.jpg" alt="ВІТІ" class="w-full h-full object-cover opacity-60 group-hover:opacity-100 transition duration-700">
                         </div>
                         <div class="flex flex-col justify-between flex-grow">
                             <div>
-                                <h4 class="font-black text-xl uppercase italic mb-2 tracking-tight text-yellow-500">ВІТІ ім. Героїв Крут (Київ)</h4>
-                                <p class="text-slate-400 text-sm leading-relaxed">Кібербезпека, телекомунікації та військові ІТ-системи управління.</p>
+                                <h4 class="font-black text-xl uppercase italic mb-2 tracking-tight text-yellow-500 italic">ВІТІ ім. Героїв Крут (Київ)</h4>
+                                <p class="text-slate-400 text-sm italic">Кібербезпека, телекомунікації та управління ІТ-системами.</p>
                             </div>
                             <div class="mt-4 flex gap-2">
-                                <span class="text-[9px] bg-blue-500/20 text-blue-400 px-3 py-1 rounded-md font-black uppercase tracking-widest italic">IT-Combat</span>
+                                <span class="text-[9px] bg-blue-500/20 text-blue-400 px-3 py-1 rounded-md font-black uppercase tracking-widest italic">IT-Specialist</span>
                             </div>
                         </div>
                     </div>
-                    <button onclick="selectDirection('ВІТІ (Київ) — Digital')" class="w-full py-5 bg-white/5 hover:bg-yellow-500 hover:text-slate-900 transition-all font-black uppercase text-xs tracking-widest border-t border-white/5">Обрати цей заклад</button>
+                    <button onclick="selectDirection('ВІТІ (Київ) — Digital')" class="w-full py-5 bg-white/5 hover:bg-yellow-500 hover:text-slate-900 transition-all font-black uppercase text-xs tracking-widest border-t border-white/5 italic">Обрати цей заклад</button>
                 </div>
-
-                <!-- ВНЗ 2 -->
-                <div class="flex flex-col bg-white/5 rounded-[2.5rem] border border-white/5 overflow-hidden group hover:border-yellow-500/30 transition shadow-lg italic font-bold">
+                <!-- ЖВІ -->
+                <div class="flex flex-col bg-white/5 rounded-[2.5rem] border border-white/5 overflow-hidden group hover:border-yellow-500/30 transition shadow-lg">
                     <div class="flex flex-col md:flex-row gap-6 p-6">
                         <div class="md:w-1/3 h-44 bg-slate-800 rounded-3xl overflow-hidden shrink-0">
                             <img src="img/zhvi.jpg" alt="ЖВІ" class="w-full h-full object-cover opacity-60 group-hover:opacity-100 transition duration-700">
@@ -282,25 +271,106 @@
                         <div class="flex flex-col justify-between flex-grow">
                             <div>
                                 <h4 class="font-black text-xl uppercase italic mb-2 tracking-tight text-yellow-500">ЖВІ ім. Корольова (Житомир)</h4>
-                                <p class="text-slate-400 text-sm leading-relaxed">Керування БПЛА, космічна розвідка та радіоелектронна боротьба (РЕБ).</p>
+                                <p class="text-slate-400 text-sm italic">БПЛА, радіоелектронна розвідка та космічні системи моніторингу.</p>
                             </div>
                             <div class="mt-4 flex gap-2">
-                                <span class="text-[9px] bg-yellow-500/20 text-yellow-500 px-3 py-1 rounded-md font-black uppercase tracking-widest italic">UAV Systems</span>
+                                <span class="text-[9px] bg-yellow-500/20 text-yellow-500 px-3 py-1 rounded-md font-black uppercase tracking-widest italic">UAV Expert</span>
                             </div>
                         </div>
                     </div>
-                    <button onclick="selectDirection('ЖВІ (Житомир) — БПЛА')" class="w-full py-5 bg-white/5 hover:bg-yellow-500 hover:text-slate-900 transition-all font-black uppercase text-xs tracking-widest border-t border-white/5">Обрати цей заклад</button>
+                    <button onclick="selectDirection('ЖВІ (Житомир) — БПЛА/РЕБ')" class="w-full py-5 bg-white/5 hover:bg-yellow-500 hover:text-slate-900 transition-all font-black uppercase text-xs tracking-widest border-t border-white/5 italic">Обрати цей заклад</button>
                 </div>
-
-            </div>
-            <div class="p-8 border-t border-white/10 bg-slate-900/50 text-center italic">
-                <button class="text-yellow-500 text-xs font-black uppercase tracking-widest hover:text-white transition" onclick="selectDirection('Весь напрямок Digital')">Мене цікавить весь напрямок</button>
             </div>
         </div>
     </div>
 
-    <!-- Футер -->
-    <footer class="py-12 text-center text-slate-700 border-t border-white/5 px-6 italic">
+    <!-- Lead Modal -->
+    <div id="modal-lead" class="modal" onclick="closeModal(event)">
+        <div class="glass max-w-3xl w-full rounded-[3rem] relative overflow-hidden flex flex-col max-h-[90vh]" onclick="event.stopPropagation()">
+            <div class="p-8 border-b border-white/10 flex justify-between items-center bg-slate-900/50 italic font-bold">
+                <h2 class="text-2xl font-black text-red-500 uppercase tracking-tighter italic">Strategic Leadership</h2>
+                <button class="text-3xl text-slate-500 hover:text-white transition" onclick="closeModalDirect('modal-lead')">&times;</button>
+            </div>
+            <div class="p-8 overflow-y-auto space-y-6 custom-scrollbar italic font-bold">
+                <div class="flex flex-col bg-white/5 rounded-[2.5rem] border border-white/5 overflow-hidden group hover:border-red-500/30 transition shadow-lg">
+                    <div class="flex flex-col md:flex-row gap-6 p-6 italic font-bold">
+                        <div class="md:w-1/3 h-44 bg-slate-800 rounded-3xl overflow-hidden shrink-0 italic">
+                            <img src="img/asv.jpg" alt="Львів" class="w-full h-full object-cover opacity-60 group-hover:opacity-100 transition duration-700 italic">
+                        </div>
+                        <div class="flex flex-col justify-between italic">
+                            <h4 class="font-black text-xl uppercase italic mb-2 tracking-tight text-yellow-500">Академія сухопутних військ (Львів)</h4>
+                            <p class="text-slate-400 text-sm font-medium italic">Головний центр підготовки бойових офіцерів за стандартами НАТО.</p>
+                        </div>
+                    </div>
+                    <button onclick="selectDirection('НАСВ (Львів) — Strategic Lead')" class="w-full py-5 bg-white/5 hover:bg-red-600 hover:text-white transition-all font-black uppercase text-xs tracking-widest border-t border-white/5 italic">Обрати Львів</button>
+                </div>
+                <!-- Одеса -->
+                <div class="flex flex-col bg-white/5 rounded-[2.5rem] border border-white/5 overflow-hidden group hover:border-red-500/30 transition shadow-lg font-bold italic">
+                    <div class="flex flex-col md:flex-row gap-6 p-6 italic">
+                        <div class="md:w-1/3 h-44 bg-slate-800 rounded-3xl overflow-hidden shrink-0 italic">
+                            <img src="img/academy-odessa.jpg" alt="Одеса" class="w-full h-full object-cover opacity-60 group-hover:opacity-100 transition duration-700 italic">
+                        </div>
+                        <div class="flex flex-col justify-between italic font-bold italic">
+                            <h4 class="font-black text-xl uppercase italic mb-2 tracking-tight text-yellow-500 font-bold italic">Військова академія (Одеса)</h4>
+                            <p class="text-slate-400 text-sm font-medium italic">Підготовка розвідників, десантників та фахівців спецпідрозділів.</p>
+                        </div>
+                    </div>
+                    <button onclick="selectDirection('ВА (Одеса) — Strategic Lead')" class="w-full py-5 bg-white/5 hover:bg-red-600 hover:text-white transition-all font-black uppercase text-xs tracking-widest border-t border-white/5 italic">Обрати Одесу</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Air Modal -->
+    <div id="modal-air" class="modal" onclick="closeModal(event)">
+        <div class="glass max-w-3xl w-full rounded-[3rem] relative overflow-hidden flex flex-col max-h-[90vh]" onclick="event.stopPropagation()">
+            <div class="p-8 border-b border-white/10 flex justify-between items-center bg-slate-900/50 italic font-bold">
+                <h2 class="text-2xl font-black text-yellow-500 uppercase tracking-tighter italic">Air & Space Masters</h2>
+                <button class="text-3xl text-slate-500 hover:text-white transition" onclick="closeModalDirect('modal-air')">&times;</button>
+            </div>
+            <div class="p-8 overflow-y-auto italic font-bold italic">
+                <div class="flex flex-col bg-white/5 rounded-[2.5rem] border border-white/5 overflow-hidden group hover:border-yellow-500/30 transition shadow-lg italic">
+                    <div class="flex flex-col md:flex-row gap-6 p-6 italic">
+                        <div class="md:w-1/3 h-44 bg-slate-800 rounded-3xl overflow-hidden shrink-0 italic">
+                            <img src="img/hnups.jpg" alt="ХНУПС" class="w-full h-full object-cover opacity-60 group-hover:opacity-100 transition duration-700 italic">
+                        </div>
+                        <div class="flex flex-col justify-between italic font-bold">
+                            <h4 class="font-black text-xl uppercase italic mb-2 tracking-tight text-yellow-500 font-bold italic">ХНУПС ім. Кожедуба (Харків)</h4>
+                            <p class="text-slate-400 text-sm italic font-bold">Підготовка пілотів, операторів ППО та фахівців з обслуговування літаків.</p>
+                        </div>
+                    </div>
+                    <button onclick="selectDirection('ХНУПС (Харків) — Air Masters')" class="w-full py-5 bg-white/5 hover:bg-yellow-500 hover:text-slate-900 transition-all font-black uppercase text-xs tracking-widest border-t border-white/5 italic">Обрати авіацію</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Elite Modal -->
+    <div id="modal-elite" class="modal" onclick="closeModal(event)">
+        <div class="glass max-w-3xl w-full rounded-[3rem] relative overflow-hidden flex flex-col max-h-[90vh]" onclick="event.stopPropagation()">
+            <div class="p-8 border-b border-white/10 flex justify-between items-center bg-slate-900/50 italic font-bold">
+                <h2 class="text-2xl font-black text-purple-500 uppercase tracking-tighter italic">Elite Strategic Services</h2>
+                <button class="text-3xl text-slate-500 hover:text-white transition" onclick="closeModalDirect('modal-elite')">&times;</button>
+            </div>
+            <div class="p-8 overflow-y-auto italic font-bold italic">
+                <div class="flex flex-col bg-white/5 rounded-[2.5rem] border border-white/5 overflow-hidden group hover:border-purple-500/30 transition shadow-lg italic">
+                    <div class="flex flex-col md:flex-row gap-6 p-6 italic">
+                        <div class="md:w-1/3 h-44 bg-slate-800 rounded-3xl overflow-hidden shrink-0 italic">
+                            <img src="img/knu.jpg" alt="ВІКНУ" class="w-full h-full object-cover opacity-60 group-hover:opacity-100 transition duration-700 italic">
+                        </div>
+                        <div class="flex flex-col justify-between italic font-bold">
+                            <h4 class="font-black text-xl uppercase italic mb-2 tracking-tight text-yellow-500 italic font-bold">Військовий інститут КНУ (Київ)</h4>
+                            <p class="text-slate-400 text-sm italic font-bold">Військова психологія, право, журналістика, переклад та фінанси.</p>
+                        </div>
+                    </div>
+                    <button onclick="selectDirection('ВІКНУ (Київ) — Elite Services')" class="w-full py-5 bg-white/5 hover:bg-purple-600 hover:text-white transition-all font-black uppercase text-xs tracking-widest border-t border-white/5 italic">Обрати гуманітарний напрямок</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ФУТЕР -->
+    <footer class="py-12 text-center text-slate-700 border-t border-white/5 px-6 italic font-bold">
         <p class="text-[10px] uppercase font-black tracking-[0.5em] mb-4">Служимо разом • Створюємо майбутнє</p>
         <p class="text-[8px] opacity-40">Офіційний ресурс Центру рекрутингу (Районний ТЦК та СП)</p>
     </footer>
@@ -319,7 +389,6 @@
         function openModal(id) {
             const m = document.getElementById(id);
             if(m) { m.classList.add('active'); document.body.style.overflow = 'hidden'; }
-            else { alert('Розділ наповнюється. Залиште заявку внизу!'); }
         }
         function closeModalDirect(id) { document.getElementById(id).classList.remove('active'); document.body.style.overflow = 'auto'; }
         function closeModal(event) { if(event.target.classList.contains('modal')) { event.target.classList.remove('active'); document.body.style.overflow = 'auto'; } }
@@ -347,7 +416,7 @@
                 .then(response => {
                     submitBtn.innerText = 'УСПІШНО ВІДПРАВЛЕНО';
                     submitBtn.style.backgroundColor = '#16a34a';
-                    alert('Дякуємо! Ментор зателефонує тобі найближчим часом.');
+                    alert('Заявку прийнято! Наш ментор зателефонує тобі найближчим часом.');
                     form.reset();
                     document.getElementById('direction-badge').classList.add('hidden');
                     setTimeout(() => { submitBtn.innerText = 'НАДІСЛАТИ ЗАЯВКУ'; submitBtn.style.backgroundColor = ''; submitBtn.disabled = false; }, 4000);
