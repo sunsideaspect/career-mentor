@@ -426,13 +426,33 @@
             setTimeout(() => { document.getElementById('form').scrollIntoView({ behavior: 'smooth' }); }, 400);
         }
 
-        // Обробка форми
-        document.getElementById('recruitment-form').addEventListener('submit', function(e) {
-            e.preventDefault();
+       // ВСТАВ СЮДИ СВОЄ ПОСИЛАННЯ (WebApp URL), яке отримаєш в Google Apps Script
+const scriptURL = 'https://script.google.com/macros/s/AKfycbwNHmRbj-IaG1LbYlo8Lpjp4Hd5QrY8TxzEWrZEX6RdSIK6oSHJ-_eEEfBJShfovXPEAA/exec'; 
+
+const form = document.getElementById('recruitment-form');
+const btn = document.getElementById('submit-btn');
+
+form.addEventListener('submit', e => {
+    e.preventDefault();
+    btn.innerText = 'ОБРОБКА...';
+    btn.disabled = true;
+
+    fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        .then(response => {
             alert('Дякуємо! Ментор зв’яжеться з тобою найближчим часом.');
-            this.reset();
+            btn.innerText = 'ВІДПРАВЛЕНО';
+            form.reset();
+            document.getElementById('direction-badge').classList.add('hidden');
+        })
+        .catch(error => {
+            console.error('Error!', error.message);
+            alert('Помилка відправки. Спробуй ще раз.');
+            btn.disabled = false;
+            btn.innerText = 'ВІДПРАВИТИ ЗАПИТ';
         });
+});
     </script>
 </body>
 </html>
+
 
