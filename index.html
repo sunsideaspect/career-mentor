@@ -3,23 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ПРОФЕСІЯ МАЙБУТНЬОГО | Твій шлях до офіцерської військової еліти</title>
+    <title>Професія майбутнього | Твій шлях до офіцерської військової еліти</title>
     
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     
     <style>
-        /* Офіційний шрифт ЗСУ - UAF Sans */
+        /* --- ПІДКЛЮЧЕННЯ ОФІЦІЙНОГО ШРИФТУ З ПАПКИ --- */
         @font-face {
-            font-family: 'UAF Sans';
-            src: url('https://cdn.jsdelivr.net/gh/scidreams/uaf-sans-font@main/fonts/UAFSans-Bold.woff2') format('woff2');
-            font-weight: 700;
+            font-family: 'e-Ukraine';
+            src: url('fonts/e-Ukraine-Light.otf') format('opentype');
+            font-weight: 300; /* Light */
+            font-style: normal;
+            font-display: swap;
         }
+
         @font-face {
-            font-family: 'UAF Sans';
-            src: url('https://cdn.jsdelivr.net/gh/scidreams/uaf-sans-font@main/fonts/UAFSans-Regular.woff2') format('woff2');
-            font-weight: 400;
+            font-family: 'e-Ukraine';
+            src: url('fonts/e-Ukraine-Regular.otf') format('opentype');
+            font-weight: 400; /* Regular */
+            font-style: normal;
+            font-display: swap;
         }
 
         :root {
@@ -29,22 +34,60 @@
             --text: #ffffff;
         }
 
+        /* --- ПУНКТИ 3, 6, 7: ОСНОВНИЙ ТЕКСТ ТА БАЗОВІ НАЛАШТУВАННЯ --- */
         body { 
-            font-family: 'UAF Sans', sans-serif; 
+            font-family: 'e-Ukraine', sans-serif; 
             background: radial-gradient(circle at 50% 50%, var(--bg-light) 0%, var(--bg-deep) 100%);
             background-attachment: fixed;
             color: var(--text); 
             overflow-x: hidden; 
-            letter-spacing: 0.01em;
-            font-style: normal !important;
+            font-weight: 300; /* Light для основного тексту */
+            font-size: 16px;
+            line-height: 24px;
+            text-align: left; /* Вирівнювання по лівому краю */
+            text-transform: none !important; /* ЗАБОРОНА ALL CAPS для основного тексту */
         }
 
-        h1, h2, h3, h4, b { 
-            font-weight: 700; 
-            text-transform: uppercase;
-            line-height: 0.85;
+        /* --- ПУНКТ 2 ТА 7: ЗАГОЛОВКИ (Накреслення Regular, без капсу) --- */
+        h1, h2, h3, h4, h5, h6, .h7 { 
+            font-weight: 400; /* Regular */
+            text-transform: none !important; 
+            margin-top: 0;
+            margin-bottom: 16px; /* Легкий відступ для естетики */
         }
 
+        h1 { font-size: 56px; line-height: 60px; }
+        h2 { font-size: 38px; line-height: 40px; }
+        h3 { font-size: 28px; line-height: 32px; }
+        h4 { font-size: 24px; line-height: 28px; }
+        h5 { font-size: 20px; line-height: 24px; }
+        h6 { font-size: 18px; line-height: 28px; }
+        .h7 { font-size: 16px; line-height: 24px; }
+
+        /* --- ПУНКТ 4: ДОДАТКОВИЙ ТЕКСТ --- */
+        .category-tags, small, .caption {
+            font-weight: 400; /* Regular */
+            font-size: 13px;
+            line-height: 18px;
+            text-transform: none !important;
+        }
+
+        /* --- ПУНКТ 5: ПОСИЛАННЯ --- */
+        a {
+            font-weight: 400;
+            font-size: 12px;
+            line-height: 16px;
+            text-transform: none;
+        }
+
+        /* Кнопки залишаємо трохи крупнішими, бо вони не є "посиланнями" в розумінні статті, це елемент інтерфейсу, але без капсу */
+        .btn-custom {
+            font-size: 16px;
+            font-weight: 400;
+            text-transform: none !important;
+        }
+
+        /* --- СТИЛІ ІНТЕРФЕЙСУ --- */
         .card-interactive { 
             background: rgba(255, 255, 255, 0.03); 
             border: 1px solid rgba(255, 255, 255, 0.08); 
@@ -81,13 +124,8 @@
         .category-title {
             color: #ffffff;
             transition: color 0.4s ease;
-            font-size: 1.75rem; 
             z-index: 10;
             position: relative;
-        }
-
-        @media (min-width: 768px) {
-            .category-title { font-size: 2.2rem; }
         }
 
         .card-interactive:hover .category-title {
@@ -96,8 +134,6 @@
 
         .category-tags {
             color: rgba(255, 255, 255, 0.5);
-            font-size: 0.7rem;
-            letter-spacing: 0.2em;
             margin-top: 0.5rem;
             z-index: 10;
             position: relative;
@@ -118,311 +154,295 @@
         .custom-scrollbar::-webkit-scrollbar-thumb { background: var(--accent); }
     </style>
 </head>
-<body class="uppercase">
+<body>
 
-    <!-- НАВІГАЦІЯ -->
-    <nav class="fixed w-full z-50 bg-black/60 backdrop-blur-lg border-b border-white/5 font-bold text-[10px] tracking-[0.3em]">
+    <nav class="fixed w-full z-50 bg-black/60 backdrop-blur-lg border-b border-white/5">
         <div class="container mx-auto px-6 py-5 flex justify-between items-center text-white">
             <div class="flex items-center gap-4">
                 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Emblem_of_the_Ukrainian_Armed_Forces.svg/1200px-Emblem_of_the_Ukrainian_Armed_Forces.svg.png" class="h-8" alt="ЗСУ">
-                <span class="text-lg tracking-tighter italic">ПРОФЕСІЯ МАЙБУТНЬОГО</span>
+                <span class="text-lg">Професія майбутнього</span>
             </div>
-            <a href="#form" class="bg-[#ffcc00] text-black px-6 py-2 hover:bg-white transition uppercase font-black">Зв'язок</a>
+            <a href="#form" class="bg-[#ffcc00] text-black px-6 py-2 hover:bg-white transition btn-custom">Зв'язок</a>
         </div>
     </nav>
 
-    <!-- HERO -->
     <section class="min-h-screen flex items-center px-6 pt-20 relative border-b border-white/5">
         <div class="container mx-auto relative z-10">
             <div data-aos="fade-up">
-                <h1 class="text-6xl md:text-[180px] mb-12 tracking-tighter font-bold leading-none italic text-white">
-                    ОБЕРИ ПРОФЕСІЮ <br> <span class="text-[#ffcc00]">МАЙБУТНЬОГО</span>
+                <h1 class="mb-12">
+                    Обери професію <br> <span class="text-[#ffcc00]">майбутнього</span>
                 </h1>
                 <div class="grid md:grid-cols-2 gap-12 items-end">
-                    <p class="text-xl md:text-4xl font-normal text-slate-300 leading-[1.1] italic">
-                        ВИЩА ОСВІТА. ПОВНЕ ЗАБЕЗПЕЧЕННЯ. <br>ТВІЙ СТАТУС В ЕЛІТІ ВІЙСЬК.
+                    <p class="text-slate-300">
+                        Вища освіта. Повне забезпечення. <br>Твій статус в еліті військ.
                     </p>
                     <div class="flex md:justify-end">
-                        <a href="#sectors" class="bg-[#ffcc00] text-black px-10 py-5 font-bold text-xl uppercase hover:bg-white transition shadow-2xl">Обрати напрямок</a>
+                        <a href="#sectors" class="bg-[#ffcc00] text-black px-10 py-5 btn-custom hover:bg-white transition shadow-2xl">Обрати напрямок</a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- НАПРЯМКИ (BENTO GRID) -->
     <section id="sectors" class="py-32 px-6">
         <div class="container mx-auto">
-            <h2 class="text-4xl md:text-8xl mb-20 text-white underline decoration-[#ffcc00] decoration-[12px] underline-offset-[20px] italic">НАПРЯМКИ</h2>
+            <h2 class="mb-20 text-white underline decoration-[#ffcc00] decoration-[12px] underline-offset-[20px]">Напрямки</h2>
             
-            <div class="grid grid-cols-1 md:grid-cols-12 gap-6 italic">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-6">
                 <div class="md:col-span-7 card-interactive group cursor-pointer p-10 h-80 flex flex-col justify-end" onclick="openModal('modal-1')">
-                    <img src="img/cat-lead.jpg" class="card-image"><div class="relative z-10"><h3 class="category-title">КОМАНДУВАННЯ</h3><p class="category-tags">ДШВ / МОРПІХИ / РОЗВІДКА / ССО</p></div>
+                    <img src="img/cat-lead.jpg" class="card-image"><div class="relative z-10"><h3 class="category-title">Командування</h3><p class="category-tags">ДШВ / Морська піхота / Розвідка / ССО</p></div>
                 </div>
                 <div class="md:col-span-5 card-interactive group cursor-pointer p-10 h-80 flex flex-col justify-end" onclick="openModal('modal-2')">
-                    <img src="img/cat-ground.jpg" class="card-image"><div class="relative z-10"><h3 class="category-title">НАЗЕМНІ СИЛИ</h3><p class="category-tags">САПЕРИ / ТАНКІСТИ / РХБЗ</p></div>
+                    <img src="img/cat-ground.jpg" class="card-image"><div class="relative z-10"><h3 class="category-title">Наземні сили</h3><p class="category-tags">Сапери / Танкісти / РХБЗ</p></div>
                 </div>
                 <div class="md:col-span-5 card-interactive group cursor-pointer p-10 h-80 flex flex-col justify-end" onclick="openModal('modal-3')">
-                    <img src="img/cat-artillery.jpg" class="card-image"><div class="relative z-10"><h3 class="category-title">АРТИЛЕРІЯ ТА РАКЕТИ</h3><p class="category-tags">ППО / РАО / БЕРЕГОВІ КОМПЛЕКСИ</p></div>
+                    <img src="img/cat-artillery.jpg" class="card-image"><div class="relative z-10"><h3 class="category-title">Артилерія та ракети</h3><p class="category-tags">ППО / РАО / Берегові комплекси</p></div>
                 </div>
                 <div class="md:col-span-7 card-interactive group cursor-pointer p-10 h-80 flex flex-col justify-end" onclick="openModal('modal-4')">
-                    <img src="img/cat-aviation.jpg" class="card-image"><div class="relative z-10"><h3 class="category-title">АВІАЦІЯ ТА ППО</h3><p class="category-tags">ПІЛОТИ / РАДАРИ / БПЛА</p></div>
+                    <img src="img/cat-aviation.jpg" class="card-image"><div class="relative z-10"><h3 class="category-title">Авіація та ППО</h3><p class="category-tags">Пілоти / Радари / БПЛА</p></div>
                 </div>
                 <div class="md:col-span-8 card-interactive group cursor-pointer p-10 h-80 flex flex-col justify-end" onclick="openModal('modal-5')">
-                    <img src="img/cat-digital.jpg" class="card-image"><div class="relative z-10"><h3 class="category-title">КІБЕР ІТ ТА ЗВ'ЯЗОК</h3><p class="category-tags">КІБЕРБЕЗПЕКА / РЕБ / РОЗРОБКА ПЗ</p></div>
+                    <img src="img/cat-digital.jpg" class="card-image"><div class="relative z-10"><h3 class="category-title">Кібербезпека, ІТ та зв'язок</h3><p class="category-tags">Кібербезпека / РЕБ / Розробка ПЗ</p></div>
                 </div>
                 <div class="md:col-span-4 card-interactive group cursor-pointer p-10 h-80 flex flex-col justify-end" onclick="openModal('modal-6')">
-                    <img src="img/cat-naval.jpg" class="card-image"><div class="relative z-10"><h3 class="category-title">МОРСЬКІ СИЛИ</h3><p class="category-tags">НАВІГАЦІЯ / ЕНЕРГЕТИКА</p></div>
+                    <img src="img/cat-naval.jpg" class="card-image"><div class="relative z-10"><h3 class="category-title">Морські сили</h3><p class="category-tags">Навігація / Енергетика</p></div>
                 </div>
                 <div class="md:col-span-4 card-interactive group cursor-pointer p-10 h-80 flex flex-col justify-end" onclick="openModal('modal-7')">
-                    <img src="img/cat-logistics.jpg" class="card-image"><div class="relative z-10"><h3 class="category-title">ЗАБЕЗПЕЧЕННЯ</h3><p class="category-tags">ЛОГІСТИКА / ПАЛЬНЕ / ВЕТЕРИНАРІЯ</p></div>
+                    <img src="img/cat-logistics.jpg" class="card-image"><div class="relative z-10"><h3 class="category-title">Забезпечення</h3><p class="category-tags">Логістика / Пальне / Ветеринарія</p></div>
                 </div>
                 <div class="md:col-span-8 card-interactive group cursor-pointer p-10 h-80 flex flex-col justify-end border-2 border-[#ffcc00]/20" onclick="openModal('modal-8')">
-                    <img src="img/cat-info.jpg" class="card-image"><div class="relative z-10"><h3 class="category-title">ГУМАНІТАРНИЙ ТА СПЕЦ НАПРЯМ</h3><p class="category-tags">ПСИХОЛОГІЯ / ПРАВО / ІПСО</p></div>
+                    <img src="img/cat-info.jpg" class="card-image"><div class="relative z-10"><h3 class="category-title">Гуманітарний та спец напрям</h3><p class="category-tags">Психологія / Право / ІПСО</p></div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ФОРМА -->
     <section id="form" class="py-32 px-6 bg-[#ffcc00] text-black">
-        <div class="container mx-auto max-w-5xl font-bold italic">
-            <div id="direction-badge" class="hidden mb-16 border-4 border-black p-6 inline-block font-black uppercase">
-                <span class="text-[10px] uppercase block mb-1">ОБРАНИЙ НАПРЯМОК:</span>
-                <div id="chosen-direction-text" class="text-3xl tracking-tighter">КОНСУЛЬТАЦІЯ</div>
+        <div class="container mx-auto max-w-5xl">
+            <div id="direction-badge" class="hidden mb-16 border-4 border-black p-6 inline-block">
+                <span class="block mb-1 caption">Обраний напрямок:</span>
+                <div id="chosen-direction-text" class="h3">Консультація</div>
             </div>
             <div class="grid md:grid-cols-2 gap-20 items-start">
                 <div>
-                    <h2 class="text-7xl md:text-8xl mb-10 leading-[0.8] tracking-tighter italic">ЗВ'ЯЗОК_ <br>З МЕНТОРОМ</h2>
-                    <p class="text-xl font-bold uppercase leading-tight italic">Залиш номер телефону. Ми зателефонуємо та побудуємо твою дорожню карту вступу.</p>
+                    <h2 class="mb-10 text-black">Зв'язок з ментором</h2>
+                    <p class="text-black">Залиш номер телефону. Ми зателефонуємо та побудуємо твою дорожню карту вступу.</p>
                 </div>
                 <form id="recruitment-form" class="space-y-12">
                     <input type="hidden" name="direction" id="hidden-direction" value="Загальна консультація">
-                    <input type="text" name="name" placeholder="ПРІЗВИЩЕ ТА ІМ'Я" required class="w-full bg-transparent border-b-8 border-black pb-4 outline-none focus:border-white transition text-4xl font-bold uppercase placeholder:text-black/30">
-                    <input type="tel" name="phone" placeholder="НОМЕР ТЕЛЕФОНУ" required class="w-full bg-transparent border-b-8 border-black pb-4 outline-none focus:border-white transition text-4xl font-bold uppercase placeholder:text-black/30">
-                    <button type="submit" id="submit-btn" class="w-full bg-black text-[#ffcc00] p-8 font-bold text-3xl uppercase hover:bg-white hover:text-black transition-all">ПОДАТИ ЗАПИТ</button>
+                    <input type="text" name="name" placeholder="Прізвище та ім'я" required class="w-full bg-transparent border-b-2 border-black pb-4 outline-none focus:border-white transition placeholder:text-black/50" style="font-size: 16px;">
+                    <input type="tel" name="phone" placeholder="Номер телефону" required class="w-full bg-transparent border-b-2 border-black pb-4 outline-none focus:border-white transition placeholder:text-black/50" style="font-size: 16px;">
+                    <button type="submit" id="submit-btn" class="w-full bg-black text-[#ffcc00] p-8 btn-custom hover:bg-white hover:text-black transition-all">Подати запит</button>
                 </form>
             </div>
         </div>
     </section>
 
-    <!-- МОДАЛЬНІ ВІКНА (УСІ 8 ШТУК З НОВОЮ ІЄРАРХІЄЮ) -->
-
-    <!-- 1. Командування -->
     <div id="modal-1" class="modal" onclick="closeModal(event)">
-        <div class="bg-black border-2 border-white/20 w-full max-w-6xl p-8 md:p-12 max-h-screen overflow-y-auto custom-scrollbar font-bold text-white uppercase italic">
-            <div class="flex justify-between items-center mb-10 border-b-4 border-[#ffcc00] pb-6">
-                <h2 class="text-4xl text-[#ffcc00] tracking-tighter">КОМАНДУВАННЯ</h2>
-                <button class="text-5xl" onclick="closeModalDirect('modal-1')">&times;</button>
+        <div class="bg-black border-2 border-white/20 w-full max-w-6xl p-8 md:p-12 max-h-screen overflow-y-auto custom-scrollbar text-white">
+            <div class="flex justify-between items-center mb-10 border-b border-[#ffcc00] pb-6">
+                <h2 class="text-[#ffcc00]">Командування</h2>
+                <button class="text-5xl" onclick="closeModalDirect('modal-1')" style="line-height: 1;">&times;</button>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 <div class="border border-white/10 p-8 card-interactive cursor-pointer flex flex-col justify-between" onclick="selectDirection('ВА (Одеса) — ДШВ/МП/ССО')">
                     <div>
-                        <h4 class="text-xl text-[#ffcc00] mb-2">Управління ДШВ, МОРПІХІВ, РОЗВІДКИ, ССО</h4>
-                        <p class="text-white text-sm mb-4">Військова академія (м. Одеса)</p>
+                        <h4 class="text-[#ffcc00] mb-2">Управління ДШВ, морською піхотою, розвідкою, ССО</h4>
+                        <p class="text-white mb-4">Військова академія (м. Одеса)</p>
                     </div>
-                    <span class="text-slate-500 text-[10px] underline">ОБРАТИ ЗАКЛАД</span>
+                    <span class="text-slate-500 underline" style="font-size: 12px;">Обрати заклад</span>
                 </div>
                 <div class="border border-white/10 p-8 card-interactive cursor-pointer flex flex-col justify-between" onclick="selectDirection('НАСВ (Львів) — Піхота/Арт')">
                     <div>
-                        <h4 class="text-xl text-[#ffcc00] mb-2">Управління Піхотою, Артилерією, Ракетними військами</h4>
-                        <p class="text-white text-sm mb-4">НАСВ ім. П. Сагайдачного (м. Львів)</p>
+                        <h4 class="text-[#ffcc00] mb-2">Управління піхотою, артилерією, ракетними військами</h4>
+                        <p class="text-white mb-4">НАСВ ім. П. Сагайдачного (м. Львів)</p>
                     </div>
-                    <span class="text-slate-500 text-[10px] underline">ОБРАТИ ЗАКЛАД_</span>
+                    <span class="text-slate-500 underline" style="font-size: 12px;">Обрати заклад</span>
                 </div>
                 <div class="border border-white/10 p-8 card-interactive cursor-pointer flex flex-col justify-between" onclick="selectDirection('ХНУПС (Харків) — Штурмани')">
                     <div>
-                        <h4 class="text-xl text-[#ffcc00] mb-2">Навігація та бойове управління (Штурмани)</h4>
-                        <p class="text-white text-sm mb-4">ХНУПС ім. І. Кожедуба (м. Харків)</p>
+                        <h4 class="text-[#ffcc00] mb-2">Навігація та бойове управління (штурмани)</h4>
+                        <p class="text-white mb-4">ХНУПС ім. І. Кожедуба (м. Харків)</p>
                     </div>
-                    <span class="text-slate-500 text-[10px] underline">ОБРАТИ ЗАКЛАД</span>
+                    <span class="text-slate-500 underline" style="font-size: 12px;">Обрати заклад</span>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- 2. Наземні бойові сили -->
     <div id="modal-2" class="modal" onclick="closeModal(event)">
-        <div class="bg-black border-2 border-white/20 w-full max-w-6xl p-8 md:p-12 max-h-screen overflow-y-auto custom-scrollbar font-bold text-white uppercase italic">
-            <div class="flex justify-between items-center mb-10 border-b-4 border-white pb-6">
-                <h2 class="text-4xl text-white tracking-tighter">НАЗЕМНІ БОЙОВІ СИЛИ</h2>
-                <button class="text-5xl" onclick="closeModalDirect('modal-2')">&times;</button>
+        <div class="bg-black border-2 border-white/20 w-full max-w-6xl p-8 md:p-12 max-h-screen overflow-y-auto custom-scrollbar text-white">
+            <div class="flex justify-between items-center mb-10 border-b border-white pb-6">
+                <h2>Наземні бойові сили</h2>
+                <button class="text-5xl" onclick="closeModalDirect('modal-2')" style="line-height: 1;">&times;</button>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div class="border border-white/10 p-8 card-interactive cursor-pointer" onclick="selectDirection('НАСВ (Львів) — Сапери')">
-                    <h4 class="text-xl text-[#ffcc00] mb-2">Інженерні війська (Сапери)</h4>
-                    <p class="text-white text-sm">НАСВ ім. П. Сагайдачного (м. Львів)</p>
+                    <h4 class="text-[#ffcc00] mb-2">Інженерні війська (сапери)</h4>
+                    <p class="text-white">НАСВ ім. П. Сагайдачного (м. Львів)</p>
                 </div>
                 <div class="border border-white/10 p-8 card-interactive cursor-pointer" onclick="selectDirection('ВІТВ (Харків) — Танки/РХБЗ')">
-                    <h4 class="text-xl text-[#ffcc00] mb-2">Ремонт бронетанкової техніки та РХБЗ</h4>
-                    <p class="text-white text-sm">Військовий інститут танкових військ (м. Харків)</p>
+                    <h4 class="text-[#ffcc00] mb-2">Ремонт бронетанкової техніки та РХБЗ</h4>
+                    <p class="text-white">Військовий інститут танкових військ (м. Харків)</p>
                 </div>
                 <div class="border-2 border-[#ffcc00]/30 p-8 card-interactive cursor-pointer md:col-span-2 text-center" onclick="selectDirection('Коледж НАСВ — Піхота (Сержанти)')">
-                    <h4 class="text-xl text-[#ffcc00] mb-2">Піхота (Сержантський рівень)</h4>
-                    <p class="text-white text-sm">Коледж сержантського складу НАСВ (м. Львів)</p>
+                    <h4 class="text-[#ffcc00] mb-2">Піхота (сержантський рівень)</h4>
+                    <p class="text-white">Коледж сержантського складу НАСВ (м. Львів)</p>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- 3. Артилерія та ракетні війська -->
     <div id="modal-3" class="modal" onclick="closeModal(event)">
-        <div class="bg-black border-2 border-white/20 w-full max-w-6xl p-8 md:p-12 max-h-screen overflow-y-auto custom-scrollbar font-bold text-white uppercase italic">
-            <div class="flex justify-between items-center mb-10 border-b-4 border-white pb-6">
-                <h2 class="text-4xl text-white tracking-tighter">АРТИЛЕРІЯ ТА РАКЕТНІ ВІЙСЬКА</h2>
-                <button class="text-5xl" onclick="closeModalDirect('modal-3')">&times;</button>
+        <div class="bg-black border-2 border-white/20 w-full max-w-6xl p-8 md:p-12 max-h-screen overflow-y-auto custom-scrollbar text-white">
+            <div class="flex justify-between items-center mb-10 border-b border-white pb-6">
+                <h2>Артилерія та ракетні війська</h2>
+                <button class="text-5xl" onclick="closeModalDirect('modal-3')" style="line-height: 1;">&times;</button>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div class="border border-white/10 p-8 card-interactive cursor-pointer" onclick="selectDirection('ВА (Одеса) — Ремонт РАО')">
-                    <h4 class="text-xl text-[#ffcc00] mb-2">Ремонт ракетно-артилерійського озброєння</h4>
-                    <p class="text-white text-sm">Військова академія (м. Одеса)</p>
+                    <h4 class="text-[#ffcc00] mb-2">Ремонт ракетно-артилерійського озброєння</h4>
+                    <p class="text-white">Військова академія (м. Одеса)</p>
                 </div>
                 <div class="border border-white/10 p-8 card-interactive cursor-pointer" onclick="selectDirection('ХНУПС (Харків) — ППО')">
-                    <h4 class="text-xl text-[#ffcc00] mb-2">Зенітно-ракетні війська (ППО)</h4>
-                    <p class="text-white text-sm">ХНУПС ім. І. Кожедуба (м. Харків)</p>
+                    <h4 class="text-[#ffcc00] mb-2">Зенітно-ракетні війська (ППО)</h4>
+                    <p class="text-white">ХНУПС ім. І. Кожедуба (м. Харків)</p>
                 </div>
                 <div class="border border-white/10 p-8 card-interactive cursor-pointer" onclick="selectDirection('ВМС (Одеса) — Берегові ракети')">
-                    <h4 class="text-xl text-[#ffcc00] mb-2">Берегові ракетні комплекси</h4>
-                    <p class="text-white text-sm">Інститут ВМС НУ «ОМА» (м. Одеса)</p>
+                    <h4 class="text-[#ffcc00] mb-2">Берегові ракетні комплекси</h4>
+                    <p class="text-white">Інститут ВМС НУ «ОМА» (м. Одеса)</p>
                 </div>
                 <div class="border-2 border-[#ffcc00]/30 p-8 card-interactive cursor-pointer" onclick="selectDirection('Коледж НАСВ — Артилерія (Сержанти)')">
-                    <h4 class="text-xl text-[#ffcc00] mb-2">Артилерія (Сержантський рівень)</h4>
-                    <p class="text-white text-sm">Коледж сержантського складу НАСВ (м. Львів)</p>
+                    <h4 class="text-[#ffcc00] mb-2">Артилерія (сержантський рівень)</h4>
+                    <p class="text-white">Коледж сержантського складу НАСВ (м. Львів)</p>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- 4. Авіація та ППО -->
     <div id="modal-4" class="modal" onclick="closeModal(event)">
-        <div class="bg-black border-2 border-white/20 w-full max-w-6xl p-8 md:p-12 max-h-screen overflow-y-auto custom-scrollbar font-bold text-white uppercase italic">
-            <div class="flex justify-between items-center mb-10 border-b-4 border-[#ffcc00] pb-6">
-                <h2 class="text-4xl text-[#ffcc00] tracking-tighter">АВІАЦІЯ ТА ПОВІТРЯНА ОБОРОНА</h2>
-                <button class="text-5xl" onclick="closeModalDirect('modal-4')">&times;</button>
+        <div class="bg-black border-2 border-white/20 w-full max-w-6xl p-8 md:p-12 max-h-screen overflow-y-auto custom-scrollbar text-white">
+            <div class="flex justify-between items-center mb-10 border-b border-[#ffcc00] pb-6">
+                <h2 class="text-[#ffcc00]">Авіація та повітряна оборона</h2>
+                <button class="text-5xl" onclick="closeModalDirect('modal-4')" style="line-height: 1;">&times;</button>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div class="border border-white/10 p-8 card-interactive cursor-pointer" onclick="selectDirection('ХНУПС (Харків) — Пілоти/Радари')">
-                    <h4 class="text-xl text-[#ffcc00] mb-2">Пілоти, Радіотехнічні війська ППО</h4>
-                    <p class="text-white text-sm">ХНУПС ім. І. Кожедуба (м. Харків)</p>
+                    <h4 class="text-[#ffcc00] mb-2">Пілоти, радіотехнічні війська ППО</h4>
+                    <p class="text-white">ХНУПС ім. І. Кожедуба (м. Харків)</p>
                 </div>
                 <div class="border border-white/10 p-8 card-interactive cursor-pointer" onclick="selectDirection('НАУ (Київ) — Аеродроми')">
-                    <h4 class="text-xl text-[#ffcc00] mb-2">Будівництво та ремонт аеродромів</h4>
-                    <p class="text-white text-sm">Військова кафедра НАУ (м. Київ)</p>
+                    <h4 class="text-[#ffcc00] mb-2">Будівництво та ремонт аеродромів</h4>
+                    <p class="text-white">Військова кафедра НАУ (м. Київ)</p>
                 </div>
                 <div class="border border-white/10 p-8 card-interactive cursor-pointer" onclick="selectDirection('ОНУ (Одеса) — Метеорологія')">
-                    <h4 class="text-xl text-[#ffcc00] mb-2">Військова метеорологія</h4>
-                    <p class="text-white text-sm">Кафедра ОНУ ім. І. Мечникова (м. Одеса)</p>
+                    <h4 class="text-[#ffcc00] mb-2">Військова метеорологія</h4>
+                    <p class="text-white">Кафедра ОНУ ім. І. Мечникова (м. Одеса)</p>
                 </div>
                 <div class="border-2 border-[#ffcc00]/30 p-8 card-interactive cursor-pointer" onclick="selectDirection('Коледж ХНУПС — Обслуговування (Сержанти)')">
-                    <h4 class="text-xl text-[#ffcc00] mb-2">Обслуговування авіації, БПЛА (Сержанти)</h4>
-                    <p class="text-white text-sm">Коледж сержантського складу ХНУПС (м. Харків)</p>
+                    <h4 class="text-[#ffcc00] mb-2">Обслуговування авіації, БПЛА (сержанти)</h4>
+                    <p class="text-white">Коледж сержантського складу ХНУПС (м. Харків)</p>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- 5. Кібер ІТ та Зв'язок -->
     <div id="modal-5" class="modal" onclick="closeModal(event)">
-        <div class="bg-black border-2 border-white/20 w-full max-w-6xl p-8 md:p-12 max-h-screen overflow-y-auto custom-scrollbar font-bold text-white uppercase italic">
-            <div class="flex justify-between items-center mb-10 border-b-4 border-[#ffcc00] pb-6">
-                <h2 class="text-4xl text-[#ffcc00] tracking-tighter">КІБЕР, ІТ ТА ЗВ’ЯЗОК</h2>
-                <button class="text-5xl" onclick="closeModalDirect('modal-5')">&times;</button>
+        <div class="bg-black border-2 border-white/20 w-full max-w-6xl p-8 md:p-12 max-h-screen overflow-y-auto custom-scrollbar text-white">
+            <div class="flex justify-between items-center mb-10 border-b border-[#ffcc00] pb-6">
+                <h2 class="text-[#ffcc00]">Кібербезпека, ІТ та зв’язок</h2>
+                <button class="text-5xl" onclick="closeModalDirect('modal-5')" style="line-height: 1;">&times;</button>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div class="border border-white/10 p-8 card-interactive cursor-pointer" onclick="selectDirection('ВІТІ (Київ) — Кібербезпека/ПЗ')">
-                    <h4 class="text-xl text-[#ffcc00] mb-2">Кібербезпека, Розробка ПЗ, Зв'язок</h4>
-                    <p class="text-white text-sm">ВІТІ ім. Героїв Крут (м. Київ)</p>
+                    <h4 class="text-[#ffcc00] mb-2">Кібербезпека, розробка ПЗ, зв'язок</h4>
+                    <p class="text-white">ВІТІ ім. Героїв Крут (м. Київ)</p>
                 </div>
                 <div class="border border-white/10 p-8 card-interactive cursor-pointer" onclick="selectDirection('ЖВІ (Житомир) — РЕБ/Космос')">
-                    <h4 class="text-xl text-[#ffcc00] mb-2">Радіоелектронна боротьба (РЕБ), Розвідка</h4>
-                    <p class="text-white text-sm">ЖВІ ім. С. П. Корольова (м. Житомир)</p>
+                    <h4 class="text-[#ffcc00] mb-2">Радіоелектронна боротьба (РЕБ), розвідка</h4>
+                    <p class="text-white">ЖВІ ім. С. П. Корольова (м. Житомир)</p>
                 </div>
-                <div class="border-2 border-[#ffcc00]/30 p-8 card-interactive cursor-pointer md:col-span-2 text-center" onclick="selectDirection('Коледж ВІТІ — ІТ/Зв'язок (Сержанти)')">
-                    <h4 class="text-xl text-[#ffcc00] mb-2">Зв'язок та ІТ (Сержантський рівень)</h4>
-                    <p class="text-white text-sm">Коледж сержантського складу ВІТІ (м. Полтава)</p>
+                <div class="border-2 border-[#ffcc00]/30 p-8 card-interactive cursor-pointer md:col-span-2 text-center" onclick="selectDirection('Коледж ВІТІ — ІТ/Зв\'язок (Сержанти)')">
+                    <h4 class="text-[#ffcc00] mb-2">Зв'язок та ІТ (сержантський рівень)</h4>
+                    <p class="text-white">Коледж сержантського складу ВІТІ (м. Полтава)</p>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- 6. Морські сили -->
     <div id="modal-6" class="modal" onclick="closeModal(event)">
-        <div class="bg-black border-2 border-white/20 w-full max-w-6xl p-8 md:p-12 max-h-screen overflow-y-auto custom-scrollbar font-bold text-white uppercase italic">
-            <div class="flex justify-between items-center mb-10 border-b-4 border-white pb-6">
-                <h2 class="text-4xl text-white tracking-tighter">МОРСЬКІ СИЛИ</h2>
-                <button class="text-5xl" onclick="closeModalDirect('modal-6')">&times;</button>
+        <div class="bg-black border-2 border-white/20 w-full max-w-6xl p-8 md:p-12 max-h-screen overflow-y-auto custom-scrollbar text-white">
+            <div class="flex justify-between items-center mb-10 border-b border-white pb-6">
+                <h2>Морські сили</h2>
+                <button class="text-5xl" onclick="closeModalDirect('modal-6')" style="line-height: 1;">&times;</button>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div class="border border-white/10 p-8 card-interactive cursor-pointer" onclick="selectDirection('ВМС (Одеса) — Навігація/Зброя')">
-                    <h4 class="text-xl text-[#ffcc00] mb-2">Кораблеводіння, Озброєння та Енергетика</h4>
-                    <p class="text-white text-sm">Інститут ВМС НУ «ОМА» (м. Одеса)</p>
+                    <h4 class="text-[#ffcc00] mb-2">Кораблеводіння, озброєння та енергетика</h4>
+                    <p class="text-white">Інститут ВМС НУ «ОМА» (м. Одеса)</p>
                 </div>
                 <div class="border-2 border-[#ffcc00]/30 p-8 card-interactive cursor-pointer" onclick="selectDirection('Коледж морського транспорту (Одеса) — Сержанти')">
-                    <h4 class="text-xl text-[#ffcc00] mb-2">Експлуатація обладнання (Сержанти)</h4>
-                    <p class="text-white text-sm">Фаховий коледж морського транспорту (м. Одеса)</p>
+                    <h4 class="text-[#ffcc00] mb-2">Експлуатація обладнання (сержанти)</h4>
+                    <p class="text-white">Фаховий коледж морського транспорту (м. Одеса)</p>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- 7. Забезпечення -->
     <div id="modal-7" class="modal" onclick="closeModal(event)">
-        <div class="bg-black border-2 border-white/20 w-full max-w-6xl p-8 md:p-12 max-h-screen overflow-y-auto custom-scrollbar font-bold text-white uppercase italic">
-            <div class="flex justify-between items-center mb-10 border-b-4 border-white pb-6">
-                <h2 class="text-4xl text-white tracking-tighter">ЗАБЕЗПЕЧЕННЯ ТА ПІДТРИМКА_</h2>
-                <button class="text-5xl" onclick="closeModalDirect('modal-7')">&times;</button>
+        <div class="bg-black border-2 border-white/20 w-full max-w-6xl p-8 md:p-12 max-h-screen overflow-y-auto custom-scrollbar text-white">
+            <div class="flex justify-between items-center mb-10 border-b border-white pb-6">
+                <h2>Забезпечення та підтримка</h2>
+                <button class="text-5xl" onclick="closeModalDirect('modal-7')" style="line-height: 1;">&times;</button>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div class="border border-white/10 p-8 card-interactive cursor-pointer" onclick="selectDirection('ВА (Одеса) — Тилове забезпечення')">
-                    <h4 class="text-xl text-[#ffcc00] mb-2">Тилове забезпечення (Продовольче, Речове)</h4>
-                    <p class="text-white text-sm">Військова академія (м. Одеса)</p>
+                    <h4 class="text-[#ffcc00] mb-2">Тилове забезпечення (продовольче, речове)</h4>
+                    <p class="text-white">Військова академія (м. Одеса)</p>
                 </div>
                 <div class="border border-white/10 p-8 card-interactive cursor-pointer" onclick="selectDirection('Франківськ — Пальне')">
-                    <h4 class="text-xl text-[#ffcc00] mb-2">Забезпечення пальним та мастилами</h4>
-                    <p class="text-white text-sm">Військова кафедра ІФНТУНГ (м. Івано-Франківськ)</p>
+                    <h4 class="text-[#ffcc00] mb-2">Забезпечення пальним та мастилами</h4>
+                    <p class="text-white">Військова кафедра ІФНТУНГ (м. Івано-Франківськ)</p>
                 </div>
                 <div class="border border-white/10 p-8 card-interactive cursor-pointer" onclick="selectDirection('Дніпро — Мости/Залізниця')">
-                    <h4 class="text-xl text-[#ffcc00] mb-2">Відновлення мостів та залізниць</h4>
-                    <p class="text-white text-sm">Кафедра УДУНТ (м. Дніпро)</p>
+                    <h4 class="text-[#ffcc00] mb-2">Відновлення мостів та залізниць</h4>
+                    <p class="text-white">Кафедра УДУНТ (м. Дніпро)</p>
                 </div>
                 <div class="border border-white/10 p-8 card-interactive cursor-pointer" onclick="selectDirection('Київ — Ветеринарія')">
-                    <h4 class="text-xl text-[#ffcc00] mb-2">Військова ветеринарія</h4>
-                    <p class="text-white text-sm">Військова кафедра НУБіП (м. Київ)</p>
+                    <h4 class="text-[#ffcc00] mb-2">Військова ветеринарія</h4>
+                    <p class="text-white">Військова кафедра НУБіП (м. Київ)</p>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- 8. Гуманітарний напрям -->
     <div id="modal-8" class="modal" onclick="closeModal(event)">
-        <div class="bg-black border-2 border-white/20 w-full max-w-6xl p-8 md:p-12 max-h-screen overflow-y-auto custom-scrollbar font-bold text-white uppercase italic">
-            <div class="flex justify-between items-center mb-10 border-b-4 border-white pb-6">
-                <h2 class="text-4xl text-white tracking-tighter">ГУМАНІТАРНИЙ ТА СПЕЦ НАПРЯМ</h2>
-                <button class="text-5xl" onclick="closeModalDirect('modal-8')">&times;</button>
+        <div class="bg-black border-2 border-white/20 w-full max-w-6xl p-8 md:p-12 max-h-screen overflow-y-auto custom-scrollbar text-white">
+            <div class="flex justify-between items-center mb-10 border-b border-white pb-6">
+                <h2>Гуманітарний та спец напрям</h2>
+                <button class="text-5xl" onclick="closeModalDirect('modal-8')" style="line-height: 1;">&times;</button>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div class="border border-white/10 p-8 card-interactive cursor-pointer" onclick="selectDirection('ВІКНУ (Київ) — Психологія/ІПСО/Переклад/Фінанси')">
-                    <h4 class="text-xl text-[#ffcc00] mb-2">Психологія, ІПСО, Переклад, Фінанси, Топографія</h4>
-                    <p class="text-white text-sm">ВІКНУ ім. Т. Шевченка (м. Київ)</p>
+                    <h4 class="text-[#ffcc00] mb-2">Психологія, ІПСО, переклад, фінанси, топографія</h4>
+                    <p class="text-white">ВІКНУ ім. Т. Шевченка (м. Київ)</p>
                 </div>
                 <div class="border border-white/10 p-8 card-interactive cursor-pointer" onclick="selectDirection('ВЮІ (Харків) — Військове Право')">
-                    <h4 class="text-xl text-[#ffcc00] mb-2">Військова юстиція та право</h4>
-                    <p class="text-white text-sm">ВЮІ НЮУ ім. Я. Мудрого (м. Харків)</p>
+                    <h4 class="text-[#ffcc00] mb-2">Військова юстиція та право</h4>
+                    <p class="text-white">ВЮІ НЮУ ім. Я. Мудрого (м. Харків)</p>
                 </div>
                 <div class="border border-white/10 p-8 card-interactive cursor-pointer md:col-span-2 text-center" onclick="selectDirection('НУОУ (Київ) — Спецпідготовка')">
-                    <h4 class="text-xl text-[#ffcc00] mb-2">Фізичне виховання та спецпідготовка</h4>
-                    <p class="text-white text-sm">НУОУ (м. Київ)</p>
+                    <h4 class="text-[#ffcc00] mb-2">Фізичне виховання та спецпідготовка</h4>
+                    <p class="text-white">НУОУ (м. Київ)</p>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- Футер -->
-    <footer class="py-20 text-center text-slate-700 bg-black border-t border-white/5 text-[9px] font-bold tracking-[0.6em] uppercase italic">
-        ОФІЦІЙНИЙ РЕСУРС РЕКРУТИНГУ • ЗБРОЙНІ СИЛИ УКРАЇНИ • 2024
+    <footer class="py-20 text-center text-slate-700 bg-black border-t border-white/5 caption">
+        Офіційний ресурс рекрутингу • Збройні Сили України • 2024
     </footer>
 
-    <!-- СКРИПТИ -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         AOS.init({ duration: 800, once: true });
@@ -464,21 +484,18 @@
 
         form.addEventListener('submit', e => {
             e.preventDefault();
-            submitBtn.innerText = 'ОБРОБКА...';
+            submitBtn.innerText = 'Обробка...';
             submitBtn.disabled = true;
             fetch(scriptURL, { method: 'POST', body: new FormData(form)})
                 .then(response => {
-                    submitBtn.innerText = 'УСПІШНО';
+                    submitBtn.innerText = 'Успішно';
                     alert('Заявку прийнято. Ментор зв’яжеться з тобою.');
                     form.reset();
                     document.getElementById('direction-badge').classList.add('hidden');
-                    setTimeout(() => { submitBtn.innerText = 'ПОДАТИ ЗАПИТ_'; submitBtn.disabled = false; }, 4000);
+                    setTimeout(() => { submitBtn.innerText = 'Подати запит'; submitBtn.disabled = false; }, 4000);
                 })
-                .catch(error => { submitBtn.innerText = 'ПОМИЛКА'; submitBtn.disabled = false; });
+                .catch(error => { submitBtn.innerText = 'Помилка'; submitBtn.disabled = false; });
         });
     </script>
 </body>
 </html>
-
-
-
