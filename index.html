@@ -349,21 +349,35 @@
         <button class="absolute top-6 right-6 text-4xl text-white/50 hover:text-[#ffcc00] z-50" onclick="closeModalDirect('modal-6')">&times;</button>
         <h2 class="text-[#ffcc00] text-3xl mb-8 border-b border-white/10 pb-4">Логістика та Забезпечення</h2>
         <div class="space-y-4">
+            <!-- ОДЕСА -->
             <div class="spec-card">
-                <div><div class="text-[#ffcc00] font-bold">Продовольче, речове забезпечення та Транспорт</div><div class="text-xs text-slate-400">Військова академія (м. Одеса)</div></div>
-                <button onclick="selectDirection('Тил/Логістика (Одеса)')" class="bg-[#ffcc00] text-black px-4 py-2 font-bold text-[10px] uppercase">ОБРАТИ</button>
+                <div><div class="text-[#ffcc00] font-bold">Продовольче, речове забезпечення та Транспортна логістика</div><div class="text-xs text-slate-400 italic">Військова академія (м. Одеса)</div></div>
+                <button onclick="selectDirection('Логістика (Продовольство/Речі) - Одеса (ВА)')" class="bg-[#ffcc00] text-black px-4 py-2 font-bold text-[10px] uppercase">ОБРАТИ</button>
             </div>
+            <!-- КИЇВ -->
             <div class="spec-card">
-                <div><div class="text-[#ffcc00] font-bold">Будівництво мостів, доріг та аеродромів</div><div class="text-xs text-slate-400">Кафедри НАУ (Київ) / УДУНТ (Дніпро)</div></div>
-                <button onclick="selectDirection('Будівництво/Інфраструктура (Київ/Дніпро)')" class="bg-[#ffcc00] text-black px-4 py-2 font-bold text-[10px] uppercase">ОБРАТИ</button>
+                <div><div class="text-[#ffcc00] font-bold">Будівництво автомобільних доріг та аеродромів</div><div class="text-xs text-slate-400 italic">Кафедра НАУ (м. Київ)</div></div>
+                <button onclick="selectDirection('Будівництво доріг/аеродромів - Київ (НАУ)')" class="bg-[#ffcc00] text-black px-4 py-2 font-bold text-[10px] uppercase">ОБРАТИ</button>
             </div>
+            <!-- ДНІПРО -->
             <div class="spec-card">
-                <div><div class="text-[#ffcc00] font-bold">Забезпечення пальним та мастилами</div><div class="text-xs text-slate-400">Кафедра ІФНТУНГ (м. Івано-Франківськ) / Одеса (ВА)</div></div>
-                <button onclick="selectDirection('Пальне/Логістика (Франківськ/Одеса)')" class="bg-[#ffcc00] text-black px-4 py-2 font-bold text-[10px] uppercase">ОБРАТИ</button>
+                <div><div class="text-[#ffcc00] font-bold">Відновлення мостів та штучних споруд на залізниці</div><div class="text-xs text-slate-400 italic">Кафедра УДУНТ (м. Дніпро)</div></div>
+                <button onclick="selectDirection('Відновлення мостів/залізниць - Дніпро (УДУНТ)')" class="bg-[#ffcc00] text-black px-4 py-2 font-bold text-[10px] uppercase">ОБРАТИ</button>
             </div>
+            <!-- ФРАНКІВСЬК -->
             <div class="spec-card">
-                <div><div class="text-[#ffcc00] font-bold">Військова ветеринарна медицина</div><div class="text-xs text-slate-400">Кафедра НУБіП (м. Київ)</div></div>
-                <button onclick="selectDirection('Ветеринар (Київ)')" class="bg-[#ffcc00] text-black px-4 py-2 font-bold text-[10px] uppercase">ОБРАТИ</button>
+                <div><div class="text-[#ffcc00] font-bold">Забезпечення пальним та мастильними матеріалами</div><div class="text-xs text-slate-400 italic">Кафедра ІФНТУНГ (м. Івано-Франківськ)</div></div>
+                <button onclick="selectDirection('Забезпечення пальним - Івано-Франківськ (ІФНТУНГ)')" class="bg-[#ffcc00] text-black px-4 py-2 font-bold text-[10px] uppercase">ОБРАТИ</button>
+            </div>
+            <!-- ОДЕСА ПАЛЬНЕ -->
+            <div class="spec-card">
+                <div><div class="text-[#ffcc00] font-bold">Забезпечення ракетним паливом та пальним</div><div class="text-xs text-slate-400 italic">Військова академія (м. Одеса)</div></div>
+                <button onclick="selectDirection('Забезпечення пальним - Одеса (ВА)')" class="bg-[#ffcc00] text-black px-4 py-2 font-bold text-[10px] uppercase">ОБРАТИ</button>
+            </div>
+            <!-- ВЕТЕРИНАРІЯ -->
+            <div class="spec-card">
+                <div><div class="text-[#ffcc00] font-bold">Військова ветеринарна медицина</div><div class="text-xs text-slate-400 italic">Кафедра НУБіП (м. Київ)</div></div>
+                <button onclick="selectDirection('Військова ветеринарія - Київ (НУБіП)')" class="bg-[#ffcc00] text-black px-4 py-2 font-bold text-[10px] uppercase">ОБРАТИ</button>
             </div>
         </div>
     </div>
@@ -526,6 +540,7 @@
 </script>
 </body>
 </html>
+
 
 
 
