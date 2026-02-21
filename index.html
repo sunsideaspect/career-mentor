@@ -326,21 +326,68 @@
 
     <!-- MODAL 7: ГУМАНІТАРНИЙ -->
     <div id="modal-7" class="modal" onclick="closeModal(event)">
-        <div class="bg-slate-900 border border-white/10 w-full max-w-5xl p-6 md:p-12 max-h-[90vh] overflow-y-auto custom-scrollbar relative text-white">
-            <button class="absolute top-6 right-6 text-4xl text-white/50 hover:text-[#ffcc00]" onclick="closeModalDirect('modal-7')">&times;</button>
-            <h2 class="text-[#ffcc00] text-3xl mb-8 border-b border-white/10 pb-4">Гуманітарний напрям</h2>
-            <div class="mb-4 border border-white/5 rounded bg-white/5">
-                <button class="w-full text-left p-6 flex justify-between items-center group" onclick="toggleAccordion(this)">
-                    <span class="text-xl font-medium">Право, Психологія, Журналістика та Спорт</span>
-                    <i class="fas fa-chevron-down accordion-icon text-[#ffcc00]"></i>
-                </button>
-                <div class="accordion-content"><div class="px-6 pb-6 space-y-3">
-                    <div class="spec-card"><div><div class="text-[#ffcc00] font-bold">Право (Військові юристи), Психологія, Журналістика, Переклад, Фінанси</div><div class="text-xs text-slate-400 italic">ВІКНУ (Київ) / ВЮІ ім. Я. Мудрого (Харків)</div></div><button onclick="selectDirection('ВІКНУ/ВЮІ - Гуманітарій')" class="bg-[#ffcc00] text-black px-4 py-2 font-bold text-[10px] uppercase">ОБРАТИ</button></div>
-                    <div class="spec-card"><div><div class="text-[#ffcc00] font-bold">Фізична культура, спорт та реабілітація, Культурологія</div><div class="text-xs text-slate-400 italic">НУОУ (Київ) / НАСВ (Львів)</div></div><button onclick="selectDirection('НУОУ/НАСВ - Спорт/Культура')" class="bg-[#ffcc00] text-black px-4 py-2 font-bold text-[10px] uppercase">ОБРАТИ</button></div>
-                </div></div>
+    <div class="bg-slate-900 border border-white/10 w-full max-w-5xl p-6 md:p-12 max-h-[90vh] overflow-y-auto custom-scrollbar relative text-white">
+        <button class="absolute top-6 right-6 text-4xl text-white/50 hover:text-[#ffcc00]" onclick="closeModalDirect('modal-7')">&times;</button>
+        <h2 class="text-[#ffcc00] text-3xl mb-8 border-b border-white/10 pb-4">Гуманітарний напрям</h2>
+        
+        <div class="mb-4 border border-white/5 rounded bg-white/5">
+            <button class="w-full text-left p-6 flex justify-between items-center group" onclick="toggleAccordion(this)">
+                <span class="text-xl font-medium">Оберіть конкретну спеціалізацію:</span>
+                <i class="fas fa-chevron-down accordion-icon text-[#ffcc00]"></i>
+            </button>
+            <div class="accordion-content">
+                <div class="px-6 pb-6 space-y-3">
+                    
+                    <!-- ЮРИСТ (Харків) -->
+                    <div class="spec-card">
+                        <div>
+                            <div class="text-[#ffcc00] font-bold">Військовий юрист (Юрисконсульт)</div>
+                            <div class="text-xs text-slate-400 italic">ВЮІ НЮУ ім. Я. Мудрого (Харків)</div>
+                        </div>
+                        <button onclick="selectDirection('Юрист - Харків (НЮУ)')" class="bg-[#ffcc00] text-black px-4 py-2 font-bold text-[10px] uppercase">ОБРАТИ</button>
+                    </div>
+
+                    <!-- ЮРИСТ / ПРАВОПОРЯДОК (Київ) -->
+                    <div class="spec-card">
+                        <div>
+                            <div class="text-[#ffcc00] font-bold">Військове право та Цивільно-військове співробітництво</div>
+                            <div class="text-xs text-slate-400 italic">ВІКНУ ім. Т. Шевченка (Київ)</div>
+                        </div>
+                        <button onclick="selectDirection('Юрист - Київ (ВІКНУ)')" class="bg-[#ffcc00] text-black px-4 py-2 font-bold text-[10px] uppercase">ОБРАТИ</button>
+                    </div>
+
+                    <!-- ПСИХОЛОГ -->
+                    <div class="spec-card">
+                        <div>
+                            <div class="text-[#ffcc00] font-bold">Військова психологія</div>
+                            <div class="text-xs text-slate-400 italic">ВІКНУ (Київ) / ХНУПС (Харків)</div>
+                        </div>
+                        <button onclick="selectDirection('Психологія')" class="bg-[#ffcc00] text-black px-4 py-2 font-bold text-[10px] uppercase">ОБРАТИ</button>
+                    </div>
+
+                    <!-- ПЕРЕКЛАДАЧ -->
+                    <div class="spec-card">
+                        <div>
+                            <div class="text-[#ffcc00] font-bold">Військовий переклад та Міжнародні відносини</div>
+                            <div class="text-xs text-slate-400 italic">ВІКНУ ім. Т. Шевченка (Київ)</div>
+                        </div>
+                        <button onclick="selectDirection('Перекладач (ВІКНУ)')" class="bg-[#ffcc00] text-black px-4 py-2 font-bold text-[10px] uppercase">ОБРАТИ</button>
+                    </div>
+
+                    <!-- ФІНАНСИСТ -->
+                    <div class="spec-card">
+                        <div>
+                            <div class="text-[#ffcc00] font-bold">Військові фінанси та економіка</div>
+                            <div class="text-xs text-slate-400 italic">ВІКНУ ім. Т. Шевченка (Київ)</div>
+                        </div>
+                        <button onclick="selectDirection('Фінансист (ВІКНУ)')" class="bg-[#ffcc00] text-black px-4 py-2 font-bold text-[10px] uppercase">ОБРАТИ</button>
+                    </div>
+
+                </div>
             </div>
         </div>
     </div>
+</div>
 
     <!-- MODAL 8: СЕРЖАНТИ -->
     <div id="modal-8" class="modal" onclick="closeModal(event)">
@@ -461,6 +508,7 @@
 </script>
 </body>
 </html>
+
 
 
 
