@@ -388,71 +388,79 @@
 
     <!-- СКРИПТИ -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-        AOS.init({ duration: 800, once: true });
+<script>
+    AOS.init({ duration: 800, once: true });
 
-        // Функція для акордеонів (виправлена)
-        function toggleAccordion(button) {
-            const content = button.nextElementSibling;
-            const icon = button.querySelector('.accordion-icon');
-            const isOpen = content.classList.contains('is-open');
+    // 1. Управління акордеонами
+    function toggleAccordion(button) {
+        const content = button.nextElementSibling;
+        const icon = button.querySelector('.accordion-icon');
+        const isOpen = content.classList.contains('is-open');
 
-            const parent = button.closest('.modal');
-            parent.querySelectorAll('.accordion-content').forEach(c => c.classList.remove('is-open'));
-            parent.querySelectorAll('.accordion-icon').forEach(i => i.classList.remove('rotate-180'));
+        const modal = button.closest('.modal');
+        modal.querySelectorAll('.accordion-content').forEach(c => c.classList.remove('is-open'));
+        modal.querySelectorAll('.accordion-icon').forEach(i => i.classList.remove('rotate-180'));
 
-            if (!isOpen) {
-                content.classList.add('is-open');
-                icon.classList.add('rotate-180');
-            }
+        if (!isOpen) {
+            content.classList.add('is-open');
+            icon.classList.add('rotate-180');
         }
+    }
 
-        // Керування модальними вікнами
-        function openModal(id) {
-            const m = document.getElementById(id);
-            if(m) { m.classList.add('active'); document.body.style.overflow = 'hidden'; }
-        }
-        function closeModalDirect(id) { document.getElementById(id).classList.remove('active'); document.body.style.overflow = 'auto'; }
-        function closeModal(event) { if(event.target.classList.contains('modal')) { event.target.classList.remove('active'); document.body.style.overflow = 'auto'; } }
+    // 2. Управління модалками
+    function openModal(id) {
+        const m = document.getElementById(id);
+        if(m) { m.classList.add('active'); document.body.style.overflow = 'hidden'; }
+    }
+    function closeModalDirect(id) { document.getElementById(id).classList.remove('active'); document.body.style.overflow = 'auto'; }
+    function closeModal(event) { if(event.target.classList.contains('modal')) { event.target.classList.remove('active'); document.body.style.overflow = 'auto'; } }
 
-        // Вибір напрямку та скрол до форми
-        function selectDirection(name) {
-            document.getElementById('hidden-direction').value = name;
-            const badge = document.getElementById('direction-badge');
-            badge.classList.remove('hidden');
-            document.getElementById('chosen-direction-text').innerText = name;
-            document.querySelectorAll('.modal').forEach(m => m.classList.remove('active'));
-            document.body.style.overflow = 'auto';
-            setTimeout(() => { document.getElementById('form').scrollIntoView({ behavior: 'smooth' }); }, 400);
-        }
+    // 3. Вибір напрямку
+    function selectDirection(name) {
+        document.getElementById('hidden-direction').value = name;
+        const badge = document.getElementById('direction-badge');
+        badge.classList.remove('hidden');
+        document.getElementById('chosen-direction-text').innerText = name;
+        document.querySelectorAll('.modal').forEach(m => m.classList.remove('active'));
+        document.body.style.overflow = 'auto';
+        setTimeout(() => { document.getElementById('form').scrollIntoView({ behavior: 'smooth' }); }, 400);
+    }
 
-       // ВСТАВ СЮДИ СВОЄ ПОСИЛАННЯ (WebApp URL), яке отримаєш в Google Apps Script
-const scriptURL = 'https://script.google.com/macros/s/AKfycbwNHmRbj-IaG1LbYlo8Lpjp4Hd5QrY8TxzEWrZEX6RdSIK6oSHJ-_eEEfBJShfovXPEAA/exec'; 
+    // 4. ВІДПРАВКА ФОРМИ (ПЕРЕПИСАНО)
+    // ВСТАВ СЮДИ СВОЙ НОВИЙ URL ПІСЛЯ DEPLOY
+    const scriptURL = 'https://script.google.com/macros/s/AKfycby5I-g50r7WH0L9S08s1pwWYEhqumpxzi6uyoiUZBoRnYNmoHPunlsLbAB_o2wfIxmi/exec'; 
+    const form = document.getElementById('recruitment-form');
+    const btn = document.getElementById('submit-btn');
 
-const form = document.getElementById('recruitment-form');
-const btn = document.getElementById('submit-btn');
+    form.addEventListener('submit', e => {
+        e.preventDefault();
+        btn.disabled = true;
+        btn.innerText = 'ОБРОБКА...';
 
-form.addEventListener('submit', e => {
-    e.preventDefault();
-    btn.innerText = 'ОБРОБКА...';
-    btn.disabled = true;
-
-    fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        fetch(scriptURL, { 
+            method: 'POST', 
+            body: new FormData(form)
+        })
         .then(response => {
-            alert('Дякуємо! Ментор зв’яжеться з тобою найближчим часом.');
-            btn.innerText = 'ВІДПРАВЛЕНО';
+            alert('Заявку прийнято! Ментор зв’яжеться з вами найближчим часом.');
+            btn.innerText = 'УСПІШНО';
             form.reset();
             document.getElementById('direction-badge').classList.add('hidden');
+            setTimeout(() => {
+                btn.disabled = false;
+                btn.innerText = 'ВІДПРАВИТИ ЗАПИТ';
+            }, 3000);
         })
         .catch(error => {
             console.error('Error!', error.message);
-            alert('Помилка відправки. Спробуй ще раз.');
+            alert('Сталася помилка. Перевірте з’єднання та спробуйте ще раз.');
             btn.disabled = false;
             btn.innerText = 'ВІДПРАВИТИ ЗАПИТ';
         });
-});
-    </script>
+    });
+</script>
 </body>
 </html>
+
 
 
