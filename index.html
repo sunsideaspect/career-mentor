@@ -150,48 +150,100 @@
         </div>
     </section>
 
-    <!-- ТАЙМЛАЙН -->
-    <section id="path" class="py-16 md:py-32 px-6 bg-[#020617]">
+    <!-- ТАЙМЛАЙН: ТВІЙ ШЛЯХ ДО ЗВАННЯ (ВІДНОВЛЕНО ТА ВИПРАВЛЕНО) -->
+    <section id="path" class="py-16 md:py-32 px-6 bg-[#020617] overflow-hidden">
         <div class="container mx-auto">
             <div class="max-w-4xl mx-auto">
-                <h2 class="text-3xl md:text-6xl text-white mb-12 md:mb-20 underline decoration-[#ffcc00] underline-offset-[10px] font-bold">Твій шлях_</h2>
+                <h2 class="text-4xl md:text-6xl text-white mb-16 md:mb-24 underline decoration-[#ffcc00] underline-offset-[16px] font-bold uppercase tracking-tighter">Твій шлях_</h2>
+                
                 <div class="relative">
-                    <div class="timeline-line"></div>
-                    <div id="progress-line" class="absolute left-[19px] top-0 w-0.5 bg-[#ffcc00] transition-all duration-700 origin-top scale-y-0"></div>
+                    <!-- Статична лінія (темна) -->
+                    <div class="absolute left-[19px] top-0 bottom-0 w-0.5 bg-white/10"></div>
+                    
+                    <!-- Динамічна лінія (жовта) - анімується через JS -->
+                    <div id="progress-line" class="absolute left-[19px] top-0 w-0.5 bg-[#ffcc00] transition-all duration-700 origin-top scale-y-0 shadow-[0_0_15px_#ffcc00]"></div>
 
-                    <!-- Крок 1 -->
-                    <div class="relative pl-12 md:pl-16 mb-12 md:mb-20 group" data-aos="fade-up">
-                        <div class="absolute left-0 top-0 w-10 h-10 bg-[#020617] border-2 border-white/20 rounded-full flex items-center justify-center z-10 group-[.is-active]:border-[#ffcc00] transition-colors">
-                            <div class="w-2 h-2 bg-white/20 rounded-full group-[.is-active]:bg-[#ffcc00]"></div>
+                    <!-- КРОК 1 -->
+                    <div class="relative pl-16 mb-20 md:mb-28 group" data-aos="fade-up">
+                        <div class="absolute left-0 top-0 w-10 h-10 bg-[#020617] border-2 border-white/20 rounded-full flex items-center justify-center z-10 group-[.is-active]:border-[#ffcc00] transition-colors duration-500">
+                            <div class="w-2 h-2 bg-white/20 rounded-full group-[.is-active]:bg-[#ffcc00] shadow-[0_0_15px_rgba(255,204,0,0.6)]"></div>
                         </div>
-                        <div class="space-y-2">
-                            <h4 class="text-[#ffcc00] font-bold text-lg md:text-xl uppercase">1. Вибір цілі та Заявка</h4>
-                            <p class="text-slate-300 text-sm">Ти обираєш бажану професію на нашому сайті та залишаєш контакти.</p>
-                            <p class="text-[#ffcc00] text-xs font-bold uppercase">Результат: Ментор формує твій план вступу.</p>
-                        </div>
-                    </div>
-                    <!-- Крок 2 -->
-                    <div class="relative pl-12 md:pl-16 mb-12 md:mb-20 group" data-aos="fade-up">
-                        <div class="absolute left-0 top-0 w-10 h-10 bg-[#020617] border-2 border-white/20 rounded-full flex items-center justify-center z-10 group-[.is-active]:border-[#ffcc00] transition-colors">
-                            <div class="w-2 h-2 bg-white/20 rounded-full group-[.is-active]:bg-[#ffcc00]"></div>
-                        </div>
-                        <div class="space-y-2">
-                            <h4 class="text-[#ffcc00] font-bold text-lg md:text-xl uppercase">2. Оформлення та ВЛК (січень – червень)</h4>
-                            <p class="text-slate-300 text-sm">Ми допомагаємо зібрати документи та пройти медкомісію без черг.</p>
-                            <p class="text-[#ffcc00] text-xs font-bold uppercase">Результат: Твоя справа готова та передана до ВВНЗ.</p>
+                        
+                        <div class="space-y-4">
+                            <h4 class="text-[#ffcc00] font-bold text-xl md:text-2xl uppercase tracking-tighter transition-colors group-[.is-active]:text-white">Крок 1: Вибір цілі та Заявка</h4>
+                            <div class="grid md:grid-cols-2 gap-6">
+                                <p class="text-slate-100 text-sm md:text-base leading-relaxed">Ти обираєш бажану професію на нашому сайті та залишаєш контакти для зворотного зв'язку.</p>
+                                <div class="bg-white/5 p-4 border-l-2 border-[#ffcc00]">
+                                    <p class="text-slate-400 text-[10px] uppercase tracking-widest mb-1 font-bold">Результат:</p>
+                                    <p class="text-[#ffcc00] font-medium text-sm">Ментор зв'язується з тобою та формує персональний план вступу.</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <!-- Крок 3 -->
-                    <div class="relative pl-12 md:pl-16 group" data-aos="fade-up">
-                        <div class="absolute left-0 top-0 w-10 h-10 bg-[#020617] border-2 border-white/20 rounded-full flex items-center justify-center z-10 group-[.is-active]:border-[#ffcc00] transition-colors">
+
+                    <!-- КРОК 2 -->
+                    <div class="relative pl-16 mb-20 md:mb-28 group" data-aos="fade-up">
+                        <div class="absolute left-0 top-0 w-10 h-10 bg-[#020617] border-2 border-white/20 rounded-full flex items-center justify-center z-10 group-[.is-active]:border-[#ffcc00] transition-colors duration-500">
                             <div class="w-2 h-2 bg-white/20 rounded-full group-[.is-active]:bg-[#ffcc00]"></div>
                         </div>
-                        <div class="space-y-2">
-                            <h4 class="text-[#ffcc00] font-bold text-lg md:text-xl uppercase">3. Зарахування та Присяга (липень – серпень)</h4>
-                            <p class="text-slate-300 text-sm">Здача НМТ та внутрішніх нормативів. Початок офіцерського шляху.</p>
-                            <p class="text-[#ffcc00] text-xs font-bold uppercase">Результат: Складання присяги та повне забезпечення.</p>
+                        
+                        <div class="space-y-4">
+                            <div class="flex flex-wrap items-center gap-3">
+                                <h4 class="text-[#ffcc00] font-bold text-xl md:text-2xl uppercase tracking-tighter group-[.is-active]:text-white transition-colors">Крок 2: Оформлення справи та ВЛК</h4>
+                                <span class="bg-white/10 text-white text-[10px] px-3 py-1 rounded-full uppercase tracking-widest font-bold">січень – червень</span>
+                            </div>
+                            <div class="grid md:grid-cols-2 gap-6">
+                                <p class="text-slate-100 text-sm md:text-base leading-relaxed">Ми допомагаємо швидко зібрати пакет документів та даємо інструкції для комфортного проходження медкомісії.</p>
+                                <div class="bg-white/5 p-4 border-l-2 border-[#ffcc00]">
+                                    <p class="text-slate-400 text-[10px] uppercase tracking-widest mb-1 font-bold">Результат:</p>
+                                    <p class="text-[#ffcc00] font-medium text-sm">Твоя справа сформована ідеально і передана до обраного закладу.</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
+
+                    <!-- КРОК 3 -->
+                    <div class="relative pl-16 mb-20 md:mb-28 group" data-aos="fade-up">
+                        <div class="absolute left-0 top-0 w-10 h-10 bg-[#020617] border-2 border-white/20 rounded-full flex items-center justify-center z-10 group-[.is-active]:border-[#ffcc00] transition-colors duration-500">
+                            <div class="w-2 h-2 bg-white/20 rounded-full group-[.is-active]:bg-[#ffcc00]"></div>
+                        </div>
+                        
+                        <div class="space-y-4">
+                            <div class="flex flex-wrap items-center gap-3">
+                                <h4 class="text-[#ffcc00] font-bold text-xl md:text-2xl uppercase tracking-tighter group-[.is-active]:text-white transition-colors">Крок 3: Вступні випробування</h4>
+                                <span class="bg-white/10 text-white text-[10px] px-3 py-1 rounded-full uppercase tracking-widest font-bold">липень</span>
+                            </div>
+                            <div class="grid md:grid-cols-2 gap-6">
+                                <p class="text-slate-100 text-sm md:text-base leading-relaxed">Ти надаєш результати НМТ та приїжджаєш до закладу для здачі нормативів з фізо та профвідбору.</p>
+                                <div class="bg-white/5 p-4 border-l-2 border-[#ffcc00]">
+                                    <p class="text-slate-400 text-[10px] uppercase tracking-widest mb-1 font-bold">Результат:</p>
+                                    <p class="text-[#ffcc00] font-medium text-sm">Успішна здача іспитів та включення до списків на зарахування.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- КРОК 4 -->
+                    <div class="relative pl-16 group" data-aos="fade-up">
+                        <div class="absolute left-0 top-0 w-10 h-10 bg-[#020617] border-2 border-white/20 rounded-full flex items-center justify-center z-10 group-[.is-active]:border-[#ffcc00] transition-colors duration-500">
+                            <div class="w-2 h-2 bg-white/20 rounded-full group-[.is-active]:bg-[#ffcc00]"></div>
+                        </div>
+                        
+                        <div class="space-y-4">
+                            <div class="flex flex-wrap items-center gap-3">
+                                <h4 class="text-[#ffcc00] font-bold text-xl md:text-2xl uppercase tracking-tighter group-[.is-active]:text-white transition-colors">Крок 4: Зарахування та КМБ</h4>
+                                <span class="bg-white/10 text-white text-[10px] px-3 py-1 rounded-full uppercase tracking-widest font-bold">серпень</span>
+                            </div>
+                            <div class="grid md:grid-cols-2 gap-6">
+                                <p class="text-slate-100 text-sm md:text-base leading-relaxed">Офіційне зарахування та проходження курсу молодого бійця (первинна підготовка).</p>
+                                <div class="bg-white/5 p-4 border-l-2 border-[#ffcc00]">
+                                    <p class="text-slate-400 text-[10px] uppercase tracking-widest mb-1 font-bold">Результат:</p>
+                                    <p class="text-[#ffcc00] font-medium text-sm">Складання Присяги. Початок кар'єри та повне державне забезпечення.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </div>
@@ -469,17 +521,28 @@
         }
         document.addEventListener("DOMContentLoaded", () => setTimeout(playTypewriter, 1000));
 
-        // АНІМАЦІЯ ТАЙМЛАЙНУ
+// АНІМАЦІЯ ТАЙМЛАЙНУ
         window.addEventListener('scroll', () => {
             const pathSection = document.getElementById('path');
             const progressLine = document.getElementById('progress-line');
             if(!pathSection || !progressLine) return;
-            const rect = pathSection.getBoundingClientRect();
+
+            const steps = pathSection.querySelectorAll('.group');
+            const sectionRect = pathSection.getBoundingClientRect();
             const winH = window.innerHeight;
-            let progress = (winH / 1.5 - rect.top) / (rect.height);
-            progressLine.style.transform = `scaleY(${Math.max(0, Math.min(1, progress))})`;
-            pathSection.querySelectorAll('.group').forEach(step => {
-                if (step.getBoundingClientRect().top < winH / 1.5) step.classList.add('is-active');
+
+            // Коли секція з'являється в центрі екрана, лінія починає рости
+            let progress = (winH / 1.3 - sectionRect.top) / (sectionRect.height - 200);
+            progress = Math.max(0, Math.min(1, progress));
+            progressLine.style.transform = `scaleY(${progress})`;
+
+            steps.forEach(step => {
+                const stepRect = step.getBoundingClientRect();
+                if (stepRect.top < winH / 1.5) {
+                    step.classList.add('is-active');
+                } else {
+                    step.classList.remove('is-active');
+                }
             });
         });
 
@@ -524,3 +587,4 @@
     </script>
 </body>
 </html>
+
