@@ -569,7 +569,7 @@
             const sectionRect = pathSection.getBoundingClientRect();
             const winH = window.innerHeight;
 
-            let progress = (winH / 1.5 - sectionRect.top) / (sectionRect.height - 150);
+            let progress = (winH / 1.5 - sectionRect.top) / (sectionRect.height - 100);
             progressLine.style.transform = `scaleY(${Math.max(0, Math.min(1, progress))})`;
 
             steps.forEach(step => {
@@ -620,4 +620,5 @@
     </script>
 </body>
 </html>
+
 
