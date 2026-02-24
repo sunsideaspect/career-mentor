@@ -26,6 +26,14 @@
         h1, h2, h3, h4 { font-family: 'e-UkraineHead', sans-serif; font-weight: 400; text-transform: none !important; }
         .hero-display { font-size: clamp(40px, 8vw, 120px); line-height: 1; margin-bottom: 2rem; }
 
+        /* Анімація мигання курсора */
+        .type-cursor {
+            display: inline-block;
+            margin-left: 5px;
+            animation: blink 0.8s infinite;
+        }
+        @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
+
         /* КАРТКИ НАПРЯМКІВ */
         .card-interactive { 
             background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.08); 
@@ -64,27 +72,29 @@
 
     <!-- НАВІГАЦІЯ -->
     <nav class="fixed w-full z-50 bg-black/60 backdrop-blur-lg border-b border-white/5 px-6 py-3">
-    <div class="container mx-auto flex justify-between items-center text-white">
-        <div class="flex items-center gap-4">
-            <!-- Збільшено висоту до h-12 на мобільних та h-16 на десктопі -->
-            <img src="img/logo.png" class="h-12 md:h-16 w-auto object-contain" alt="Military Education"> 
-            
-            <!-- Також трохи збільшимо текст для балансу -->
-            <span class="font-bold text-sm md:text-lg tracking-widest uppercase">Military Education</span>
+        <div class="container mx-auto flex justify-between items-center text-white">
+            <div class="flex items-center gap-4">
+                <img src="img/logo.png" class="h-12 md:h-16 w-auto object-contain" alt="Military Education"> 
+                <span class="font-bold text-sm md:text-lg tracking-widest uppercase">Military Education</span>
+            </div>
+            <a href="#form" class="bg-[#ffcc00] text-black px-6 py-2 hover:bg-white transition font-bold text-sm uppercase">Консультація</a>
         </div>
-        <a href="#form" class="bg-[#ffcc00] text-black px-6 py-2 hover:bg-white transition font-bold text-sm uppercase">Консультація</a>
-    </div>
-</nav>
+    </nav>
 
     <!-- HERO -->
     <section class="min-h-screen flex items-center px-6 pt-20 border-b border-white/5">
         <div class="container mx-auto">
             <div data-aos="fade-up">
-                <h1 class="hero-display text-white">Здобувай професію <br> <span class="text-[#ffcc00]">майбутнього</span></h1>
+                <h1 class="hero-display text-white min-h-[160px] md:min-h-[280px]">
+                    Твоя кар'єра в еліті:<br> 
+                    <span id="typewriter" class="text-[#ffcc00]"></span><span class="type-cursor text-[#ffcc00]">|</span>
+                </h1>
                 <div class="grid md:grid-cols-2 gap-12 items-end">
-                    <p class="text-slate-300 text-xl md:text-2xl font-light">Вища освіта. Повне забезпечення. <br>Твій шлях до військової еліти України.</p>
+                    <p class="text-slate-300 text-xl md:text-2xl font-light">
+                        Вища освіта. Повне забезпечення. <br>Твій шлях до військової еліти України.
+                    </p>
                     <div class="flex md:justify-end">
-                        <a href="#sectors" class="bg-[#ffcc00] text-black px-12 py-6 hover:bg-white transition shadow-2xl font-bold">ОБРАТИ НАПРЯМОК</a>
+                        <a href="#sectors" class="bg-[#ffcc00] text-black px-12 py-6 hover:bg-white transition shadow-2xl font-bold uppercase tracking-tighter">Обрати напрямок</a>
                     </div>
                 </div>
             </div>
@@ -155,36 +165,28 @@
             <h2 class="text-4xl md:text-6xl text-white mb-20 underline decoration-[#ffcc00] underline-offset-[16px]">Напрямки</h2>
             
             <div class="grid grid-cols-1 md:grid-cols-12 gap-6">
-                <!-- 1. Командування -->
                 <div class="md:col-span-6 card-interactive group cursor-pointer p-10 h-80 flex flex-col justify-end" onclick="openModal('modal-1')">
                     <img src="img/cat-lead.jpg" class="card-image"><div class="relative z-10"><h3 class="text-3xl text-white group-hover:text-[#ffcc00] transition">Бойове Лідерство</h3><p class="text-xs text-slate-400 uppercase">ДШВ / МОРПІХИ / РОЗВІДКА / ПІХОТА / ТАНКИ</p></div>
                 </div>
-                <!-- 2. Авіація -->
                 <div class="md:col-span-6 card-interactive group cursor-pointer p-10 h-80 flex flex-col justify-end" onclick="openModal('modal-2')">
                     <img src="img/cat-aviation.jpg" class="card-image"><div class="relative z-10"><h3 class="text-3xl text-white group-hover:text-[#ffcc00] transition">Авіація та ППО</h3><p class="text-xs text-slate-400 uppercase">ПІЛОТИ / ЗЕНІТНІ ВІЙСЬКА / РАДАРНІ СИСТЕМИ</p></div>
                 </div>
-                <!-- 3. Кібер / ІТ -->
                 <div class="md:col-span-7 card-interactive group cursor-pointer p-10 h-80 flex flex-col justify-end" onclick="openModal('modal-3')">
                     <img src="img/cat-digital.jpg" class="card-image"><div class="relative z-10"><h3 class="text-3xl text-white group-hover:text-[#ffcc00] transition">Кібербезпека та ІТ</h3><p class="text-xs text-slate-400 uppercase">РОЗРОБКА ПЗ / КІБЕРЗАХИСТ / РЕБ / ЗВ'ЯЗОК</p></div>
                 </div>
-                <!-- 4. Техніка / Артилерія -->
                 <div class="md:col-span-5 card-interactive group cursor-pointer p-10 h-80 flex flex-col justify-end" onclick="openModal('modal-4')">
                     <img src="img/cat-artillery.jpg" class="card-image"><div class="relative z-10"><h3 class="text-3xl text-white group-hover:text-[#ffcc00] transition">Озброєння та Техніка</h3><p class="text-xs text-slate-400 uppercase">АРТИЛЕРІЯ / РАКЕТИ / САПЕРИ / РХБЗ</p></div>
                 </div>
-                <!-- 5. Морські сили -->
                 <div class="md:col-span-4 card-interactive group cursor-pointer p-10 h-80 flex flex-col justify-end" onclick="openModal('modal-5')">
                     <img src="img/cat-naval.jpg" class="card-image"><div class="relative z-10"><h3 class="text-3xl text-white group-hover:text-[#ffcc00] transition">Морські Сили</h3><div class="text-xs text-slate-400 uppercase">ФЛОТ / НАВІГАЦІЯ / МОРСЬКІ ДРОНИ</div></div>
                 </div>
-                <!-- 6. Логістика -->
                 <div class="md:col-span-8 card-interactive group cursor-pointer p-10 h-80 flex flex-col justify-end" onclick="openModal('modal-6')">
                     <img src="img/cat-logistics.jpg" class="card-image"><div class="relative z-10"><h3 class="text-3xl text-white group-hover:text-[#ffcc00] transition">Логістика та Забезпечення</h3><p class="text-xs text-slate-400 uppercase">ТИЛ / ТРАНСПОРТ / ПАЛЬНЕ / ВЕТЕРИНАРІЯ</p></div>
                 </div>
-                <!-- 7. Гуманітарний -->
                 <div class="md:col-span-8 card-interactive group cursor-pointer p-10 h-80 flex flex-col justify-end" onclick="openModal('modal-7')">
                     <img src="img/cat-info.jpg" class="card-image"><div class="relative z-10"><h3 class="text-3xl text-white group-hover:text-[#ffcc00] transition">Гуманітарний напрям</h3><p class="text-xs text-slate-400 uppercase">ПРАВО / ПСИХОЛОГІЯ / ФІНАНСИ / СПОРТ / КУЛЬТУРА</p></div>
                 </div>
-                <!-- 8. Сержанти -->
-                <div class="md:col-span-4 card-interactive group cursor-pointer p-10 h-80 flex flex-col justify-end bg-slate-900/40 border-2 border-slate-700" onclick="openModal('modal-8')">
+                <div class="md:col-span-4 card-interactive group cursor-pointer p-10 h-80 flex flex-col justify-end border-2 border-slate-700 bg-slate-900/40" onclick="openModal('modal-8')">
                     <img src="img/cat-ground.jpg" class="card-image">
                     <div class="relative z-10"><h3 class="text-2xl text-slate-300">Військові коледжі</h3><p class="text-xs text-slate-500 mb-2 uppercase tracking-tighter">Сержантський склад</p><p class="text-[#ffcc00] text-sm font-bold">ПЕРЕГЛЯНУТИ ➔</p></div>
                 </div>
@@ -192,7 +194,7 @@
         </div>
     </section>
 
-    <!-- МОДАЛЬНІ ВІКНА (ЗАПОВНЕНІ З ДОВІДНИКА) -->
+    <!-- МОДАЛЬНІ ВІКНА -->
 
     <!-- 1. БОЙОВЕ ЛІДЕРСТВО -->
     <div id="modal-1" class="modal" onclick="closeModal(event)">
@@ -200,7 +202,6 @@
             <button class="absolute top-6 right-6 text-4xl text-white/50 hover:text-[#ffcc00] z-50" onclick="closeModalDirect('modal-1')">&times;</button>
             <h2 class="text-[#ffcc00] text-3xl mb-8 border-b border-white/10 pb-4">Бойове управління та Лідерство</h2>
             <div class="space-y-6">
-                <!-- ГРУПА: КОМАНДИРИ -->
                 <div class="spec-card flex-col !items-stretch">
                     <div class="text-[#ffcc00] font-bold text-lg mb-4">Командне управління бойовими підрозділами</div>
                     <div class="grid gap-3">
@@ -446,92 +447,112 @@
 
     <!-- СКРИПТИ -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<script>
-    AOS.init({ duration: 800, once: true });
+    <script>
+        AOS.init({ duration: 800, once: true });
 
-    // 1. Управління акордеонами
-    function toggleAccordion(button) {
-        const content = button.nextElementSibling;
-        const icon = button.querySelector('.accordion-icon');
-        const isOpen = content.classList.contains('is-open');
+        // ЕФЕКТ ДРУКАРСЬКОЇ МАШИНКИ (ВИПРАВЛЕНО ДЛЯ ЕМОДЗІ)
+        const typewriterWords = ["Кібервійськах 💻", "Авіації ✈️", "Військовій Юстиції ⚖️", "ССО 🐺"];
+        let wordIdx = 0;
+        let charIdx = 0;
+        let isRemoving = false;
+        const typeTarget = document.getElementById("typewriter");
 
-        const modal = button.closest('.modal');
-        modal.querySelectorAll('.accordion-content').forEach(c => c.classList.remove('is-open'));
-        modal.querySelectorAll('.accordion-icon').forEach(i => i.classList.remove('rotate-180'));
+        function playTypewriter() {
+            // Перетворюємо слово в масив символів, щоб коректно рахувати емодзі
+            const currentWordChars = [...typewriterWords[wordIdx]];
+            const fullCount = currentWordChars.length;
+            
+            if (isRemoving) {
+                // Видаляємо по одному цілому символу (включаючи емодзі)
+                charIdx--;
+            } else {
+                // Додаємо по одному цілому символу
+                charIdx++;
+            }
 
-        if (!isOpen) {
-            content.classList.add('is-open');
-            icon.classList.add('rotate-180');
+            // Виводимо частину масиву, з'єднану в рядок
+            typeTarget.textContent = currentWordChars.slice(0, charIdx).join("");
+
+            let speed = isRemoving ? 50 : 100;
+
+            // Якщо слово надруковано повністю
+            if (!isRemoving && charIdx === fullCount) {
+                isRemoving = true;
+                speed = 2500; // Пауза в кінці
+            } 
+            // Якщо слово стерто повністю
+            else if (isRemoving && charIdx === 0) {
+                isRemoving = false;
+                wordIdx = (wordIdx + 1) % typewriterWords.length;
+                speed = 500; // Пауза перед новим словом
+            }
+
+            setTimeout(playTypewriter, speed);
         }
-    }
 
-    // 2. Управління модалками
-    function openModal(id) {
-        const m = document.getElementById(id);
-        if(m) { m.classList.add('active'); document.body.style.overflow = 'hidden'; }
-    }
-    function closeModalDirect(id) { document.getElementById(id).classList.remove('active'); document.body.style.overflow = 'auto'; }
-    function closeModal(event) { if(event.target.classList.contains('modal')) { event.target.classList.remove('active'); document.body.style.overflow = 'auto'; } }
+        document.addEventListener("DOMContentLoaded", () => {
+            setTimeout(playTypewriter, 1000);
+        });
 
-    // 3. Вибір напрямку
-    function selectDirection(name) {
-        document.getElementById('hidden-direction').value = name;
-        const badge = document.getElementById('direction-badge');
-        badge.classList.remove('hidden');
-        document.getElementById('chosen-direction-text').innerText = name;
-        document.querySelectorAll('.modal').forEach(m => m.classList.remove('active'));
-        document.body.style.overflow = 'auto';
-        setTimeout(() => { document.getElementById('form').scrollIntoView({ behavior: 'smooth' }); }, 400);
-    }
+        // МОДАЛКИ ТА АКОРДЕОНИ
+        function toggleAccordion(button) {
+            const content = button.nextElementSibling;
+            const icon = button.querySelector('.accordion-icon');
+            const isOpen = content.classList.contains('is-open');
+            const modal = button.closest('.modal');
+            modal.querySelectorAll('.accordion-content').forEach(c => c.classList.remove('is-open'));
+            modal.querySelectorAll('.accordion-icon').forEach(i => i.classList.remove('rotate-180'));
+            if (!isOpen) {
+                content.classList.add('is-open');
+                icon.classList.add('rotate-180');
+            }
+        }
 
-    // 4. ВІДПРАВКА ФОРМИ (ПЕРЕПИСАНО)
-    // ВСТАВ СЮДИ СВОЙ НОВИЙ URL ПІСЛЯ DEPLOY
-    const scriptURL = 'https://script.google.com/macros/s/AKfycbyovXY2OIn61oss7mU9eMJrQ6TST-w-1sZL99RcUPN3CsaVgCa3om-wMvzxVXfzgEid/exec'; 
-    const form = document.getElementById('recruitment-form');
-    const btn = document.getElementById('submit-btn');
+        function openModal(id) {
+            const m = document.getElementById(id);
+            if(m) { m.classList.add('active'); document.body.style.overflow = 'hidden'; }
+        }
+        function closeModalDirect(id) { document.getElementById(id).classList.remove('active'); document.body.style.overflow = 'auto'; }
+        function closeModal(event) { if(event.target.classList.contains('modal')) { event.target.classList.remove('active'); document.body.style.overflow = 'auto'; } }
 
-    form.addEventListener('submit', e => {
-        e.preventDefault();
-        btn.disabled = true;
-        btn.innerText = 'ОБРОБКА...';
+        function selectDirection(name) {
+            document.getElementById('hidden-direction').value = name;
+            const badge = document.getElementById('direction-badge');
+            badge.classList.remove('hidden');
+            document.getElementById('chosen-direction-text').innerText = name;
+            document.querySelectorAll('.modal').forEach(m => m.classList.remove('active'));
+            document.body.style.overflow = 'auto';
+            setTimeout(() => { document.getElementById('form').scrollIntoView({ behavior: 'smooth' }); }, 400);
+        }
 
-        fetch(scriptURL, { 
-            method: 'POST', 
-            body: new FormData(form)
-        })
-        .then(response => {
-            alert('Заявку прийнято! Ментор зв’яжеться з вами найближчим часом.');
-            btn.innerText = 'УСПІШНО';
-            form.reset();
-            document.getElementById('direction-badge').classList.add('hidden');
-            setTimeout(() => {
+        // ВІДПРАВКА ФОРМИ
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbyovXY2OIn61oss7mU9eMJrQ6TST-w-1sZL99RcUPN3CsaVgCa3om-wMvzxVXfzgEid/exec'; 
+        const form = document.getElementById('recruitment-form');
+        const btn = document.getElementById('submit-btn');
+
+        form.addEventListener('submit', e => {
+            e.preventDefault();
+            btn.disabled = true;
+            btn.innerText = 'ОБРОБКА...';
+
+            fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+            .then(response => {
+                alert('Заявку прийнято! Ментор зв’яжеться з вами найближчим часом.');
+                btn.innerText = 'УСПІШНО';
+                form.reset();
+                document.getElementById('direction-badge').classList.add('hidden');
+                setTimeout(() => {
+                    btn.disabled = false;
+                    btn.innerText = 'ВІДПРАВИТИ ЗАПИТ';
+                }, 3000);
+            })
+            .catch(error => {
+                console.error('Error!', error.message);
+                alert('Сталася помилка. Перевірте з’єднання та спробуйте ще раз.');
                 btn.disabled = false;
                 btn.innerText = 'ВІДПРАВИТИ ЗАПИТ';
-            }, 3000);
-        })
-        .catch(error => {
-            console.error('Error!', error.message);
-            alert('Сталася помилка. Перевірте з’єднання та спробуйте ще раз.');
-            btn.disabled = false;
-            btn.innerText = 'ВІДПРАВИТИ ЗАПИТ';
+            });
         });
-    });
-</script>
+    </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
