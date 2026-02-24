@@ -303,184 +303,217 @@
 
     <!-- МОДАЛЬНІ ВІКНА -->
     
+    <!-- МОДАЛЬНІ ВІКНА (ПОВНИЙ ПЕРЕЛІК ЗГІДНО З ДОВІДНИКОМ) -->
+
     <!-- 1. Бойове Лідерство -->
     <div id="modal-1" class="modal" onclick="closeModal(event)">
         <div class="bg-slate-900 border border-white/10 w-full max-w-5xl p-6 md:p-12 max-h-[90vh] overflow-y-auto custom-scrollbar relative text-white">
             <button class="absolute top-6 right-6 text-4xl text-white/50 hover:text-[#ffcc00] z-50" onclick="closeModalDirect('modal-1')">&times;</button>
             <h2 class="text-[#ffcc00] text-3xl mb-8 border-b border-white/10 pb-4">Бойове управління та Лідерство</h2>
             <div class="space-y-6">
-                <div class="spec-card flex-col !items-stretch">
-                    <div class="text-[#ffcc00] font-bold text-lg mb-4">Командне управління бойовими підрозділами</div>
-                    <div class="grid gap-3">
-                        <div class="flex justify-between items-center bg-white/5 p-4 rounded border border-white/10">
-                            <div class="text-xs text-slate-300 italic">Одеса (ВА) — ДШВ, Морська піхота, ССО, Розвідка</div>
-                            <button onclick="selectDirection('Командир (ДШВ/МП/ССО/Розвідка) — Одеса (ВА)')" class="bg-[#ffcc00] text-black px-4 py-2 font-bold text-[10px] uppercase hover:bg-white transition">ОБРАТИ</button>
-                        </div>
-                        <div class="flex justify-between items-center bg-white/5 p-4 rounded border border-white/10">
-                            <div class="text-xs text-slate-300 italic">Львів (НАСВ) — Механізовані війська (Піхота)</div>
-                            <button onclick="selectDirection('Командир (Піхота) — Львів (НАСВ)')" class="bg-[#ffcc00] text-black px-4 py-2 font-bold text-[10px] uppercase hover:bg-white transition">ОБРАТИ</button>
-                        </div>
-                        <div class="flex justify-between items-center bg-white/5 p-4 rounded border border-white/10 transition">
-                            <div class="text-xs text-slate-300 italic">Харків (ВІТВ) — Танкові війська</div>
-                            <button onclick="selectDirection('Командир (Танкові війська) — Харків (ВІТВ)')" class="bg-[#ffcc00] text-black px-4 py-2 font-bold text-[10px] uppercase hover:bg-white transition">ОБРАТИ</button>
-                        </div>
-                    </div>
+                <div class="spec-card">
+                    <div><div class="text-[#ffcc00] font-bold text-lg">ДШВ, Морська піхота, ССО, Військова розвідка</div><div class="text-xs text-slate-400 italic">Військова академія (м. Одеса)</div></div>
+                    <button onclick="selectDirection('Командир ДШВ/МП/ССО/Розвідка — Одеса (ВА)')" class="bg-[#ffcc00] text-black px-4 py-2 font-bold text-[10px] uppercase hover:bg-white transition">ОБРАТИ</button>
+                </div>
+                <div class="spec-card">
+                    <div><div class="text-[#ffcc00] font-bold text-lg">Механізовані війська (Піхота) та Артилерія</div><div class="text-xs text-slate-400 italic">НАСВ ім. Сагайдачного (м. Львів)</div></div>
+                    <button onclick="selectDirection('Командир Піхоти/Артилерії — Львів (НАСВ)')" class="bg-[#ffcc00] text-black px-4 py-2 font-bold text-[10px] uppercase hover:bg-white transition">ОБРАТИ</button>
+                </div>
+                <div class="spec-card">
+                    <div><div class="text-[#ffcc00] font-bold text-lg">Танкові війська</div><div class="text-xs text-slate-400 italic">ВІТВ НТУ «ХПІ» (м. Харків)</div></div>
+                    <button onclick="selectDirection('Командир Танкових військ — Харків (ВІТВ)')" class="bg-[#ffcc00] text-black px-4 py-2 font-bold text-[10px] uppercase hover:bg-white transition">ОБРАТИ</button>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- 2. АВІАЦІЯ -->
+    <!-- 2. Авіація та ППО -->
     <div id="modal-2" class="modal" onclick="closeModal(event)">
         <div class="bg-slate-900 border border-white/10 w-full max-w-5xl p-6 md:p-12 max-h-[90vh] overflow-y-auto custom-scrollbar relative text-white">
             <button class="absolute top-6 right-6 text-4xl text-white/50 hover:text-[#ffcc00] z-50" onclick="closeModalDirect('modal-2')">&times;</button>
             <h2 class="text-[#ffcc00] text-3xl mb-8 border-b border-white/10 pb-4">Авіація та ППО</h2>
-            <div class="space-y-4">
+            <div class="space-y-6">
                 <div class="spec-card">
-                    <div><div class="text-[#ffcc00] font-bold text-lg">Льотна експлуатація (Пілоти та Штурмани)</div><div class="text-xs text-slate-400 italic">Харків (ХНУПС)</div></div>
-                    <button onclick="selectDirection('Пілоти/Штурмани — Харків (ХНУПС)')" class="bg-[#ffcc00] text-black px-4 py-2 font-bold text-[10px] uppercase hover:bg-white transition">ОБРАТИ</button>
+                    <div><div class="text-[#ffcc00] font-bold text-lg">Льотна експлуатація (Пілоти, Штурмани, Управління польотами)</div><div class="text-xs text-slate-400 italic">ХНУПС ім. І. Кожедуба (м. Харків)</div></div>
+                    <button onclick="selectDirection('Пілот/Штурман/Управління польотами — Харків (ХНУПС)')" class="bg-[#ffcc00] text-black px-4 py-2 font-bold text-[10px] uppercase hover:bg-white transition">ОБРАТИ</button>
                 </div>
                 <div class="spec-card">
-                    <div><div class="text-[#ffcc00] font-bold text-lg">Зенітні ракетні війська та Безпілотні системи (БПЛА)</div><div class="text-xs text-slate-400 italic">Харків (ХНУПС)</div></div>
-                    <button onclick="selectDirection('ППО та БПЛА — Харків (ХНУПС)')" class="bg-[#ffcc00] text-black px-4 py-2 font-bold text-[10px] uppercase hover:bg-white transition">ОБРАТИ</button>
+                    <div><div class="text-[#ffcc00] font-bold text-lg">Зенітні ракетні війська, Радіолокація та ППО</div><div class="text-xs text-slate-400 italic">ХНУПС ім. І. Кожедуба (м. Харків)</div></div>
+                    <button onclick="selectDirection('Зенітні війська/Радіолокація — Харків (ХНУПС)')" class="bg-[#ffcc00] text-black px-4 py-2 font-bold text-[10px] uppercase hover:bg-white transition">ОБРАТИ</button>
                 </div>
                 <div class="spec-card">
-                    <div><div class="text-[#ffcc00] font-bold text-lg">Військова метеорологія та геофізика</div><div class="text-xs text-slate-400 italic">Одеса (ОНУ)</div></div>
+                    <div><div class="text-[#ffcc00] font-bold text-lg">Військова метеорологія та геофізика</div><div class="text-xs text-slate-400 italic">ОНУ ім. І. Мечникова (м. Одеса)</div></div>
                     <button onclick="selectDirection('Військова метеорологія — Одеса (ОНУ)')" class="bg-[#ffcc00] text-black px-4 py-2 font-bold text-[10px] uppercase hover:bg-white transition">ОБРАТИ</button>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- 3. КІБЕР ТА ІТ -->
+    <!-- 3. Кібербезпека та ІТ -->
     <div id="modal-3" class="modal" onclick="closeModal(event)">
         <div class="bg-slate-900 border border-white/10 w-full max-w-5xl p-6 md:p-12 max-h-[90vh] overflow-y-auto custom-scrollbar relative text-white">
             <button class="absolute top-6 right-6 text-4xl text-white/50 hover:text-[#ffcc00] z-50" onclick="closeModalDirect('modal-3')">&times;</button>
-            <h2 class="text-[#ffcc00] text-3xl mb-8 border-b border-white/10 pb-4">Кібербезпека, ІТ та Зв'язок</h2>
-            <div class="space-y-4">
+            <h2 class="text-[#ffcc00] text-3xl mb-8 border-b border-white/10 pb-4">Кібербезпека та ІТ</h2>
+            <div class="space-y-6">
                 <div class="spec-card">
-                    <div><div class="text-[#ffcc00] font-bold text-lg">Кіберзахист, Програмне забезпечення та АСУ</div><div class="text-xs text-slate-400 italic">Київ (ВІТІ)</div></div>
-                    <button onclick="selectDirection('Кібербезпека та ІТ — Київ (ВІТІ)')" class="bg-[#ffcc00] text-black px-4 py-2 font-bold text-[10px] uppercase hover:bg-white transition">ОБРАТИ</button>
+                    <div><div class="text-[#ffcc00] font-bold text-lg">Кіберзахист, Програмне забезпечення, АСУ та Зв'язок</div><div class="text-xs text-slate-400 italic">ВІТІ ім. Героїв Крут (м. Київ)</div></div>
+                    <button onclick="selectDirection('Кібербезпека/Програмне забезпечення — Київ (ВІТІ)')" class="bg-[#ffcc00] text-black px-4 py-2 font-bold text-[10px] uppercase hover:bg-white transition">ОБРАТИ</button>
                 </div>
                 <div class="spec-card">
-                    <div><div class="text-[#ffcc00] font-bold text-lg">Радіоелектронна боротьба (РЕБ) та Космічна розвідка</div><div class="text-xs text-slate-400 italic">Житомир (ЖВІ)</div></div>
-                    <button onclick="selectDirection('РЕБ та Розвідка — Житомир (ЖВІ)')" class="bg-[#ffcc00] text-black px-4 py-2 font-bold text-[10px] uppercase hover:bg-white transition">ОБРАТИ</button>
+                    <div><div class="text-[#ffcc00] font-bold text-lg">Радіоелектронна боротьба (РЕБ) та Космічна розвідка</div><div class="text-xs text-slate-400 italic">ЖВІ ім. С.П. Корольова (м. Житомир)</div></div>
+                    <button onclick="selectDirection('РЕБ та Космічна розвідка — Житомир (ЖВІ)')" class="bg-[#ffcc00] text-black px-4 py-2 font-bold text-[10px] uppercase hover:bg-white transition">ОБРАТИ</button>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- 4. ТЕХНІКА -->
+    <!-- 4. Озброєння та Техніка -->
     <div id="modal-4" class="modal" onclick="closeModal(event)">
         <div class="bg-slate-900 border border-white/10 w-full max-w-5xl p-6 md:p-12 max-h-[90vh] overflow-y-auto custom-scrollbar relative text-white">
             <button class="absolute top-6 right-6 text-4xl text-white/50 hover:text-[#ffcc00] z-50" onclick="closeModalDirect('modal-4')">&times;</button>
             <h2 class="text-[#ffcc00] text-3xl mb-8 border-b border-white/10 pb-4">Озброєння та Техніка</h2>
-            <div class="space-y-4">
+            <div class="space-y-6">
                 <div class="spec-card">
-                    <div><div class="text-[#ffcc00] font-bold text-lg">Артилерія та Ракетні війська</div><div class="text-xs text-slate-400 italic">Львів (НАСВ)</div></div>
-                    <button onclick="selectDirection('Артилерія та Ракетні війська — Львів (НАСВ)')" class="bg-[#ffcc00] text-black px-4 py-2 font-bold text-[10px] uppercase hover:bg-white transition">ОБРАТИ</button>
+                    <div><div class="text-[#ffcc00] font-bold text-lg">Артилерійська розвідка та Ракетні комплекси</div><div class="text-xs text-slate-400 italic">НАСВ ім. П. Сагайдачного (м. Львів)</div></div>
+                    <button onclick="selectDirection('Артилерійська розвідка/Ракети — Львів (НАСВ)')" class="bg-[#ffcc00] text-black px-4 py-2 font-bold text-[10px] uppercase hover:bg-white transition">ОБРАТИ</button>
                 </div>
                 <div class="spec-card">
-                    <div><div class="text-[#ffcc00] font-bold text-lg">Інженерні війська (Сапери)</div><div class="text-xs text-slate-400 italic">Львів (НАСВ)</div></div>
+                    <div><div class="text-[#ffcc00] font-bold text-lg">Інженерні підрозділи та Саперна справа</div><div class="text-xs text-slate-400 italic">НАСВ ім. П. Сагайдачного (м. Львів)</div></div>
                     <button onclick="selectDirection('Інженерні війська (Сапери) — Львів (НАСВ)')" class="bg-[#ffcc00] text-black px-4 py-2 font-bold text-[10px] uppercase hover:bg-white transition">ОБРАТИ</button>
                 </div>
                 <div class="spec-card">
-                    <div><div class="text-[#ffcc00] font-bold text-lg">Ремонт ракетно-артилерійського озброєння</div><div class="text-xs text-slate-400 italic">Одеса (ВА)</div></div>
+                    <div><div class="text-[#ffcc00] font-bold text-lg">Радіаційний, хімічний, біологічний захист (РХБЗ)</div><div class="text-xs text-slate-400 italic">ВІТВ НТУ «ХПІ» (м. Харків)</div></div>
+                    <button onclick="selectDirection('РХБЗ та екологічна безпека — Харків (ВІТВ)')" class="bg-[#ffcc00] text-black px-4 py-2 font-bold text-[10px] uppercase hover:bg-white transition">ОБРАТИ</button>
+                </div>
+                <div class="spec-card">
+                    <div><div class="text-[#ffcc00] font-bold text-lg">Експлуатація та ремонт ракетно-артилерійського озброєння</div><div class="text-xs text-slate-400 italic">Військова академія (м. Одеса)</div></div>
                     <button onclick="selectDirection('Ремонт РАО — Одеса (ВА)')" class="bg-[#ffcc00] text-black px-4 py-2 font-bold text-[10px] uppercase hover:bg-white transition">ОБРАТИ</button>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- 5. МОРСЬКІ СИЛИ -->
+    <!-- 5. Морські Сили -->
     <div id="modal-5" class="modal" onclick="closeModal(event)">
         <div class="bg-slate-900 border border-white/10 w-full max-w-5xl p-6 md:p-12 max-h-[90vh] overflow-y-auto custom-scrollbar relative text-white">
             <button class="absolute top-6 right-6 text-4xl text-white/50 hover:text-[#ffcc00] z-50" onclick="closeModalDirect('modal-5')">&times;</button>
-            <h2 class="text-[#ffcc00] text-3xl mb-8 border-b border-white/10 pb-4">Морські Сили</h2>
-            <div class="space-y-4">
+            <h2 class="text-[#ffcc00] text-3xl mb-8 border-b border-white/10 pb-4">Військово-Морські Сили</h2>
+            <div class="space-y-6">
                 <div class="spec-card">
-                    <div><div class="text-[#ffcc00] font-bold text-lg">Кораблеводіння та Озброєння флоту</div><div class="text-xs text-slate-400 italic">Одеса (ВМС)</div></div>
+                    <div><div class="text-[#ffcc00] font-bold text-lg">Кораблеводіння, Озброєння та Енергетика флоту</div><div class="text-xs text-slate-400 italic">Інститут ВМС НУ «ОМА» (м. Одеса)</div></div>
                     <button onclick="selectDirection('Кораблеводіння та Озброєння — Одеса (ВМС)')" class="bg-[#ffcc00] text-black px-4 py-2 font-bold text-[10px] uppercase hover:bg-white transition">ОБРАТИ</button>
                 </div>
                 <div class="spec-card">
-                    <div><div class="text-[#ffcc00] font-bold text-lg">Морські безекіпажні системи (Морські дрони)</div><div class="text-xs text-slate-400 italic">Одеса (ВМС)</div></div>
+                    <div><div class="text-[#ffcc00] font-bold text-lg">Морські безекіпажні системи (Оператор морських дронів)</div><div class="text-xs text-slate-400 italic">Інститут ВМС НУ «ОМА» (м. Одеса)</div></div>
                     <button onclick="selectDirection('Морські дрони — Одеса (ВМС)')" class="bg-[#ffcc00] text-black px-4 py-2 font-bold text-[10px] uppercase hover:bg-white transition">ОБРАТИ</button>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- 6. ЛОГІСТИКА -->
+    <!-- 6. Логістика та Забезпечення -->
     <div id="modal-6" class="modal" onclick="closeModal(event)">
         <div class="bg-slate-900 border border-white/10 w-full max-w-5xl p-6 md:p-12 max-h-[90vh] overflow-y-auto custom-scrollbar relative text-white">
             <button class="absolute top-6 right-6 text-4xl text-white/50 hover:text-[#ffcc00] z-50" onclick="closeModalDirect('modal-6')">&times;</button>
             <h2 class="text-[#ffcc00] text-3xl mb-8 border-b border-white/10 pb-4">Логістика та Забезпечення</h2>
             <div class="space-y-6">
                 <div class="spec-card">
-                    <div><div class="text-[#ffcc00] font-bold text-lg">Тил, Логістика та Забезпечення</div><div class="text-xs text-slate-400">Військова академія (м. Одеса)</div></div>
+                    <div><div class="text-[#ffcc00] font-bold text-lg">Продовольче, речове забезпечення та Транспортна логістика</div><div class="text-xs text-slate-400 italic">Військова академія (м. Одеса)</div></div>
                     <button onclick="selectDirection('Тил та Логістика — Одеса (ВА)')" class="bg-[#ffcc00] text-black px-4 py-2 font-bold text-[10px] uppercase hover:bg-white transition">ОБРАТИ</button>
                 </div>
+                <!-- ГРУПА: ПАЛЬНЕ -->
                 <div class="spec-card flex-col !items-stretch">
-                    <div class="text-[#ffcc00] font-bold text-lg mb-4">Забезпечення пальним та Будівництво</div>
+                    <div class="text-[#ffcc00] font-bold text-lg mb-4">Забезпечення пальним та мастильними матеріалами</div>
                     <div class="grid gap-3">
-                        <div class="flex justify-between items-center bg-white/5 p-4 rounded border border-white/10 transition">
-                            <div class="text-xs text-slate-300 italic">Івано-Франківськ (ІФНТУНГ) — Пальне</div>
-                            <button onclick="selectDirection('Забезпечення пальним — Франківськ')" class="bg-[#ffcc00] text-black px-4 py-2 font-bold text-[10px] uppercase hover:bg-white transition">ОБРАТИ</button>
+                        <div class="flex justify-between items-center bg-white/5 p-4 rounded border border-white/10">
+                            <div class="text-xs text-slate-300 italic">Кафедра ІФНТУНГ (м. Івано-Франківськ)</div>
+                            <button onclick="selectDirection('Забезпечення пальним — Івано-Франківськ (ІФНТУНГ)')" class="bg-[#ffcc00] text-black px-4 py-2 font-bold text-[10px] uppercase hover:bg-white transition">ОБРАТИ ФРАНКІВСЬК</button>
                         </div>
-                        <div class="flex justify-between items-center bg-white/5 p-4 rounded border border-white/10 transition">
-                            <div class="text-xs text-slate-300 italic">Київ (НАУ) / Дніпро (УДУНТ) — Інфраструктура</div>
-                            <button onclick="selectDirection('Будівництво та Інфраструктура')" class="bg-[#ffcc00] text-black px-4 py-2 font-bold text-[10px] uppercase hover:bg-white transition">ОБРАТИ</button>
+                        <div class="flex justify-between items-center bg-white/5 p-4 rounded border border-white/10">
+                            <div class="text-xs text-slate-300 italic">Військова академія (м. Одеса)</div>
+                            <button onclick="selectDirection('Забезпечення пальним — Одеса (ВА)')" class="bg-[#ffcc00] text-black px-4 py-2 font-bold text-[10px] uppercase hover:bg-white transition">ОБРАТИ ОДЕСУ</button>
                         </div>
                     </div>
+                </div>
+                <!-- ГРУПА: БУДІВНИЦТВО -->
+                <div class="spec-card flex-col !items-stretch">
+                    <div class="text-[#ffcc00] font-bold text-lg mb-4">Будівництво доріг, аеродромів та мостів</div>
+                    <div class="grid gap-3">
+                        <div class="flex justify-between items-center bg-white/5 p-4 rounded border border-white/10">
+                            <div class="text-xs text-slate-300 italic">Кафедра НАУ (м. Київ) — Аеродроми та дороги</div>
+                            <button onclick="selectDirection('Будівництво доріг — Київ (НАУ)')" class="bg-[#ffcc00] text-black px-4 py-2 font-bold text-[10px] uppercase hover:bg-white transition">ОБРАТИ КИЇВ</button>
+                        </div>
+                        <div class="flex justify-between items-center bg-white/5 p-4 rounded border border-white/10">
+                            <div class="text-xs text-slate-300 italic">Кафедра УДУНТ (м. Дніпро) — Мости та залізниця</div>
+                            <button onclick="selectDirection('Відновлення мостів — Дніпро (УДУНТ)')" class="bg-[#ffcc00] text-black px-4 py-2 font-bold text-[10px] uppercase hover:bg-white transition">ОБРАТИ ДНІПРО</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- ВЕТЕРИНАРІЯ (ТУТ ВОНА БУЛА ЗАГУБЛЕНА) -->
+                <div class="spec-card">
+                    <div><div class="text-[#ffcc00] font-bold text-lg">Військова ветеринарна медицина</div><div class="text-xs text-slate-400 italic">Кафедра НУБіП (м. Київ)</div></div>
+                    <button onclick="selectDirection('Військова ветеринарія — Київ (НУБіП)')" class="bg-[#ffcc00] text-black px-4 py-2 font-bold text-[10px] uppercase hover:bg-white transition">ОБРАТИ</button>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- 7. ГУМАНІТАРНИЙ -->
+    <!-- 7. Гуманітарний напрям -->
     <div id="modal-7" class="modal" onclick="closeModal(event)">
         <div class="bg-slate-900 border border-white/10 w-full max-w-5xl p-6 md:p-12 max-h-[90vh] overflow-y-auto custom-scrollbar relative text-white">
             <button class="absolute top-6 right-6 text-4xl text-white/50 hover:text-[#ffcc00] z-50" onclick="closeModalDirect('modal-7')">&times;</button>
             <h2 class="text-[#ffcc00] text-3xl mb-8 border-b border-white/10 pb-4 font-bold">Гуманітарний напрям</h2>
             <div class="space-y-6">
+                <!-- ГРУПА: ЮРИСТИ -->
                 <div class="spec-card flex-col !items-stretch">
                     <div class="text-[#ffcc00] font-bold text-lg mb-4">Військове право та Юстиція</div>
                     <div class="grid gap-3">
                         <div class="flex justify-between items-center bg-white/5 p-4 rounded border border-white/10 transition">
-                            <div class="text-xs text-slate-300 italic">Харків (НЮУ) — Юрисконсульт</div>
-                            <button onclick="selectDirection('Військовий юрист — Харків')" class="bg-[#ffcc00] text-black px-4 py-2 font-bold text-[10px] uppercase hover:bg-white transition">ОБРАТИ</button>
+                            <div class="text-xs text-slate-300 italic">ВЮІ НЮУ ім. Я. Мудрого (м. Харків) — Юрисконсульт</div>
+                            <button onclick="selectDirection('Військовий юрист — Харків (НЮУ)')" class="bg-[#ffcc00] text-black px-4 py-2 font-bold text-[10px] uppercase hover:bg-white transition">ОБРАТИ ХАРКІВ</button>
                         </div>
                         <div class="flex justify-between items-center bg-white/5 p-4 rounded border border-white/10 transition">
-                            <div class="text-xs text-slate-300 italic">Київ (ВІКНУ) — Правопорядок</div>
-                            <button onclick="selectDirection('Військове право — Київ')" class="bg-[#ffcc00] text-black px-4 py-2 font-bold text-[10px] uppercase hover:bg-white transition">ОБРАТИ</button>
+                            <div class="text-xs text-slate-300 italic">ВІКНУ ім. Т. Шевченка (м. Київ) — Правопорядок</div>
+                            <button onclick="selectDirection('Військове право — Київ (ВІКНУ)')" class="bg-[#ffcc00] text-black px-4 py-2 font-bold text-[10px] uppercase hover:bg-white transition">ОБРАТИ КИЇВ</button>
                         </div>
                     </div>
                 </div>
-                <div class="spec-card"><div><div class="text-[#ffcc00] font-bold text-lg">Психологія, Журналістика та Фінанси</div><div class="text-xs text-slate-400 italic">Київ (ВІКНУ)</div></div><button onclick="selectDirection('Психологія/Журналістика/Фінанси — Київ')" class="bg-[#ffcc00] text-black px-4 py-2 font-bold text-[10px] uppercase hover:bg-white transition">ОБРАТИ</button></div>
+                <div class="spec-card">
+                    <div><div class="text-[#ffcc00] font-bold text-lg">Психологія, Журналістика та Фінанси</div><div class="text-xs text-slate-400 italic">ВІКНУ ім. Т. Шевченка (м. Київ)</div></div>
+                    <button onclick="selectDirection('Психологія/Журналістика/Фінанси — Київ (ВІКНУ)')" class="bg-[#ffcc00] text-black px-4 py-2 font-bold text-[10px] uppercase hover:bg-white transition">ОБРАТИ</button>
+                </div>
+                <div class="spec-card">
+                    <div><div class="text-[#ffcc00] font-bold text-lg">Фізичне виховання та Спорт у ЗСУ</div><div class="text-xs text-slate-400 italic">НУОУ (м. Київ)</div></div>
+                    <button onclick="selectDirection('Фізичне виховання/Спорт — Київ (НУОУ)')" class="bg-[#ffcc00] text-black px-4 py-2 font-bold text-[10px] uppercase hover:bg-white transition">ОБРАТИ</button>
+                </div>
+                <div class="spec-card">
+                    <div><div class="text-[#ffcc00] font-bold text-lg">Військова культурологія</div><div class="text-xs text-slate-400 italic">НАСВ ім. П. Сагайдачного (м. Львів)</div></div>
+                    <button onclick="selectDirection('Військова культурологія — Львів (НАСВ)')" class="bg-[#ffcc00] text-black px-4 py-2 font-bold text-[10px] uppercase hover:bg-white transition">ОБРАТИ</button>
+                </div>
             </div>
         </div>
     </div>
 
-    <!-- 8. ВІЙСЬКОВІ КОЛЕДЖІ -->
+    <!-- 8. Військові коледжі -->
     <div id="modal-8" class="modal" onclick="closeModal(event)">
         <div class="bg-black border-2 border-slate-700 w-full max-w-5xl p-6 md:p-12 max-h-[90vh] overflow-y-auto custom-scrollbar relative text-white">
             <button class="absolute top-6 right-6 text-4xl text-white/50 hover:text-[#ffcc00] z-50" onclick="closeModalDirect('modal-8')">&times;</button>
             <h2 class="text-slate-300 text-3xl mb-8 border-b border-white/10 pb-4 font-bold">Військові коледжі (Сержантський склад)</h2>
             <div class="space-y-4">
                 <div class="spec-card">
-                    <div><div class="text-[#ffcc00] font-bold text-lg">Піхота, Артилерія, Техніка, Логістика</div><div class="text-xs text-slate-400">Коледж НАСВ (м. Львів)</div></div>
-                    <button onclick="selectDirection('Сержант: Піхота/Арт — Львів (НАСВ)')" class="bg-slate-200 text-black px-4 py-2 font-bold text-[10px] uppercase hover:bg-white transition">ОБРАТИ</button>
+                    <div><div class="text-[#ffcc00] font-bold text-lg">Піхота, Артилерія, Техніка, Логістика</div><div class="text-xs text-slate-400 italic">Коледж НАСВ (м. Львів)</div></div>
+                    <button onclick="selectDirection('Сержант: Піхота/Арт/Техніка — Львів (НАСВ)')" class="bg-slate-200 text-black px-4 py-2 font-bold text-[10px] uppercase hover:bg-white transition">ОБРАТИ</button>
                 </div>
                 <div class="spec-card">
-                    <div><div class="text-[#ffcc00] font-bold text-lg">Авіаційне озброєння, БПЛА, ППО</div><div class="text-xs text-slate-400">Коледж ХНУПС (с. Вишня, Львівська обл.)</div></div>
+                    <div><div class="text-[#ffcc00] font-bold text-lg">Авіаційне озброєння, БПЛА, ППО</div><div class="text-xs text-slate-400 italic">Коледж ХНУПС (с. Вишня, Львівська обл.)</div></div>
                     <button onclick="selectDirection('Сержант: Авіація/БПЛА — Вишня (ХНУПС)')" class="bg-slate-200 text-black px-4 py-2 font-bold text-[10px] uppercase hover:bg-white transition">ОБРАТИ</button>
                 </div>
                 <div class="spec-card">
-                    <div><div class="text-[#ffcc00] font-bold text-lg">Зв'язок, ІТ та Кібербезпека</div><div class="text-xs text-slate-400">Коледж ВІТІ (м. Полтава)</div></div>
+                    <div><div class="text-[#ffcc00] font-bold text-lg">Зв'язок, ІТ та Кібербезпека</div><div class="text-xs text-slate-400 italic">Коледж ВІТІ (м. Полтава)</div></div>
                     <button onclick="selectDirection('Сержант: Зв\'язок та ІТ — Полтава (ВІТІ)')" class="bg-slate-200 text-black px-4 py-2 font-bold text-[10px] uppercase hover:bg-white transition">ОБРАТИ</button>
                 </div>
                 <div class="spec-card">
-                    <div><div class="text-[#ffcc00] font-bold text-lg">Морська справа та Енергетика флоту</div><div class="text-xs text-slate-400">Коледж морського транспорту (м. Одеса)</div></div>
+                    <div><div class="text-[#ffcc00] font-bold text-lg">Морська справа та Енергетика флоту</div><div class="text-xs text-slate-400 italic">Коледж морського транспорту (м. Одеса)</div></div>
                     <button onclick="selectDirection('Сержант: Флот — Одеса (ВМС)')" class="bg-slate-200 text-black px-4 py-2 font-bold text-[10px] uppercase hover:bg-white transition">ОБРАТИ</button>
                 </div>
             </div>
@@ -596,6 +629,7 @@
     </script>
 </body>
 </html>
+
 
 
 
