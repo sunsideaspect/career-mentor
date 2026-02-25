@@ -72,6 +72,45 @@
 
         .custom-scrollbar::-webkit-scrollbar { width: 4px; }
         .custom-scrollbar::-webkit-scrollbar-thumb { background: var(--accent); }
+
+        /* СТИЛІ МАПИ */
+        .map-container {
+            position: relative;
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            padding: 20px;
+        }
+        .city-dot {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background: var(--accent);
+            border-radius: 50%;
+            box-shadow: 0 0 15px var(--accent);
+            z-index: 20;
+        }
+        .city-dot::after {
+            content: '';
+            position: absolute;
+            inset: -4px;
+            border: 1px solid var(--accent);
+            border-radius: 50%;
+            animation: map-pulse 2s infinite;
+        }
+        @keyframes map-pulse {
+            0% { transform: scale(1); opacity: 1; }
+            100% { transform: scale(2.5); opacity: 0; }
+        }
+        .city-label {
+            position: absolute;
+            color: #fff;
+            font-size: 10px;
+            font-weight: bold;
+            text-transform: uppercase;
+            white-space: nowrap;
+            pointer-events: none;
+        }   
     </style>
 </head>
 <body>
@@ -124,9 +163,9 @@
                 <!-- 02 -->
                 <div class="benefit-card p-6 md:p-8 group" data-aos="fade-up" data-aos-delay="100">
                     <div class="step-number">02</div>
-                    <div class="text-[#ffcc00] text-2xl font-bold mb-2">$1 000 000+ техніка</div>
-                    <h3 class="text-lg font-bold mb-4">Defence Tech замість підручників</h3>
-                    <p class="text-slate-400 text-sm leading-relaxed">Військова сфера — це технологічний авангард. Понад 70% твого навчання — це практика. Ти матимеш доступ до сучасних систем РЕБ, симуляторів управління FPV-дронами, закритого софту та обладнання, яке коштує мільйони доларів. Це реальний досвід роботи з технологіями майбутнього.</p>
+                    <div class="text-[#ffcc00] text-2xl font-bold mb-2">1500+ годин реального досвіду</div>
+                    <h3 class="text-lg font-bold mb-4">Defence Tech замість сухої теорії</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">Забудь про конспекти під диктовку. Військова освіта сьогодні — це драйв та інновації. Понад 70% навчального часу ти проводиш на полігонах, сучасних симуляторах та з новітнім софтом. Ти опануєш системи, до яких у цивільних немає доступу, і станеш фахівцем, який знає техніку на дотик, а не по картинках.</p>
                 </div>
                 <!-- 03 -->
                 <div class="benefit-card p-6 md:p-8 group" data-aos="fade-up" data-aos-delay="200">
@@ -180,7 +219,7 @@
                         </div>
                         <div class="space-y-4">
                             <div class="flex flex-wrap items-center gap-3">
-                                <h4 class="text-[#ffcc00] font-bold text-xl md:text-2xl uppercase tracking-tighter transition-colors group-[.is-active]:text-white">Крок 1: Вибір фаху та Заявка</h4>
+                                <h4 class="text-[#ffcc00] font-bold text-xl md:text-2xl uppercase tracking-tighter transition-colors group-[.is-active]:text-white">Крок 1: Вибір напрямку та Заявка</h4>
                                 <span class="bg-white/10 text-white text-[10px] px-3 py-1 rounded-full uppercase font-bold tracking-widest">сьогодні</span>
                             </div>
                             <div class="grid md:grid-cols-2 gap-6">
@@ -222,7 +261,7 @@
                                 <span class="bg-white/10 text-white text-[10px] px-3 py-1 rounded-full uppercase font-bold tracking-widest">липень</span>
                             </div>
                             <div class="grid md:grid-cols-2 gap-6">
-                                <p class="text-slate-300 text-sm leading-relaxed">Ти надаєш результати НМТ та приїжджаєш для здачі нормативів з фізо та профвідбору. Ми підкажемо, як підготуватися найкраще.</p>
+                                <p class="text-slate-300 text-sm leading-relaxed">Ти складаєш іспити (НМТ або внутрішні іспити ВНЗ) та проходиш перевірку з фізо й профвідбору. Ми точно знаємо вимоги кожного закладу і підкажемо, як підготуватися найкраще саме до твого вибору.</p>
                                 <div class="bg-white/5 p-4 border-l-2 border-[#ffcc00]">
                                     <p class="text-[#ffcc00] font-medium text-sm"><span class="text-slate-400 text-[10px] uppercase block mb-1">Результат:</span> Успішна здача іспитів та включення до списків на зарахування.</p>
                                 </div>
@@ -254,6 +293,75 @@
         </div>
     </section>
 
+    <!-- ГЕОГРАФІЯ НАВЧАННЯ -->
+    <section id="geography" class="py-16 md:py-32 px-6 border-b border-white/5 bg-[#020617]">
+        <div class="container mx-auto">
+            <div class="mb-12 md:mb-20">
+                <h2 class="text-3xl md:text-6xl text-white mb-6 underline decoration-[#ffcc00] underline-offset-[10px] font-bold uppercase tracking-tighter">Географія_</h2>
+                <p class="text-slate-400 text-lg max-w-2xl font-light leading-relaxed">Твоє навчання проходитиме в найбільших освітніх хабах України. Обирай місто, яке стане твоїм домом на наступні 4-5 років.</p>
+            </div>
+
+            <div class="grid lg:grid-cols-12 gap-10 items-center">
+                <!-- Текстовий список міст -->
+                <div class="lg:col-span-4 order-2 lg:order-1 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-4">
+                    <div class="p-4 bg-white/5 border-l-2 border-[#ffcc00]">
+                        <h5 class="text-white font-bold text-sm uppercase">КИЇВ</h5>
+                        <p class="text-[10px] text-slate-500 uppercase tracking-tighter">ВІТІ / ВІКНУ / НУОУ / НУБіП / НАУ</p>
+                    </div>
+                    <div class="p-4 bg-white/5 border-l-2 border-[#ffcc00]">
+                        <h5 class="text-white font-bold text-sm uppercase">ЛЬВІВ</h5>
+                        <p class="text-[10px] text-slate-500 uppercase tracking-tighter">НАСВ ім. Сагайдачного / Коледж НАСВ</p>
+                    </div>
+                    <div class="p-4 bg-white/5 border-l-2 border-[#ffcc00]">
+                        <h5 class="text-white font-bold text-sm uppercase">ХАРКІВ</h5>
+                        <p class="text-[10px] text-slate-500 uppercase tracking-tighter">ХНУПС / ВІТВ / ВЮІ Мудрого</p>
+                    </div>
+                    <div class="p-4 bg-white/5 border-l-2 border-[#ffcc00]">
+                        <h5 class="text-white font-bold text-sm uppercase">ОДЕСА</h5>
+                        <p class="text-[10px] text-slate-500 uppercase tracking-tighter">Військова академія / Інститут ВМС</p>
+                    </div>
+                    <div class="p-4 bg-white/5 border-l-2 border-[#ffcc00]">
+                        <h5 class="text-white font-bold text-sm uppercase">ЖИТОМИР / ПОЛТАВА</h5>
+                        <p class="text-[10px] text-slate-500 uppercase tracking-tighter">ЖВІ Корольова / Коледж ВІТІ</p>
+                    </div>
+                </div>
+
+                <!-- Візуальна мапа -->
+                <div class="lg:col-span-8 order-1 lg:order-2 map-container" data-aos="zoom-in">
+                    <div class="relative w-full overflow-hidden">
+                        <!-- Контур України -->
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/e/e0/Ukraine_outline_map.svg" class="w-full opacity-10 grayscale invert" alt="Мапа">
+                        
+                        <!-- Міста (координати адаптовані під SVG контур) -->
+                        <div class="city-dot" style="top: 25%; left: 48%;"></div>
+                        <span class="city-label" style="top: 22%; left: 51%;">Київ</span>
+
+                        <div class="city-dot" style="top: 35%; left: 15%;"></div>
+                        <span class="city-label" style="top: 38%; left: 8%;">Львів</span>
+
+                        <div class="city-dot" style="top: 30%; left: 82%;"></div>
+                        <span class="city-label" style="top: 27%; left: 84%;">Харків</span>
+
+                        <div class="city-dot" style="top: 80%; left: 48%;"></div>
+                        <span class="city-label" style="top: 83%; left: 46%;">Одеса</span>
+
+                        <div class="city-dot" style="top: 28%; left: 38%;"></div>
+                        <span class="city-label" style="top: 24%; left: 32%;">Житомир</span>
+
+                        <div class="city-dot" style="top: 50%; left: 72%;"></div>
+                        <span class="city-label" style="top: 53%; left: 74%;">Дніпро</span>
+
+                        <div class="city-dot" style="top: 38%; left: 60%;"></div>
+                        <span class="city-label" style="top: 35%; left: 62%;">Полтава</span>
+
+                        <div class="city-dot" style="top: 48%; left: 22%;"></div>
+                        <span class="city-label" style="top: 52%; left: 16%;">ІФ</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
     <!-- НАПРЯМКИ -->
     <section id="sectors" class="py-16 md:py-32 px-6 border-t border-white/5 text-left">
         <div class="container mx-auto">
@@ -308,7 +416,7 @@
                     <button onclick="selectDirection('Командир ДШВ/МП/ССО/Розвідка — Одеса (ВА)')" class="bg-[#ffcc00] text-black px-4 py-2 font-bold text-[10px] uppercase">ОБРАТИ</button>
                 </div>
                 <div class="spec-card">
-                    <div><div class="text-[#ffcc00] font-bold text-lg">Механізовані війська (Піхота) та Артилерія</div><div class="text-xs text-slate-400 italic">НАСВ ім. Сагайдачного (м. Львів)</div></div>
+                    <div><div class="text-[#ffcc00] font-bold text-lg">Механізовані війська та Артилерія</div><div class="text-xs text-slate-400 italic">НАСВ ім. Сагайдачного (м. Львів)</div></div>
                     <button onclick="selectDirection('Командир Піхоти/Артилерії — Львів (НАСВ)')" class="bg-[#ffcc00] text-black px-4 py-2 font-bold text-[10px] uppercase">ОБРАТИ</button>
                 </div>
                 <div class="spec-card">
@@ -622,6 +730,7 @@
     </script>
 </body>
 </html>
+
 
 
 
