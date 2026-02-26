@@ -1,30 +1,30 @@
 var simplemaps_countrymap_mapdata={
   main_settings: {
-   //General settings
-    width: "responsive", //'700' or 'responsive'
+    //General settings
+    width: "responsive", 
     background_color: "#FFFFFF",
     background_transparent: "yes",
-    border_color: "#ffffff",
+    border_color: "#2a2a35",
     
     //State defaults
-    state_description: "State description",
-    state_color: "#000000",
-    state_hover_color: "#ffcc00",
+    state_description: "",
+    state_color: "#1e1e26",
+    state_hover_color: "#2a2a35",
     state_url: "",
     border_size: 1.5,
     all_states_inactive: "no",
-    all_states_zoomable: "yes",
+    all_states_zoomable: "no",
     
     //Location defaults
-    location_description: "Location description",
+    location_description: "",
     location_url: "",
-    location_color: "#FFcc00",
-    location_opacity: 0.8,
+    location_color: "#ffcc00",
+    location_opacity: 0.9,
     location_hover_opacity: 1,
-    location_size: 25,
-    location_type: "square",
+    location_size: 15,
+    location_type: "circle",
     location_image_source: "frog.png",
-    location_border_color: "#FFFFFF",
+    location_border_color: "#000",
     location_border: 2,
     location_hover_border: 2.5,
     all_locations_inactive: "no",
@@ -33,7 +33,7 @@ var simplemaps_countrymap_mapdata={
     //Label defaults
     label_color: "#ffffff",
     label_hover_color: "#ffffff",
-    label_size: 16,
+    label_size: 11,
     label_font: "Arial",
     label_display: "auto",
     label_scale: "yes",
@@ -41,8 +41,8 @@ var simplemaps_countrymap_mapdata={
     hide_eastern_labels: "no",
    
     //Zoom settings
-    zoom: "yes",
-    manual_zoom: "yes",
+    zoom: "no",
+    manual_zoom: "no",
     back_image: "no",
     initial_back: "no",
     initial_zoom: "-1",
@@ -54,10 +54,12 @@ var simplemaps_countrymap_mapdata={
     zoom_time: 0.5,
     
     //Popup settings
-    popup_color: "white",
-    popup_opacity: 0.9,
-    popup_shadow: 1,
-    popup_corners: 5,
+    popup_nocss: "no",
+    popup_centered: "yes",
+    popup_lossy_eyeball: "no",
+    popup_outline: "no",
+    popup_shadow: "no",
+    popup_corners: "0",
     popup_font: "12px/1.5 Verdana, Arial, Helvetica, sans-serif",
     popup_nocss: "no",
     
@@ -74,242 +76,27 @@ var simplemaps_countrymap_mapdata={
     location_image_url: ""
   },
   state_specific: {
-    UA05: {
-      name: "Vinnytska"
-    },
-    UA07: {
-      name: "Volynska"
-    },
-    UA09: {
-      name: "Luhanska"
-    },
-    UA12: {
-      name: "Dnipropetrovska"
-    },
-    UA14: {
-      name: "Donetska"
-    },
-    UA18: {
-      name: "Zhytomyrska"
-    },
-    UA21: {
-      name: "Zakarpatska"
-    },
-    UA23: {
-      name: "Zaporizka"
-    },
-    UA26: {
-      name: "Ivano-Frankivska"
-    },
-    UA30: {
-      name: "Kyivska"
-    },
-    UA32: {
-      name: "Kyivska"
-    },
-    UA35: {
-      name: "Kirovohradska"
-    },
-    UA40: {
-      name: "Sevastopilska"
-    },
-    UA43: {
-      name: "Avtonomna Respublika Krym"
-    },
-    UA46: {
-      name: "Lvivska"
-    },
-    UA48: {
-      name: "Mykolaivska"
-    },
-    UA51: {
-      name: "Odeska"
-    },
-    UA53: {
-      name: "Poltavska"
-    },
-    UA56: {
-      name: "Rivnenska"
-    },
-    UA59: {
-      name: "Sumska"
-    },
-    UA61: {
-      name: "Ternopilska"
-    },
-    UA63: {
-      name: "Kharkivska"
-    },
-    UA65: {
-      name: "Khersonska"
-    },
-    UA68: {
-      name: "Khmelnytska"
-    },
-    UA71: {
-      name: "Cherkaska"
-    },
-    UA74: {
-      name: "Chernihivska"
-    },
-    UA77: {
-      name: "Chernivetska"
-    }
+    UA01: { name: "Крим" }, UA05: { name: "Вінницька" }, UA07: { name: "Волинська" },
+    UA12: { name: "Дніпропетровська" }, UA14: { name: "Донецька" }, UA18: { name: "Житомирська" },
+    UA21: { name: "Закарпатська" }, UA23: { name: "Запорізька" }, UA26: { name: "Івано-Франківська" },
+    UA32: { name: "Київська" }, UA35: { name: "Кіровоградська" }, UA44: { name: "Луганська" },
+    UA46: { name: "Львівська" }, UA48: { name: "Миколаївська" }, UA51: { name: "Одеська" },
+    UA53: { name: "Полтавська" }, UA56: { name: "Рівненська" }, UA59: { name: "Сумська" },
+    UA61: { name: "Тернопільська" }, UA63: { name: "Харківська" }, UA65: { name: "Херсонська" },
+    UA68: { name: "Хмельницька" }, UA71: { name: "Черкаська" }, UA73: { name: "Чернівецька" },
+    UA74: { name: "Чернігівська" }
   },
   locations: {
-    "0": {
-      name: "Kiev",
-      lat: "50.433333",
-      lng: "30.516667"
-    },
-    "1": {
-      lat: "49.8397",
-      lng: "24.0297",
-      name: "Львів"
-    },
-    "2": {
-      lat: "48.9226",
-      lng: "24.7111",
-      name: "Івано-Франківськ"
-    },
-    "3": {
-      lat: "50.2547",
-      lng: "28.6587",
-      name: "Житомир"
-    },
-    "4": {
-      lat: "49.5883",
-      lng: "34.5514",
-      name: "Полтава"
-    },
-    "5": {
-      lat: "49.9935",
-      lng: "36.2304",
-      name: "Харків"
-    },
-    "6": {
-      lat: "48.4647",
-      lng: "35.0462",
-      name: "Дніпро"
-    },
-    "7": {
-      lat: "46.4825",
-      lng: "30.7233",
-      name: "Одеса"
-    }
+    "0": { name: "Київ", lat: "50.45", lng: "30.52" },
+    "1": { name: "Львів", lat: "49.83", lng: "24.02" },
+    "2": { name: "Харків", lat: "49.99", lng: "36.23" },
+    "3": { name: "Одеса", lat: "46.48", lng: "30.72" },
+    "4": { name: "Дніпро", lat: "48.46", lng: "35.04" },
+    "5": { name: "Полтава", lat: "49.58", lng: "34.55" },
+    "6": { name: "Житомир", lat: "50.25", lng: "28.65" },
+    "7": { name: "Івано-Франківськ", lat: "48.92", lng: "24.71" }
   },
   labels: {
-    UA05: {
-      name: "Vinnytska",
-      parent_id: "UA05"
-    },
-    UA07: {
-      name: "Volynska",
-      parent_id: "UA07"
-    },
-    UA09: {
-      name: "Luhanska",
-      parent_id: "UA09"
-    },
-    UA12: {
-      name: "Dnipropetrovska",
-      parent_id: "UA12"
-    },
-    UA14: {
-      name: "Donetska",
-      parent_id: "UA14"
-    },
-    UA18: {
-      name: "Zhytomyrska",
-      parent_id: "UA18"
-    },
-    UA21: {
-      name: "Zakarpatska",
-      parent_id: "UA21"
-    },
-    UA23: {
-      name: "Zaporizka",
-      parent_id: "UA23"
-    },
-    UA26: {
-      name: "Ivano-Frankivska",
-      parent_id: "UA26"
-    },
-    UA30: {
-      name: "Kyivska",
-      parent_id: "UA30"
-    },
-    UA32: {
-      name: "Kyivska",
-      parent_id: "UA32"
-    },
-    UA35: {
-      name: "Kirovohradska",
-      parent_id: "UA35"
-    },
-    UA40: {
-      name: "Sevastopilska",
-      parent_id: "UA40"
-    },
-    UA43: {
-      name: "Avtonomna Respublika Krym",
-      parent_id: "UA43"
-    },
-    UA46: {
-      name: "Lvivska",
-      parent_id: "UA46"
-    },
-    UA48: {
-      name: "Mykolaivska",
-      parent_id: "UA48"
-    },
-    UA51: {
-      name: "Odeska",
-      parent_id: "UA51"
-    },
-    UA53: {
-      name: "Poltavska",
-      parent_id: "UA53"
-    },
-    UA56: {
-      name: "Rivnenska",
-      parent_id: "UA56"
-    },
-    UA59: {
-      name: "Sumska",
-      parent_id: "UA59"
-    },
-    UA61: {
-      name: "Ternopilska",
-      parent_id: "UA61"
-    },
-    UA63: {
-      name: "Kharkivska",
-      parent_id: "UA63"
-    },
-    UA65: {
-      name: "Khersonska",
-      parent_id: "UA65"
-    },
-    UA68: {
-      name: "Khmelnytska",
-      parent_id: "UA68"
-    },
-    UA71: {
-      name: "Cherkaska",
-      parent_id: "UA71"
-    },
-    UA74: {
-      name: "Chernihivska",
-      parent_id: "UA74"
-    },
-    UA77: {
-      name: "Chernivetska",
-      parent_id: "UA77"
-    }
-  },
-  legend: {
-    entries: []
-  },
-  regions: {}
+    UA32: { parent_id: "UA32", x: "478", y: "175", text: "КИЇВ" }
+  }
 };
