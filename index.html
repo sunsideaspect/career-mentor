@@ -73,101 +73,78 @@
         .custom-scrollbar::-webkit-scrollbar { width: 4px; }
         .custom-scrollbar::-webkit-scrollbar-thumb { background: var(--accent); }
 
-        /* МАПА: КОНТУРНИЙ РЕЖИМ */
-        .map-section-wrapper {
-            position: relative;
-            width: 100%;
-            background: transparent !important;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
+        /* --- ГЕОГРАФІЯ: ФІНАЛЬНА КОНТУРНА МАПА --- */
+.map-section-wrapper {
+    position: relative;
+    width: 100%;
+    display: block; /* Гарантує, що контейнер бачить розмір картинки */
+    background: transparent !important;
+    line-height: 0; /* Прибирає мікро-відступи знизу */
+}
 
-        .map-section-wrapper img {
-            width: 100%;
-            height: auto;
-            /* Постійна підсвітка контурів: */
-            filter: invert(1) brightness(1.5) opacity(0.3) drop-shadow(0 0 2px rgba(255,255,255,0.5));
-            transition: opacity 0.5s ease;
-        }
+.map-section-wrapper img {
+    width: 100%;
+    height: auto;
+    display: block;
+    /* Фільтр: робить темний SVG білим контуром із легким сяйвом */
+    filter: invert(1) brightness(1.8) opacity(0.3) drop-shadow(0 0 3px rgba(255,255,255,0.2));
+    transition: opacity 0.5s ease, filter 0.5s ease;
+    pointer-events: none; /* Щоб картинка не заважала клікати на точки */
+}
 
-        /* При наведенні робимо трохи яскравіше, але не обов'язково */
-        .map-section-wrapper:hover img {
-            opacity: 0.5;
-        }
+/* Ефект при наведенні на секцію мапи */
+.map-section-wrapper:hover img {
+    opacity: 0.5;
+    filter: invert(1) brightness(2.2) opacity(0.6) drop-shadow(0 0 8px rgba(255,255,255,0.4));
+}
 
-        .city-marker {
-            position: absolute;
-            transform: translate(-50%, -50%);
-            z-index: 20;
-        }
+/* МАРКЕРИ МІСТ */
+.city-marker {
+    position: absolute;
+    transform: translate(-50%, -50%); /* Центруємо точку по координатах */
+    z-index: 20;
+    pointer-events: none;
+}
 
-        .dot {
-            width: 10px;
-            height: 10px;
-            background: var(--accent);
-            border-radius: 50%;
-            box-shadow: 0 0 15px var(--accent);
-            position: relative;
-        }
+.dot {
+    width: 10px;
+    height: 10px;
+    background: var(--accent);
+    border-radius: 50%;
+    box-shadow: 0 0 15px var(--accent), 0 0 30px rgba(255, 204, 0, 0.5);
+    position: relative;
+}
 
-        .dot::after {
-            content: ''; position: absolute; inset: 0;
-            background: var(--accent); border-radius: 50%;
-            animation: pulse-map-fix 2s infinite;
-        }
+/* Анімація пульсації (Ping) */
+.dot::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: var(--accent);
+    border-radius: 50%;
+    animation: map-ping-final 2.5s infinite;
+}
 
-        @keyframes pulse-map-fix {
-            0% { transform: scale(1); opacity: 1; }
-            100% { transform: scale(3.5); opacity: 0; }
-        }
+@keyframes map-ping-final {
+    0% { transform: scale(1); opacity: 0.8; }
+    100% { transform: scale(3.5); opacity: 0; }
+}
 
-        .city-label-final {
-            position: absolute; top: 18px; left: 50%;
-            transform: translateX(-50%); color: #ffffff;
-            font-size: 11px; font-weight: 900;
-            text-transform: uppercase; white-space: nowrap;
-            letter-spacing: 0.5px;
-            text-shadow: 0 0 10px #000, 0 0 5px #000;
-            pointer-events: none;
-        }
-
-        /* ТОЧКИ МІСТ */
-        .city-marker {
-            position: absolute;
-            transform: translate(-50%, -50%);
-            z-index: 20;
-        }
-
-        .dot {
-            width: 10px; /* Трохи збільшив */
-            height: 10px;
-            background: var(--accent);
-            border-radius: 50%;
-            box-shadow: 0 0 20px var(--accent), 0 0 40px var(--accent);
-            position: relative;
-        }
-
-        .dot::after {
-            content: ''; position: absolute; inset: 0;
-            background: var(--accent); border-radius: 50%;
-            animation: map-pulse-final 2s infinite;
-        }
-
-        @keyframes map-pulse-final {
-            0% { transform: scale(1); opacity: 0.8; }
-            100% { transform: scale(4); opacity: 0; }
-        }
-
-        .city-label-final {
-            position: absolute; top: 16px; left: 50%;
-            transform: translateX(-50%); color: #ffffff;
-            font-size: 11px; font-weight: 800; /* Жирніший шрифт */
-            text-transform: uppercase; white-space: nowrap;
-            letter-spacing: 1px; opacity: 1; /* Повна видимість */
-            text-shadow: 0 0 10px #000, 0 0 20px #000;
-            pointer-events: none;
-        }  
+/* ПІДПИСИ МІСТ */
+.city-label-final {
+    position: absolute;
+    top: 16px; /* Відступ під точкою */
+    left: 50%;
+    transform: translateX(-50%);
+    color: #ffffff;
+    font-size: 10px;
+    font-weight: 900;
+    text-transform: uppercase;
+    white-space: nowrap;
+    letter-spacing: 0.8px;
+    text-shadow: 0 0 10px #000, 0 0 5px #000;
+    pointer-events: none;
+}  
     </style>
 </head>
 <body>
@@ -358,8 +335,9 @@
                 <p class="text-slate-400 text-lg max-w-2xl font-light">Навчальні заклади розташовані у найбільших освітніх центрах країни.</p>
             </div>
 
-            <div class="grid lg:grid-cols-12 gap-10 items-center">
-                <!-- Список міст -->
+            <div class="grid lg:grid-cols-12 gap-10 items-start">
+                
+                <!-- Список міст (Колонка 4 з 12) -->
                 <div class="lg:col-span-4 order-2 lg:order-1 space-y-3">
                     <div class="p-4 bg-white/5 border-l-2 border-[#ffcc00] rounded-r transition hover:bg-white/10">
                         <h5 class="text-white font-bold text-sm">КИЇВ</h5>
@@ -369,54 +347,67 @@
                         <h5 class="text-white font-bold text-sm">ЛЬВІВ / ІФ</h5>
                         <p class="text-[10px] text-slate-500 uppercase tracking-widest">НАСВ / Коледж НАСВ / Кафедра ІФНТУНГ</p>
                     </div>
-                    <div class="p-4 bg-white/5 border-l-2 border-[#ffcc00]">
+                    <div class="p-4 bg-white/5 border-l-2 border-[#ffcc00] rounded-r transition hover:bg-white/10">
                         <h5 class="text-white font-bold text-sm">ХАРКІВ / ПОЛТАВА</h5>
                         <p class="text-[10px] text-slate-500 uppercase tracking-widest">ХНУПС / ВІТВ / ВЮІ / Коледж ВІТІ</p>
                     </div>
-                    <div class="p-4 bg-white/5 border-l-2 border-[#ffcc00]">
+                    <div class="p-4 bg-white/5 border-l-2 border-[#ffcc00] rounded-r transition hover:bg-white/10">
                         <h5 class="text-white font-bold text-sm">ОДЕСА</h5>
                         <p class="text-[10px] text-slate-500 uppercase tracking-widest">Військова академія / Інститут ВМС</p>
                     </div>
                 </div>
 
-                                <div class="map-section-wrapper">
+                <!-- Блок мапи (Колонка 8 з 12) -->
+                <div class="lg:col-span-8 order-1 lg:order-2" data-aos="fade-in">
+                    <div class="map-section-wrapper">
+                        <!-- Твоя мапа -->
                         <img src="img/ukraine.svg" alt="Ukraine Map">
                 
-                        <!-- КИЇВ (Зміщено вліво і вниз) -->
-                        <div class="city-marker" style="top: 29%; left: 49%;">
+                        <!-- ТОЧКИ (Координати адаптовані) -->
+                        
+                        <!-- КИЇВ -->
+                        <div class="city-marker" style="top: 31%; left: 51%;">
                             <div class="dot"></div><span class="city-label-final">Київ</span>
                         </div>
-                        <!-- ЛЬВІВ (Зміщено вправо) -->
-                        <div class="city-marker" style="top: 36%; left: 14%;">
+                        
+                        <!-- ЛЬВІВ -->
+                        <div class="city-marker" style="top: 36%; left: 15%;">
                             <div class="dot"></div><span class="city-label-final">Львів</span>
                         </div>
-                        <!-- ХАРКІВ (Суттєво зміщено вліво від краю) -->
-                        <div class="city-marker" style="top: 32%; left: 81%;">
+                        
+                        <!-- ХАРКІВ -->
+                        <div class="city-marker" style="top: 33%; left: 81%;">
                             <div class="dot"></div><span class="city-label-final">Харків</span>
                         </div>
+                        
                         <!-- ОДЕСА -->
                         <div class="city-marker" style="top: 81%; left: 47%;">
                             <div class="dot"></div><span class="city-label-final">Одеса</span>
                         </div>
-                        <!-- ЖИТОМИР (Лівіше Києва) -->
-                        <div class="city-marker" style="top: 29%; left: 38%;">
+                        
+                        <!-- ЖИТОМИР -->
+                        <div class="city-marker" style="top: 30%; left: 42%;">
                             <div class="dot"></div><span class="city-label-final">Житомир</span>
                         </div>
+                        
                         <!-- ДНІПРО -->
                         <div class="city-marker" style="top: 55%; left: 70%;">
                             <div class="dot"></div><span class="city-label-final">Дніпро</span>
                         </div>
+                        
                         <!-- ПОЛТАВА -->
-                        <div class="city-marker" style="top: 41%; left: 63%;">
+                        <div class="city-marker" style="top: 41%; left: 64%;">
                             <div class="dot"></div><span class="city-label-final">Полтава</span>
                         </div>
-                        <!-- ІВАННО-ФРАНКІВСЬК -->
-                        <div class="city-marker" style="top: 48%; left: 22%;">
+                        
+                        <!-- ІВАНО-ФРАНКІВСЬК -->
+                        <div class="city-marker" style="top: 48%; left: 23%;">
                             <div class="dot"></div><span class="city-label-final">Івано-Франківськ</span>
                         </div>
                     </div>
-                </div>
-            </div>
+                </div> <!-- кінець колонки мапи -->
+                
+            </div> <!-- кінець grid -->
         </div>
     </section>
     
@@ -788,6 +779,7 @@
     </script>
 </body>
 </html>
+
 
 
 
