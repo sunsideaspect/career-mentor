@@ -395,22 +395,22 @@
 
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-start">
             
-            <!-- ІНТЕРАКТИВНИЙ СПИСОК (Колонка 5 з 12) -->
+            <!-- АКОРДЕОН (Колонка 5 з 12) -->
             <div class="lg:col-span-5 order-2 lg:order-1 space-y-2 text-left">
                 
                 <!-- КИЇВ -->
                 <div class="border border-white/10 bg-white/5 rounded-sm">
                     <button onclick="toggleCity('city-kyiv')" class="w-full flex justify-between items-center p-4 text-left group">
-                        <span class="text-[#ffcc00] font-bold uppercase tracking-widest text-sm">Київ</span>
+                        <span class="text-[#ffcc00] font-bold uppercase tracking-widest text-sm">Київ (5 закладів)</span>
                         <i class="fas fa-chevron-down text-[#ffcc00] text-xs transition-transform duration-300" id="icon-city-kyiv"></i>
                     </button>
                     <div id="city-kyiv" class="max-h-0 overflow-hidden transition-all duration-300 ease-in-out bg-black/20">
                         <ul class="p-4 pt-0 space-y-3 text-[11px] leading-relaxed text-slate-300">
-                            <li><b>ВІТІ</b> — Військовий інститут телекомунікацій та інформатизації імені Героїв Крут</li>
-                            <li><b>ВІКНУ</b> — Військовий інститут КНУ імені Тараса Шевченка</li>
                             <li><b>НУОУ</b> — Національний університет оборони України</li>
-                            <li>Військовий факультет <b>КНУБА</b></li>
-                            <li>Військовий інститут <b>НАУ</b></li>
+                            <li><b>ВІТІ</b> — Військовий інститут телекомунікацій та інформатизації імені Героїв Крут</li>
+                            <li><b>ВІКНУ</b> — Військовий інститут Київського національного університету імені Тараса Шевченка</li>
+                            <li><b>КВП НАУ</b> — Кафедра військової підготовки Національного авіаційного університету</li>
+                            <li><b>КВП НУБіП</b> — Кафедра військової підготовки Національного університету біоресурсів і природокористування України</li>
                         </ul>
                     </div>
                 </div>
@@ -418,28 +418,16 @@
                 <!-- ЛЬВІВ -->
                 <div class="border border-white/10 bg-white/5 rounded-sm">
                     <button onclick="toggleCity('city-lviv')" class="w-full flex justify-between items-center p-4 text-left">
-                        <span class="text-[#ffcc00] font-bold uppercase tracking-widest text-sm">Львів</span>
+                        <span class="text-[#ffcc00] font-bold uppercase tracking-widest text-sm">Львів (5 закладів)</span>
                         <i class="fas fa-chevron-down text-[#ffcc00] text-xs transition-transform duration-300" id="icon-city-lviv"></i>
                     </button>
                     <div id="city-lviv" class="max-h-0 overflow-hidden transition-all duration-300 ease-in-out bg-black/20">
                         <ul class="p-4 pt-0 space-y-3 text-[11px] leading-relaxed text-slate-300">
                             <li><b>НАСВ</b> — Національна академія сухопутних військ імені гетьмана Петра Сагайдачного</li>
-                            <li><b>ЛДУВС</b> — Львівський державний університет внутрішніх справ</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- ХАРКІВ -->
-                <div class="border border-white/10 bg-white/5 rounded-sm">
-                    <button onclick="toggleCity('city-kharkiv')" class="w-full flex justify-between items-center p-4 text-left">
-                        <span class="text-[#ffcc00] font-bold uppercase tracking-widest text-sm">Харків</span>
-                        <i class="fas fa-chevron-down text-[#ffcc00] text-xs transition-transform duration-300" id="icon-city-kharkiv"></i>
-                    </button>
-                    <div id="city-kharkiv" class="max-h-0 overflow-hidden transition-all duration-300 ease-in-out bg-black/20">
-                        <ul class="p-4 pt-0 space-y-3 text-[11px] leading-relaxed text-slate-300">
-                            <li><b>ХНУПС</b> — Харківський національний університет Повітряних Сил імені Івана Кожедуба</li>
-                            <li><b>НАНГУ</b> — Національна академія Національної гвардії України</li>
-                            <li>Військовий інститут танкових військ <b>НТУ «ХПІ»</b></li>
+                            <li><b>ХНУПС</b> — Харківський національний університет Повітряних Сил (тимчасово у Львові)</li>
+                            <li><b>ВІТВ НТУ «ХПІ»</b> — Військовий інститут танкових військ (тимчасово у Львові)</li>
+                            <li>Коледж сержантського складу <b>НАСВ</b></li>
+                            <li>Коледж сержантського складу <b>ХНУПС</b></li>
                         </ul>
                     </div>
                 </div>
@@ -447,39 +435,15 @@
                 <!-- ОДЕСА -->
                 <div class="border border-white/10 bg-white/5 rounded-sm">
                     <button onclick="toggleCity('city-odesa')" class="w-full flex justify-between items-center p-4 text-left">
-                        <span class="text-[#ffcc00] font-bold uppercase tracking-widest text-sm">Одеса</span>
+                        <span class="text-[#ffcc00] font-bold uppercase tracking-widest text-sm">Одеса (4 заклади)</span>
                         <i class="fas fa-chevron-down text-[#ffcc00] text-xs transition-transform duration-300" id="icon-city-odesa"></i>
                     </button>
                     <div id="city-odesa" class="max-h-0 overflow-hidden transition-all duration-300 ease-in-out bg-black/20">
                         <ul class="p-4 pt-0 space-y-3 text-[11px] leading-relaxed text-slate-300">
                             <li><b>Військова академія</b> (м. Одеса)</li>
-                            <li>Інститут Військово-Морських Сил <b>НУ «ОМА»</b></li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- ЖИТОМИР -->
-                <div class="border border-white/10 bg-white/5 rounded-sm">
-                    <button onclick="toggleCity('city-zhytomyr')" class="w-full flex justify-between items-center p-4 text-left">
-                        <span class="text-[#ffcc00] font-bold uppercase tracking-widest text-sm">Житомир</span>
-                        <i class="fas fa-chevron-down text-[#ffcc00] text-xs transition-transform duration-300" id="icon-city-zhytomyr"></i>
-                    </button>
-                    <div id="city-zhytomyr" class="max-h-0 overflow-hidden transition-all duration-300 ease-in-out bg-black/20">
-                        <ul class="p-4 pt-0 space-y-3 text-[11px] leading-relaxed text-slate-300">
-                            <li><b>ЖВІ</b> — Житомирський військовий інститут імені С. П. Корольова</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- ХМЕЛЬНИЦЬКИЙ -->
-                <div class="border border-white/10 bg-white/5 rounded-sm">
-                    <button onclick="toggleCity('city-khmel')" class="w-full flex justify-between items-center p-4 text-left">
-                        <span class="text-[#ffcc00] font-bold uppercase tracking-widest text-sm">Хмельницький</span>
-                        <i class="fas fa-chevron-down text-[#ffcc00] text-xs transition-transform duration-300" id="icon-city-khmel"></i>
-                    </button>
-                    <div id="city-khmel" class="max-h-0 overflow-hidden transition-all duration-300 ease-in-out bg-black/20">
-                        <ul class="p-4 pt-0 space-y-3 text-[11px] leading-relaxed text-slate-300">
-                            <li><b>НАДПСУ</b> — Національна академія ДПСУ імені Богдана Хмельницького</li>
+                            <li><b>ІВМС НУ «ОМА»</b> — Інститут Військово-Морських Сил</li>
+                            <li><b>КВП ОНУ</b> — Кафедра військової підготовки Одеського національного університету ім. Мечникова</li>
+                            <li>Коледж морського транспорту <b>НУ «ОМА»</b> (сержантське відділення)</li>
                         </ul>
                     </div>
                 </div>
@@ -487,25 +451,52 @@
                 <!-- ПОЛТАВА -->
                 <div class="border border-white/10 bg-white/5 rounded-sm">
                     <button onclick="toggleCity('city-poltava')" class="w-full flex justify-between items-center p-4 text-left">
-                        <span class="text-[#ffcc00] font-bold uppercase tracking-widest text-sm">Полтава</span>
+                        <span class="text-[#ffcc00] font-bold uppercase tracking-widest text-sm">Полтава (2 заклади)</span>
                         <i class="fas fa-chevron-down text-[#ffcc00] text-xs transition-transform duration-300" id="icon-city-poltava"></i>
                     </button>
                     <div id="city-poltava" class="max-h-0 overflow-hidden transition-all duration-300 ease-in-out bg-black/20">
                         <ul class="p-4 pt-0 space-y-3 text-[11px] leading-relaxed text-slate-300">
                             <li>Військовий коледж сержантського складу <b>ВІТІ</b></li>
+                            <li><b>ВЮІ НЮУ</b> — Військово-юридичний інститут</li>
                         </ul>
                     </div>
                 </div>
 
-                <!-- ВАСИЛЬКІВ -->
+                <!-- ЖИТОМИР -->
                 <div class="border border-white/10 bg-white/5 rounded-sm">
-                    <button onclick="toggleCity('city-vasylkiv')" class="w-full flex justify-between items-center p-4 text-left">
-                        <span class="text-[#ffcc00] font-bold uppercase tracking-widest text-sm">Васильків</span>
-                        <i class="fas fa-chevron-down text-[#ffcc00] text-xs transition-transform duration-300" id="icon-city-vasylkiv"></i>
+                    <button onclick="toggleCity('city-zhytomyr')" class="w-full flex justify-between items-center p-4 text-left">
+                        <span class="text-[#ffcc00] font-bold uppercase tracking-widest text-sm">Житомир (1 заклад)</span>
+                        <i class="fas fa-chevron-down text-[#ffcc00] text-xs transition-transform duration-300" id="icon-city-zhytomyr"></i>
                     </button>
-                    <div id="city-vasylkiv" class="max-h-0 overflow-hidden transition-all duration-300 ease-in-out bg-black/20">
+                    <div id="city-zhytomyr" class="max-h-0 overflow-hidden transition-all duration-300 ease-in-out bg-black/20">
                         <ul class="p-4 pt-0 space-y-3 text-[11px] leading-relaxed text-slate-300">
-                            <li>Військовий коледж сержантського складу <b>ХНУПС</b></li>
+                            <li><b>ЖВІ</b> — Житомирський військовий інститут імені С.П. Корольова</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- ДНІПРО -->
+                <div class="border border-white/10 bg-white/5 rounded-sm">
+                    <button onclick="toggleCity('city-dnipro')" class="w-full flex justify-between items-center p-4 text-left">
+                        <span class="text-[#ffcc00] font-bold uppercase tracking-widest text-sm">Дніпро (1 заклад)</span>
+                        <i class="fas fa-chevron-down text-[#ffcc00] text-xs transition-transform duration-300" id="icon-city-dnipro"></i>
+                    </button>
+                    <div id="city-dnipro" class="max-h-0 overflow-hidden transition-all duration-300 ease-in-out bg-black/20">
+                        <ul class="p-4 pt-0 space-y-3 text-[11px] leading-relaxed text-slate-300">
+                            <li><b>КВП ДССТ</b> — Кафедра військової підготовки спеціалістів Держспецтрансслужби</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- ІВАНО-ФРАНКІВСЬК -->
+                <div class="border border-white/10 bg-white/5 rounded-sm">
+                    <button onclick="toggleCity('city-if')" class="w-full flex justify-between items-center p-4 text-left">
+                        <span class="text-[#ffcc00] font-bold uppercase tracking-widest text-sm">Івано-Франківськ (1 заклад)</span>
+                        <i class="fas fa-chevron-down text-[#ffcc00] text-xs transition-transform duration-300" id="icon-city-if"></i>
+                    </button>
+                    <div id="city-if" class="max-h-0 overflow-hidden transition-all duration-300 ease-in-out bg-black/20">
+                        <ul class="p-4 pt-0 space-y-3 text-[11px] leading-relaxed text-slate-300">
+                            <li><b>КВП ІФНТУНГ</b> — Кафедра військової підготовки ІФНТУ нафти і газу</li>
                         </ul>
                     </div>
                 </div>
@@ -917,6 +908,7 @@ function toggleCity(id) {
 </script>
 </body>
 </html>
+
 
 
 
