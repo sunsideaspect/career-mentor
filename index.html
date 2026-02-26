@@ -93,6 +93,19 @@
             transition: all 0.5s ease;
         }
 
+        /* Це примусово прибере заливку з твого SVG файлу */
+.map-section-wrapper img {
+    /* Цей фільтр залишить тільки лінії, якщо вони були світліші за фон */
+    filter: invert(1) brightness(2) opacity(0.5); 
+}
+
+/* Якщо ти вставив SVG кодом, то цей варіант кращий: */
+.map-section-wrapper svg path {
+    fill: none !important;
+    stroke: rgba(255, 255, 255, 0.3) !important;
+    stroke-width: 1px;
+}
+        
         /* Ефект при наведенні на всю мапу */
         .map-section-wrapper:hover img {
             opacity: 0.8;
@@ -759,6 +772,7 @@
     </script>
 </body>
 </html>
+
 
 
 
