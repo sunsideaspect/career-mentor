@@ -310,61 +310,78 @@
         </div>
     </section>
 
-    <!-- СТИЛІ ДЛЯ МАПИ (можна додати в загальний <style> або лишити тут) -->
-<style>
-    .map-svg-main {
-        width: 100%;
-        height: auto;
-        display: block;
-        background: transparent;
+    <style>
+    /* 1. Основний контейнер мапи */
+    #map {
+        width: 100% !important;
+        height: auto !important;
+        margin: 0 auto;
     }
-    .map-oblast-path {
-        fill: #1e1e26; /* Колір областей */
-        stroke: #2a2a35; /* Колір кордонів */
-        stroke-width: 0.8;
+
+    /* Прибираємо фон самої бібліотеки, щоб бачити темний фон сайту */
+    .sm_map_container {
+        background: transparent !important;
+    }
+
+    /* 2. Стилі для областей (States/Oblasts) */
+    .sm_state {
+        fill: #1e1e26 !important; /* Твій темно-сірий колір */
+        stroke: #2a2a35 !important; /* Колір кордонів */
+        stroke-width: 1;
         transition: fill 0.3s ease, stroke 0.3s ease;
     }
-    .map-svg-main:hover .map-oblast-path {
-        fill: #252530;
-    }
-    .map-oblast-path:hover {
-        fill: #ffcc00 !important;
-        fill-opacity: 0.1;
-        stroke: #ffcc00;
+
+    /* Ефект при наведенні на область */
+    .sm_state:hover {
+        fill: #252530 !important;
+        stroke: #ffcc00 !important;
     }
 
-    /* Анімація пульсації міст */
-    @keyframes map-pulse-ring {
-        0% { r: 3; opacity: 1; stroke-width: 1; }
-        100% { r: 15; opacity: 0; stroke-width: 0.5; }
-    }
-    @keyframes map-dot-grow {
-        0%, 100% { transform: scale(1); }
-        50% { transform: scale(1.2); }
+    /* 3. Анімація пульсації для точок міст */
+    @keyframes mapPulse {
+        0% { transform: scale(1); opacity: 1; }
+        50% { transform: scale(1.3); opacity: 0.6; }
+        100% { transform: scale(1); opacity: 1; }
     }
 
-    .city-pulse-circle {
-        fill: none;
-        stroke: #ffcc00;
-        animation: map-pulse-ring 2s infinite ease-out;
-        pointer-events: none;
-    }
-    .city-point-main {
-        fill: #ffcc00;
-        animation: map-dot-grow 2s infinite ease-in-out;
+    .sm_location {
+        fill: #ffcc00 !important; /* Жовтий колір точки */
+        animation: mapPulse 2s infinite ease-in-out;
+        transform-origin: center;
+        transform-box: fill-box; /* Щоб пульсувало від центру точки */
         filter: drop-shadow(0 0 5px #ffcc00);
     }
-    .city-label-text {
-        fill: #ffffff;
-        font-family: "Segoe UI", Arial, sans-serif;
-        font-size: 11px;
-        font-weight: 900;
+
+    /* 4. Стилі для підписів міст (Текст) */
+    .sm_label {
+        fill: #ffffff !important;
+        font-family: "e-Ukraine", "Segoe UI", Arial, sans-serif !important;
+        font-size: 11px !important;
+        font-weight: 900 !important;
         text-transform: uppercase;
         pointer-events: none;
+        /* Чорна обводка, щоб текст було видно на будь-якому фоні */
         paint-order: stroke;
-        stroke: #020617;
-        stroke-width: 3px;
+        stroke: #020617 !important;
+        stroke-width: 3px !important;
         letter-spacing: 0.5px;
+    }
+
+    /* 5. Адаптація для МОБІЛЬНИХ ПРИСТРОЇВ */
+    @media (max-width: 767px) {
+        #map svg {
+            max-height: 320px !important; /* Обмежуємо висоту мапи, щоб не було дірки */
+            width: 100% !important;
+        }
+        .sm_label {
+            font-size: 9px !important; /* Зменшуємо текст на телефонах */
+            stroke-width: 2px !important;
+        }
+    }
+
+    /* Ховаємо стандартні тултіпи (спливаючі назви), якщо вони заважають */
+    .sm_tt {
+        display: none !important;
     }
 </style>
 
@@ -836,6 +853,7 @@
     </script>
 </body>
 </html>
+
 
 
 
