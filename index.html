@@ -124,14 +124,14 @@
             stroke-width: 2.5px !important;
         }
 
-        /* Видаляємо водяні знаки SimpleMaps та MapChart */
+            /* Посилене приховування водяних знаків */
             #map_trial_text, 
-            #credit-text-svg, 
-            #credit-tspan-svg,
-            text[font-size="7.5"] {
+            #map_trial_link,
+            svg text[fill="black"],
+            svg a[href*="simplemaps"] {
                 display: none !important;
-                visibility: hidden !important;
                 opacity: 0 !important;
+                visibility: hidden !important;
                 pointer-events: none !important;
             }
         
@@ -917,8 +917,27 @@ function toggleCity(id) {
     }
 }
 </script>
+   <script>
+    // Скрипт для примусового видалення напису SimpleMaps
+    window.onload = function() {
+        setTimeout(function() {
+            var trial = document.getElementById('map_trial_text');
+            if (trial) {
+                trial.remove();
+            }
+            // Додатково шукаємо за текстом, якщо ID інший
+            var allTexts = document.getElementsByTagName('text');
+            for (var i = 0; i < allTexts.length; i++) {
+                if (allTexts[i].textContent.includes('simplemaps.com')) {
+                    allTexts[i].remove();
+                }
+            }
+        }, 500); // чекаємо пів секунди, поки мапа прогрузиться
+    };
+</script> 
 </body>
 </html>
+
 
 
 
