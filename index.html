@@ -124,16 +124,16 @@
             stroke-width: 2.5px !important;
         }
 
-            /* Посилене приховування водяних знаків */
-            #map_trial_text, 
-            #map_trial_link,
-            svg text[fill="black"],
-            svg a[href*="simplemaps"] {
-                display: none !important;
-                opacity: 0 !important;
-                visibility: hidden !important;
-                pointer-events: none !important;
-            }
+            /* Приховуємо напис на всіх рівнях */
+        #map svg text:last-of-type,
+        #map svg a:last-of-type,
+        #map_trial_text,
+        #map_trial_link {
+            display: none !important;
+            opacity: 0 !important;
+            font-size: 0 !important;
+            pointer-events: none !important;
+        }
         
         /* Ховаємо стандартні поп-апи, якщо вони тобі не потрібні */
         .sm_tt {
@@ -935,8 +935,37 @@ function toggleCity(id) {
         }, 500); // чекаємо пів секунди, поки мапа прогрузиться
     };
 </script> 
+    <script>
+    const targetNode = document.getElementById('map');
+    const config = { childList: true, subtree: true };
+
+    const callback = function(mutationsList, observer) {
+        // Шукаємо за ID
+        const ids = ['map_trial_text', 'map_trial_link'];
+        ids.forEach(id => {
+            const el = document.getElementById(id);
+            if (el) el.remove();
+        });
+
+        // Шукаємо за змістом (для мобільних версій)
+        const svgTexts = document.querySelectorAll('#map svg text, #map svg a');
+        svgTexts.forEach(el => {
+            if (el.textContent.toLowerCase().includes('simplemaps')) {
+                el.remove();
+            }
+        });
+    };
+
+    // Створюємо спостерігач
+    const observer = new MutationObserver(callback);
+    // Починаємо стежити за контейнером мапи
+    if (targetNode) {
+        observer.observe(targetNode, config);
+    }
+</script>
 </body>
 </html>
+
 
 
 
