@@ -123,6 +123,17 @@
             stroke: #020617 !important;
             stroke-width: 2.5px !important;
         }
+
+        /* Видаляємо водяні знаки SimpleMaps та MapChart */
+            #map_trial_text, 
+            #credit-text-svg, 
+            #credit-tspan-svg,
+            text[font-size="7.5"] {
+                display: none !important;
+                visibility: hidden !important;
+                opacity: 0 !important;
+                pointer-events: none !important;
+            }
         
         /* Ховаємо стандартні поп-апи, якщо вони тобі не потрібні */
         .sm_tt {
@@ -908,6 +919,7 @@ function toggleCity(id) {
 </script>
 </body>
 </html>
+
 
 
 
