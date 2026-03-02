@@ -803,6 +803,8 @@
                     <input type="text" name="name" placeholder="ТВОЄ ІМ'Я" required class="w-full bg-transparent border-b-2 border-black pb-4 outline-none placeholder:text-black/50 text-xl font-bold uppercase text-black">
                     <input type="tel" name="phone" placeholder="НОМЕР ТЕЛЕФОНУ" required class="w-full bg-transparent border-b-2 border-black pb-4 outline-none placeholder:text-black/50 text-xl font-bold uppercase text-black">
                     <input type="hidden" name="utm_source" id="utm_source" value="direct">
+                    <input type="hidden" name="utm_campaign" id="utm_campaign" value="">
+                    <input type="hidden" name="utm_content" id="utm_content" value="">
                     <button type="submit" id="submit-btn" class="w-full bg-black text-[#ffcc00] py-6 text-xl font-bold hover:bg-white hover:text-black transition uppercase tracking-tighter">Відправити запит</button>
                 </form>
             </div>
@@ -883,7 +885,7 @@
         }
 
         // ВІДПРАВКА ФОРМИ
-        const scriptURL = 'https://script.google.com/macros/s/AKfycbycdbq75yPKpTPs5pPgaDGav8v1g2OZRqrQhXMOyFsP7Dc_uY2uOlnbSRPr4bpkt-2M/exec'; 
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbxUWXW4m8THt8zzj1JeQ9rDIRKQ5TgzUPlIzFO8lS0FP1v8fqECEQbeWnNZiEqKXNXk/exec'; 
         const form = document.getElementById('recruitment-form');
         const btn = document.getElementById('submit-btn');
         form.addEventListener('submit', e => {
@@ -969,23 +971,30 @@ function toggleCity(id) {
     }
 </script>
     <script>
-    document.addEventListener("DOMContentLoaded", function() {
-        const urlParams = new URLSearchParams(window.location.search);
-        const source = urlParams.get('utm_source');
+document.addEventListener("DOMContentLoaded", function() {
+    const urlParams = new URLSearchParams(window.location.search);
+    
+    // Список міток, які ми хочемо відстежувати
+    const utms = ['utm_source', 'utm_campaign', 'utm_content'];
+    
+    utms.forEach(utm => {
+        const value = urlParams.get(utm);
+        const input = document.getElementById(utm);
         
-        if (source) {
-            // Якщо в посиланні є utm_source, записуємо його у приховане поле
-            document.getElementById('utm_source').value = source;
-            // Також зберігаємо в пам'ять браузера, щоб мітка не зникла при переході між блоками
-            sessionStorage.setItem('detected_source', source);
-        } else if (sessionStorage.getItem('detected_source')) {
-            // Якщо мітки в посиланні вже нема, але ми її бачили раніше — беремо з пам'яті
-            document.getElementById('utm_source').value = sessionStorage.getItem('detected_source');
+        if (value) {
+            // Якщо мітка є в URL — записуємо в інпут і в пам'ять
+            input.value = value;
+            sessionStorage.setItem('detected_' + utm, value);
+        } else if (sessionStorage.getItem('detected_' + utm)) {
+            // Якщо в URL немає, але ми її запам'ятали раніше — беремо з пам'яті
+            input.value = sessionStorage.getItem('detected_' + utm);
         }
-    });
-    </script>
+            });
+        });
+        </script>
 </body>
 </html>
+
 
 
 
