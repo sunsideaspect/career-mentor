@@ -802,6 +802,7 @@
                     <input type="hidden" name="utm_source" id="utm_source" value="Органіка/Прямий">
                     <input type="text" name="name" placeholder="ТВОЄ ІМ'Я" required class="w-full bg-transparent border-b-2 border-black pb-4 outline-none placeholder:text-black/50 text-xl font-bold uppercase text-black">
                     <input type="tel" name="phone" placeholder="НОМЕР ТЕЛЕФОНУ" required class="w-full bg-transparent border-b-2 border-black pb-4 outline-none placeholder:text-black/50 text-xl font-bold uppercase text-black">
+                    <input type="hidden" name="utm_source" id="utm_source" value="direct">
                     <button type="submit" id="submit-btn" class="w-full bg-black text-[#ffcc00] py-6 text-xl font-bold hover:bg-white hover:text-black transition uppercase tracking-tighter">Відправити запит</button>
                 </form>
             </div>
@@ -967,8 +968,25 @@ function toggleCity(id) {
         observer.observe(targetNode, config);
     }
 </script>
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const urlParams = new URLSearchParams(window.location.search);
+        const source = urlParams.get('utm_source');
+        
+        if (source) {
+            // Якщо в посиланні є utm_source, записуємо його у приховане поле
+            document.getElementById('utm_source').value = source;
+            // Також зберігаємо в пам'ять браузера, щоб мітка не зникла при переході між блоками
+            sessionStorage.setItem('detected_source', source);
+        } else if (sessionStorage.getItem('detected_source')) {
+            // Якщо мітки в посиланні вже нема, але ми її бачили раніше — беремо з пам'яті
+            document.getElementById('utm_source').value = sessionStorage.getItem('detected_source');
+        }
+    });
+    </script>
 </body>
 </html>
+
 
 
 
