@@ -805,6 +805,13 @@
                     <input type="hidden" name="utm_source" id="utm_source" value="direct">
                     <input type="hidden" name="utm_campaign" id="utm_campaign" value="">
                     <input type="hidden" name="utm_content" id="utm_content" value="">
+                    <input type="hidden" name="source" id="lead-source" value="Лендинг">
+                    <input type="hidden" name="request_id" id="lead-request" value="">
+                    <input type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;height:0;width:0;opacity:0">
+                    <label class="flex items-start gap-3 text-left text-sm font-semibold normal-case leading-snug">
+                        <input type="checkbox" name="consent" value="yes" required class="mt-1">
+                        <span>Погоджуюся на обробку імені й телефону для зворотного зв’язку щодо вступу. Згоду можна відкликати.</span>
+                    </label>
                     <button type="submit" id="submit-btn" class="w-full bg-black text-[#ffcc00] py-6 text-xl font-bold hover:bg-white hover:text-black transition uppercase tracking-tighter">Відправити запит</button>
                 </form>
             </div>
@@ -885,19 +892,39 @@
         }
 
         // ВІДПРАВКА ФОРМИ
-        const scriptURL = 'https://script.google.com/macros/s/AKfycbxUWXW4m8THt8zzj1JeQ9rDIRKQ5TgzUPlIzFO8lS0FP1v8fqECEQbeWnNZiEqKXNXk/exec'; 
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbyXSl9ufMLcOWyC5G553QuaBdkaCjEX4MBhNjf0vxxJKMC-OyoUBNEipq-mBOp_8oUMQg/exec';
         const form = document.getElementById('recruitment-form');
         const btn = document.getElementById('submit-btn');
+
+        function intakeSource(value) {
+            const text = String(value || '').toLowerCase();
+            if (text.includes('facebook') || text === 'fb') return 'Facebook';
+            if (text.includes('qr')) return 'QR';
+            return 'Лендинг';
+        }
+
+        function intakeRequestId() {
+            const rand = Math.random().toString(36).slice(2, 10);
+            return 'web-' + Date.now().toString(36) + '-' + rand;
+        }
+
         form.addEventListener('submit', e => {
             e.preventDefault();
+            const params = new URLSearchParams(window.location.search);
+            document.getElementById('lead-source').value = intakeSource(params.get('utm_source'));
+            document.getElementById('lead-request').value = intakeRequestId();
             btn.disabled = true; btn.innerText = 'ОБРОБКА...';
-            fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-            .then(() => {
+            fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+            .then(response => response.json())
+            .then(result => {
+                if (!result || (result.status !== 'accepted' && result.status !== 'duplicate')) {
+                    throw new Error('rejected');
+                }
                 alert('Заявку прийнято! Ментор зв’яжеться з вами найближчим часом.');
                 btn.innerText = 'УСПІШНО'; form.reset();
                 document.getElementById('direction-badge').classList.add('hidden');
                 setTimeout(() => { btn.disabled = false; btn.innerText = 'ВІДПРАВИТИ ЗАПИТ'; }, 3000);
-            }).catch(() => { alert('Помилка!'); btn.disabled = false; btn.innerText = 'ВІДПРАВИТИ ЗАПИТ'; });
+            }).catch(() => { alert('Не вдалося надіслати. Поставте згоду і перевірте телефон, або спробуйте ще раз.'); btn.disabled = false; btn.innerText = 'ВІДПРАВИТИ ЗАПИТ'; });
         });
     </script>
     <script>
