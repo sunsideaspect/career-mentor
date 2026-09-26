@@ -1,0 +1,25 @@
+<!DOCTYPE html><html lang="uk"><head><meta charset="UTF-8"><title>Білий аркуш 1</title><style>
+@font-face { font-family: 'e-Ukraine'; src: url('../../../fonts/e-Ukraine-Regular.otf') format('opentype'); font-weight: 400; }
+@font-face { font-family: 'e-UkraineHead'; src: url('../../../fonts/e-UkraineHead-Regular.otf') format('opentype'); font-weight: 400; }
+@page { size: A4 portrait; margin: 0; }
+* { box-sizing: border-box; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+html, body { margin: 0; background: #9aa0a6; }
+body { font-family: 'e-Ukraine', Arial, sans-serif; color: #020617; }
+.sheet { position: relative; width: 210mm; height: 297mm; margin: 12px auto; overflow: hidden; background: #fff; display: flex; flex-direction: column; align-items: center; }
+.brand { display: flex; align-items: center; gap: 3mm; }
+.logo { position: relative; width: 13mm; height: 14.8mm; overflow: hidden; flex-shrink: 0; }
+.logo img { position: absolute; width: 28mm; left: -7.5mm; top: -6.5mm; }
+.brand span { font-family: 'e-UkraineHead', Arial, sans-serif; font-size: 16pt; letter-spacing: 0.1em; text-transform: uppercase; line-height: 1; }
+.qr { width: 178mm; height: 178mm; flex-shrink: 0; position: relative; }
+.qr img { width: 100%; height: 100%; display: block; }
+.head { font-family: 'e-UkraineHead', Arial, sans-serif; text-transform: uppercase; line-height: 1; text-align: center; }
+.url { font-family: 'e-UkraineHead', Arial, sans-serif; letter-spacing: 0.02em; }
+.y { color: #d4a200; }
+.hint { width: 210mm; margin: 8px auto 16px; font: 13px/1.4 Arial, sans-serif; color: #111; }
+@media print { html, body { background: #fff; } .sheet { margin: 0; } .hint { display: none; } }
+
+.sheet { padding: 14mm 16mm 12mm; justify-content: space-between; }
+.head { font-size: 26pt; }
+.head b { display: inline-block; font-weight: 400; border-bottom: 1.6mm solid #ffcc00; padding-bottom: 1.5mm; }
+.url { font-size: 15pt; margin-top: 4mm; text-align: center; }
+</style></head><body><article class="sheet"><div class="brand"><div class="logo"><img src="../../../img/logo.png" alt=""></div><span>Military Education</span></div><div class="qr"><img src="../code.svg" alt="QR-код сайту viyskova-osvita.com.ua"></div><div><div class="head">Наведи камеру — <b>дізнайся більше</b></div><div class="url">viyskova-osvita.com.ua</div></div></article><p class="hint">Скачати для друку: <a href="../flyer-white-1.png" download>PNG 300 dpi</a> · <a href="../flyer-white-1.pdf" download>PDF А4</a></p></body></html>
