@@ -17,12 +17,8 @@ function link(source, medium, content) {
 
 const cards = [
     ['facebook', 'Facebook', link('facebook', 'organic', 'page')],
-    ['poster', 'Загальний QR', link('qr', 'qr', 'poster')],
-    ['pilot-a-student', 'Пілот A · учні', link('school', 'qr', 'pilot_a_student')],
-    ['pilot-a-parent', 'Пілот A · батьки', link('school', 'qr', 'pilot_a_parent')],
-    ['pilot-b-student', 'Пілот B · учні', link('school', 'qr', 'pilot_b_student')],
-    ['pilot-b-parent', 'Пілот B · батьки', link('school', 'qr', 'pilot_b_parent')],
-    ['pilot-c-student', 'Пілот C · учні', link('school', 'qr', 'pilot_c_student')]
+    ['site', 'Сайт', base],
+    ['telegram', 'Telegram', link('telegram', 'social', 'channel')]
 ];
 
 const dir = path.join(__dirname, 'codes');
@@ -34,6 +30,10 @@ fs.mkdirSync(dir, { recursive: true });
         const file = path.join(dir, `${id}.svg`);
         await QRCode.toFile(file, url, { type: 'svg', margin: 1, width: 280 });
         ready.push({ id, title, url });
+    }
+    const keep = new Set(ready.map(card => `${card.id}.svg`));
+    for (const name of fs.readdirSync(dir)) {
+        if (name.endsWith('.svg') && !keep.has(name)) fs.unlinkSync(path.join(dir, name));
     }
     fs.writeFileSync(path.join(__dirname, 'cards.json'), JSON.stringify(ready, null, 2));
     console.log(`wrote ${ready.length}`);

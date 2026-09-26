@@ -16,12 +16,12 @@ function params(query) {
     return new URLSearchParams(query);
 }
 
-test('facebook, qr and the three pilots map to separate CRM sources', () => {
+test('facebook, telegram and a direct visit map to three CRM sources', () => {
     assert.equal(context.intakeSource(params('utm_source=facebook&utm_medium=organic&utm_content=page')), 'Facebook');
     assert.equal(context.intakeSource(params('utm_source=fb')), 'Facebook');
-    assert.equal(context.intakeSource(params('utm_source=qr&utm_medium=qr&utm_content=poster')), 'QR');
-    assert.equal(context.intakeSource(params('utm_source=school&utm_medium=qr&utm_content=pilot_a_parent')), 'Пілот A');
-    assert.equal(context.intakeSource(params('utm_source=school&utm_medium=qr&utm_content=pilot_b_student')), 'Пілот B');
-    assert.equal(context.intakeSource(params('utm_source=school&utm_medium=qr&utm_content=pilot_c_student')), 'Пілот C');
-    assert.equal(context.intakeSource(params('')), 'Лендинг');
+    assert.equal(context.intakeSource(params('utm_source=telegram&utm_medium=social&utm_content=channel')), 'Telegram');
+    assert.equal(context.intakeSource(params('utm_source=tg')), 'Telegram');
+    assert.equal(context.intakeSource(params('utm_source=qr&utm_medium=qr&utm_content=poster')), 'Сайт');
+    assert.equal(context.intakeSource(params('utm_source=school&utm_medium=qr&utm_content=pilot_a_parent')), 'Сайт');
+    assert.equal(context.intakeSource(params('')), 'Сайт');
 });

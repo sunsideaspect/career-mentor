@@ -805,7 +805,7 @@
                     <input type="hidden" name="utm_source" id="utm_source" value="direct">
                     <input type="hidden" name="utm_campaign" id="utm_campaign" value="">
                     <input type="hidden" name="utm_content" id="utm_content" value="">
-                    <input type="hidden" name="source" id="lead-source" value="Лендинг">
+                    <input type="hidden" name="source" id="lead-source" value="Сайт">
                     <input type="hidden" name="channel" id="lead-channel" value="">
                     <input type="hidden" name="request_id" id="lead-request" value="">
                     <input type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;height:0;width:0;opacity:0">
@@ -904,14 +904,9 @@
 
         function intakeSource(params) {
             const source = String(params.get('utm_source') || '').toLowerCase();
-            const medium = String(params.get('utm_medium') || '').toLowerCase();
-            const content = intakeChannel(params);
-            if (content.indexOf('pilot_a') === 0) return 'Пілот A';
-            if (content.indexOf('pilot_b') === 0) return 'Пілот B';
-            if (content.indexOf('pilot_c') === 0) return 'Пілот C';
             if (source.indexOf('facebook') !== -1 || source === 'fb') return 'Facebook';
-            if (source === 'qr' || source.indexOf('qr') !== -1 || medium === 'qr') return 'QR';
-            return 'Лендинг';
+            if (source.indexOf('telegram') !== -1 || source === 'tg') return 'Telegram';
+            return 'Сайт';
         }
 
         function intakeRequestId() {
@@ -923,7 +918,7 @@
             e.preventDefault();
             const params = new URLSearchParams(window.location.search);
             document.getElementById('lead-source').value = intakeSource(params);
-            document.getElementById('lead-channel').value = intakeChannel(params);
+            document.getElementById('lead-channel').value = '';
             document.getElementById('lead-request').value = intakeRequestId();
             btn.disabled = true; btn.innerText = 'ОБРОБКА...';
             fetch(scriptURL, { method: 'POST', body: new FormData(form) })
