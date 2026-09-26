@@ -5,75 +5,158 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Аркуш А4 для школи</title>
     <style>
+        @font-face { font-family: 'e-Ukraine'; src: url('../fonts/e-Ukraine-Light.otf') format('opentype'); font-weight: 300; }
+        @font-face { font-family: 'e-Ukraine'; src: url('../fonts/e-Ukraine-Regular.otf') format('opentype'); font-weight: 400; }
+        @font-face { font-family: 'e-UkraineHead'; src: url('../fonts/e-UkraineHead-Regular.otf') format('opentype'); font-weight: 400; }
+
         @page { size: A4 portrait; margin: 0; }
-        * { box-sizing: border-box; }
-        html, body { margin: 0; background: #d9d9d9; }
-        body { font-family: Arial, sans-serif; color: #111; }
+        * { box-sizing: border-box; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+        html, body { margin: 0; background: #9aa0a6; }
+        body { font-family: 'e-Ukraine', Arial, sans-serif; }
+
         .sheet {
+            position: relative;
             width: 210mm;
             height: 297mm;
             margin: 12px auto;
-            background: #fff;
+            overflow: hidden;
+            background: #020617;
+            color: #fff;
+        }
+        .photo {
+            position: absolute;
+            inset: 0 0 auto 0;
+            height: 125mm;
+            background: url('../img/cat-aviation.jpg') center 40% / cover no-repeat;
+        }
+        .photo::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to bottom, rgba(2, 6, 23, 0.55) 0%, rgba(2, 6, 23, 0.35) 45%, #020617 100%);
+        }
+        .content {
+            position: relative;
+            height: 100%;
             display: flex;
             flex-direction: column;
-            align-items: center;
-            text-align: center;
-            padding: 14mm 16mm 12mm;
+            padding: 12mm 14mm 11mm;
         }
-        .mark {
-            align-self: stretch;
-            background: #ffcc00;
-            color: #111;
-            font-weight: 800;
-            letter-spacing: 0.08em;
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 4mm;
+        }
+        .brand img { width: 20mm; height: 20mm; object-fit: contain; }
+        .brand span {
+            font-weight: 400;
+            font-size: 12pt;
+            letter-spacing: 0.18em;
             text-transform: uppercase;
-            font-size: 13pt;
-            padding: 4mm 6mm;
         }
         h1 {
-            margin: 10mm 0 3mm;
-            font-size: 28pt;
-            line-height: 1.05;
-            font-weight: 800;
+            margin: 26mm 0 0;
+            font-family: 'e-UkraineHead', Arial, sans-serif;
+            font-weight: 400;
+            font-size: 52pt;
+            line-height: 0.92;
+            letter-spacing: -0.02em;
+            text-transform: uppercase;
         }
-        .lead {
-            margin: 0 0 8mm;
-            font-size: 16pt;
-            line-height: 1.3;
+        .sub {
+            margin: 5mm 0 0;
+            font-family: 'e-UkraineHead', Arial, sans-serif;
+            color: #ffcc00;
+            font-size: 19pt;
+            line-height: 1.15;
+        }
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2.5mm;
+            margin-top: 7mm;
+        }
+        .tags span {
+            border: 0.4mm solid rgba(255, 204, 0, 0.7);
+            padding: 1.6mm 3.5mm;
+            font-size: 10.5pt;
+            letter-spacing: 0.04em;
+        }
+        .scan {
+            margin-top: auto;
+            display: grid;
+            grid-template-columns: 98mm 1fr;
+            gap: 9mm;
+            align-items: center;
         }
         .code {
-            width: 128mm;
-            height: 128mm;
-            border: 2.5mm solid #111;
-            padding: 4mm;
+            position: relative;
+            width: 98mm;
+            height: 98mm;
+            background: #fff;
+            padding: 5mm;
         }
         .code img { width: 100%; height: 100%; display: block; }
+        .code::before, .code::after {
+            content: '';
+            position: absolute;
+            width: 14mm;
+            height: 14mm;
+            border: 1.6mm solid #ffcc00;
+        }
+        .code::before { top: -4mm; left: -4mm; border-right: 0; border-bottom: 0; }
+        .code::after { bottom: -4mm; right: -4mm; border-left: 0; border-top: 0; }
+        .cta {
+            font-family: 'e-UkraineHead', Arial, sans-serif;
+            font-size: 22pt;
+            line-height: 1.05;
+            text-transform: uppercase;
+        }
+        .cta b { color: #ffcc00; font-weight: 400; }
+        .steps {
+            margin: 6mm 0 0;
+            padding: 0;
+            list-style: none;
+            font-size: 10.5pt;
+            line-height: 1.55;
+            color: #e2e8f0;
+        }
+        .steps li { padding-left: 7mm; position: relative; }
+        .steps li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 2.4mm;
+            width: 3.5mm;
+            height: 0.8mm;
+            background: #ffcc00;
+        }
+        .foot {
+            margin-top: 10mm;
+            padding-top: 5mm;
+            border-top: 0.4mm solid rgba(255, 255, 255, 0.18);
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            gap: 6mm;
+        }
         .url {
-            margin: 8mm 0 0;
-            font-size: 16pt;
-            font-weight: 800;
-            letter-spacing: 0.01em;
+            font-family: 'e-UkraineHead', Arial, sans-serif;
+            font-size: 17pt;
+            color: #ffcc00;
         }
-        .phone {
-            margin: 7mm 0 0;
-            font-size: 13pt;
-            line-height: 1.35;
-        }
-        .phone b { display: block; margin-top: 1mm; font-size: 18pt; }
-        .note {
-            margin-top: auto;
-            font-size: 10pt;
-            line-height: 1.35;
-        }
+        .phone { text-align: right; font-size: 9.5pt; color: #cbd5e1; }
+        .phone b { display: block; color: #fff; font-size: 14pt; font-weight: 400; margin-top: 1mm; }
+        .note { margin-top: 3mm; font-size: 8pt; color: #94a3b8; }
+
         .hint {
             width: 210mm;
             margin: 8px auto 20px;
-            font-family: Arial, sans-serif;
-            font-size: 13px;
-            color: #333;
+            font: 13px/1.4 Arial, sans-serif;
+            color: #111;
         }
         @media print {
-            html, body { background: #fff; }
+            html, body { background: #020617; }
             .sheet { margin: 0; }
             .hint { display: none; }
         }
@@ -81,16 +164,42 @@
 </head>
 <body>
     <article class="sheet">
-        <div class="mark">Військова освіта</div>
-        <h1>Наведи камеру<br>на код</h1>
-        <p class="lead">Відкриється сайт, де можна залишити заявку на консультацію.</p>
-        <div class="code">
-            <img src="code.svg" alt="QR-код сайту viyskova-osvita.com.ua">
+        <div class="photo"></div>
+        <div class="content">
+            <div class="brand">
+                <img src="../img/logo.png" alt="">
+                <span>Military Education</span>
+            </div>
+
+            <h1>Професія<br>майбутнього</h1>
+            <p class="sub">Вища військова освіта:<br>обери свій напрям</p>
+            <div class="tags">
+                <span>Кібервійська</span>
+                <span>Авіація</span>
+                <span>Військова юстиція</span>
+                <span>ССО</span>
+                <span>Логістика</span>
+            </div>
+
+            <div class="scan">
+                <div class="code"><img src="code.svg" alt="QR-код сайту viyskova-osvita.com.ua"></div>
+                <div>
+                    <div class="cta">Наведи<br>камеру —<br><b>дізнайся більше</b></div>
+                    <ul class="steps">
+                        <li>відкрий сайт</li>
+                        <li>обери заклад і спеціальність</li>
+                        <li>залиш заявку на консультацію</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="foot">
+                <div class="url">viyskova-osvita.com.ua</div>
+                <div class="phone">Код не відкривається?<b>+380 68 776 3011</b></div>
+            </div>
+            <div class="note">Форму на сайті заповнює повнолітній вступник або законний представник.</div>
         </div>
-        <p class="url">viyskova-osvita.com.ua</p>
-        <p class="phone">Якщо код не відкривається, зателефонуй<b>+380 68 776 3011</b></p>
-        <p class="note">Форму на сайті заповнює повнолітній вступник або законний представник.</p>
     </article>
-    <p class="hint">Друк: Ctrl+P, папір А4, поля «Немає», масштаб 100%.</p>
+    <p class="hint">Друк: Ctrl+P → папір А4 → поля «Немає» → масштаб 100% → увімкнути «Фонова графіка».</p>
 </body>
 </html>
