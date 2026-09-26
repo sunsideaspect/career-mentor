@@ -8,9 +8,9 @@ import vm from 'node:vm';
 const html = readFileSync(path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../index.html'), 'utf8');
 const start = html.indexOf('function intakeChannel');
 const end = html.indexOf('function intakeRequestId');
-const context = {};
+const context = { URLSearchParams, decodeURIComponent };
 vm.createContext(context);
-vm.runInContext(`${html.slice(start, end)}\nthis.intakeSource = intakeSource;`, context);
+vm.runInContext(`${html.slice(start, end)}\nthis.intakeSource = intakeSource;\nthis.visitQuery = visitQuery;`, context);
 
 function params(query) {
     return new URLSearchParams(query);
@@ -24,4 +24,11 @@ test('facebook, telegram and a direct visit map to three CRM sources', () => {
     assert.equal(context.intakeSource(params('utm_source=qr&utm_medium=qr&utm_content=poster')), 'Сайт');
     assert.equal(context.intakeSource(params('utm_source=school&utm_medium=qr&utm_content=pilot_a_parent')), 'Сайт');
     assert.equal(context.intakeSource(params('')), 'Сайт');
+});
+
+test('a stored facebook mark counts without showing it in the address', () => {
+    assert.equal(context.intakeSource(context.visitQuery('', 'vo_src=facebook')), 'Facebook');
+    assert.equal(context.intakeSource(context.visitQuery('', 'vo_src=telegram')), 'Telegram');
+    assert.equal(context.intakeSource(context.visitQuery('', '')), 'Сайт');
+    assert.equal(context.intakeSource(context.visitQuery('utm_source=telegram', 'vo_src=facebook')), 'Telegram');
 });

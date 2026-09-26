@@ -909,6 +909,16 @@
             return 'Сайт';
         }
 
+        function visitQuery(search, cookie) {
+            const params = new URLSearchParams(search || '');
+            if (!params.get('utm_source')) {
+                const match = String(cookie || '').match(/(?:^|; )vo_src=([^;]*)/);
+                const value = match ? decodeURIComponent(match[1]) : '';
+                if (value === 'facebook' || value === 'telegram') params.set('utm_source', value);
+            }
+            return params;
+        }
+
         function intakeRequestId() {
             const rand = Math.random().toString(36).slice(2, 10);
             return 'web-' + Date.now().toString(36) + '-' + rand;
@@ -916,7 +926,7 @@
 
         form.addEventListener('submit', e => {
             e.preventDefault();
-            const params = new URLSearchParams(window.location.search);
+            const params = visitQuery(window.location.search, document.cookie);
             document.getElementById('lead-source').value = intakeSource(params);
             document.getElementById('lead-channel').value = '';
             document.getElementById('lead-request').value = intakeRequestId();
