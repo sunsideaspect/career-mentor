@@ -1,0 +1,37 @@
+[
+  {
+    "id": "facebook",
+    "title": "Facebook",
+    "url": "https://viyskova-osvita.com.ua/?utm_source=facebook&utm_medium=organic&utm_campaign=vvnz_2027_kryvyi_rih_raion&utm_content=page"
+  },
+  {
+    "id": "poster",
+    "title": "Загальний QR",
+    "url": "https://viyskova-osvita.com.ua/?utm_source=qr&utm_medium=qr&utm_campaign=vvnz_2027_kryvyi_rih_raion&utm_content=poster"
+  },
+  {
+    "id": "pilot-a-student",
+    "title": "Пілот A · учні",
+    "url": "https://viyskova-osvita.com.ua/?utm_source=school&utm_medium=qr&utm_campaign=vvnz_2027_kryvyi_rih_raion&utm_content=pilot_a_student"
+  },
+  {
+    "id": "pilot-a-parent",
+    "title": "Пілот A · батьки",
+    "url": "https://viyskova-osvita.com.ua/?utm_source=school&utm_medium=qr&utm_campaign=vvnz_2027_kryvyi_rih_raion&utm_content=pilot_a_parent"
+  },
+  {
+    "id": "pilot-b-student",
+    "title": "Пілот B · учні",
+    "url": "https://viyskova-osvita.com.ua/?utm_source=school&utm_medium=qr&utm_campaign=vvnz_2027_kryvyi_rih_raion&utm_content=pilot_b_student"
+  },
+  {
+    "id": "pilot-b-parent",
+    "title": "Пілот B · батьки",
+    "url": "https://viyskova-osvita.com.ua/?utm_source=school&utm_medium=qr&utm_campaign=vvnz_2027_kryvyi_rih_raion&utm_content=pilot_b_parent"
+  },
+  {
+    "id": "pilot-c-student",
+    "title": "Пілот C · учні",
+    "url": "https://viyskova-osvita.com.ua/?utm_source=school&utm_medium=qr&utm_campaign=vvnz_2027_kryvyi_rih_raion&utm_content=pilot_c_student"
+  }
+]
