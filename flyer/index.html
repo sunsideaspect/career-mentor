@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Аркуш А4 для школи</title>
+    <style>
+        @page { size: A4 portrait; margin: 0; }
+        * { box-sizing: border-box; }
+        html, body { margin: 0; background: #d9d9d9; }
+        body { font-family: Arial, sans-serif; color: #111; }
+        .sheet {
+            width: 210mm;
+            height: 297mm;
+            margin: 12px auto;
+            background: #fff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding: 14mm 16mm 12mm;
+        }
+        .mark {
+            align-self: stretch;
+            background: #ffcc00;
+            color: #111;
+            font-weight: 800;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            font-size: 13pt;
+            padding: 4mm 6mm;
+        }
+        h1 {
+            margin: 10mm 0 3mm;
+            font-size: 28pt;
+            line-height: 1.05;
+            font-weight: 800;
+        }
+        .lead {
+            margin: 0 0 8mm;
+            font-size: 16pt;
+            line-height: 1.3;
+        }
+        .code {
+            width: 128mm;
+            height: 128mm;
+            border: 2.5mm solid #111;
+            padding: 4mm;
+        }
+        .code img { width: 100%; height: 100%; display: block; }
+        .url {
+            margin: 8mm 0 0;
+            font-size: 16pt;
+            font-weight: 800;
+            letter-spacing: 0.01em;
+        }
+        .phone {
+            margin: 7mm 0 0;
+            font-size: 13pt;
+            line-height: 1.35;
+        }
+        .phone b { display: block; margin-top: 1mm; font-size: 18pt; }
+        .note {
+            margin-top: auto;
+            font-size: 10pt;
+            line-height: 1.35;
+        }
+        .hint {
+            width: 210mm;
+            margin: 8px auto 20px;
+            font-family: Arial, sans-serif;
+            font-size: 13px;
+            color: #333;
+        }
+        @media print {
+            html, body { background: #fff; }
+            .sheet { margin: 0; }
+            .hint { display: none; }
+        }
+    </style>
+</head>
+<body>
+    <article class="sheet">
+        <div class="mark">Військова освіта</div>
+        <h1>Наведи камеру<br>на код</h1>
+        <p class="lead">Відкриється сайт, де можна залишити заявку на консультацію.</p>
+        <div class="code">
+            <img src="code.svg" alt="QR-код сайту viyskova-osvita.com.ua">
+        </div>
+        <p class="url">viyskova-osvita.com.ua</p>
+        <p class="phone">Якщо код не відкривається, зателефонуй<b>+380 68 776 3011</b></p>
+        <p class="note">Форму на сайті заповнює повнолітній вступник або законний представник.</p>
+    </article>
+    <p class="hint">Друк: Ctrl+P, папір А4, поля «Немає», масштаб 100%.</p>
+</body>
+</html>
